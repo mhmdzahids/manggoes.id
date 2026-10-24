@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Design Tokens: Manggoes Brand System
+   Scoped strictly to .mg to isolate custom properties from host theme
+   ========================================================================== */
+
+.mg {
+  /* Brand Palette (Derived from logo & agricultural identity) */
+  --mg-green-900: #1F3A14;
+  --mg-green-800: #254718;
+  --mg-green-700: #2F5A1E;
+  --mg-green-600: #42782A;
+  --mg-green-500: #5B9A3A;
+  --mg-green-200: #CDE2B8;
+  --mg-green-100: #E6EFD9;
+  --mg-green-50:  #F2F7EC;
+
+  --mg-mango-600: #E0880B;
+  --mg-mango-500: #F4A21B;
+  --mg-mango-400: #F6B344;
+  --mg-mango-200: #FCD997;
+  --mg-mango-100: #FDEBC8;
+  --mg-mango-50:  #FFF8ED;
+
+  --mg-cream-100: #EFE9D6;
+  --mg-cream-50:  #F7F3E8;
+  --mg-cream-0:   #FDFAF3;
+
+  --mg-ink-900: #1E2A17;
+  --mg-ink-700: #2F3E28;
+  --mg-ink-600: #45573D;
+  --mg-ink-400: #6D8064;
+  --mg-ink-200: #A8B8A0;
+
+  --mg-white: #FFFFFF;
+  --mg-white-alpha-12: rgba(255, 255, 255, 0.12);
+  --mg-white-alpha-20: rgba(255, 255, 255, 0.20);
+  --mg-white-alpha-35: rgba(255, 255, 255, 0.35);
+  --mg-white-alpha-60: rgba(255, 255, 255, 0.60);
+  --mg-white-alpha-75: rgba(255, 255, 255, 0.75);
+  --mg-white-alpha-90: rgba(255, 255, 255, 0.90);
+
+  --mg-green-alpha-15: rgba(31, 58, 20, 0.15);
+  --mg-green-alpha-30: rgba(31, 58, 20, 0.30);
+  --mg-green-alpha-65: rgba(31, 58, 20, 0.65);
+  --mg-green-alpha-85: rgba(31, 58, 20, 0.85);
+
+  /* Surface Context Foreground Tokens */
+  --mg-on-dark: var(--mg-cream-50);
+  --mg-on-dark-muted: var(--mg-green-100);
+  --mg-on-light: var(--mg-ink-900);
+  --mg-on-light-muted: var(--mg-ink-700);
+
+  /* Vertical Rhythm Stacking Scale */
+  --mg-stack-heading-p: var(--mg-space-md);  /* 16px */
+  --mg-stack-p-btn: var(--mg-space-2xl);     /* 32px */
+
+  /* Typography Families */
+  --mg-font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mg-font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Type Scale */
+  --mg-text-xs:   0.75rem;    /* 12px */
+  --mg-text-sm:   0.84375rem; /* 13.5px */
+  --mg-text-base: 0.9375rem;  /* 15px */
+  --mg-text-md:   1.0625rem;  /* 17px */
+  --mg-text-lg:   1.25rem;    /* 20px */
+  --mg-text-xl:   1.5rem;     /* 24px */
+  --mg-text-2xl:  1.875rem;   /* 30px */
+  --mg-text-3xl:  2.25rem;    /* 36px */
+  --mg-text-4xl:  3rem;       /* 48px */
+  --mg-text-5xl:  3.75rem;    /* 60px */
+
+  /* Spacing Scale */
+  --mg-space-2xs: 4px;
+  --mg-space-xs:  8px;
+  --mg-space-sm:  12px;
+  --mg-space-md:  16px;
+  --mg-space-lg:  20px;
+  --mg-space-xl:  24px;
+  --mg-space-2xl: 32px;
+  --mg-space-3xl: 40px;
+  --mg-space-4xl: 48px;
+  --mg-space-5xl: 64px;
+  --mg-space-6xl: 80px;
+  --mg-space-7xl: 96px;
+
+  /* Border Radii */
+  --mg-radius-xs:   4px;
+  --mg-radius-sm:   8px;
+  --mg-radius-md:   14px;
+  --mg-radius-lg:   20px;
+  --mg-radius-xl:   32px;
+  --mg-radius-2xl:  40px;
+  --mg-radius-pill: 9999px;
+
+  /* Shadows */
+  --mg-shadow-sm: 0 2px 6px rgba(31, 58, 20, 0.05);
+  --mg-shadow-md: 0 8px 24px rgba(31, 58, 20, 0.08);
+  --mg-shadow-lg: 0 16px 40px rgba(31, 58, 20, 0.12);
+  --mg-shadow-glass: 0 12px 36px rgba(18, 36, 12, 0.14);
+  --mg-shadow-card: 0 10px 30px -5px rgba(31, 58, 20, 0.09);
+
+  /* Animation & Transitions */
+  --mg-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mg-duration-fast: 160ms;
+  --mg-duration-base: 280ms;
+  --mg-duration-slow: 480ms;
+
+  /* Layout Boundaries */
+  --mg-container-max: 1280px;
+  --mg-page-gutter: 20px;
+}
+
+@media (min-width: 768px) {
+  .mg {
+    --mg-page-gutter: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mg {
+    --mg-page-gutter: 48px;
+  }
+}

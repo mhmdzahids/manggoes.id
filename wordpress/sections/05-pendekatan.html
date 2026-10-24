@@ -1,0 +1,128 @@
+<!-- ======================================================================
+     Manggoes Section 5: Pendekatan Kami (#mg-pendekatan & #mg-video-modal)
+     Panduan Elementor:
+     1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
+     2. Masukkan widget 'HTML' ke dalam container tersebut.
+     3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
+     ====================================================================== -->
+<div class="mg">
+<section id="mg-pendekatan" class="mg-approach mg-section" aria-label="Pendekatan dan Kualitas Kerja">
+        <div class="mg-container">
+          <div class="mg-approach__grid">
+
+            <!-- Left Column: Standards & Pillars -->
+            <div class="mg-approach__left mg-reveal">
+              <span class="mg-eyebrow">Pendekatan Kami</span>
+              <h2 class="mg-approach__title mg-heading-h2">
+                Kualitas di setiap detail
+              </h2>
+              <p class="mg-approach__desc mg-subline">
+                Kami menjaga keaslian rasa dan kesegaran sejak bibit unggul ditanam, dipelihara dengan pupuk organik, hingga tiba di meja makan Anda.
+              </p>
+
+              <div class="mg-approach__features">
+
+                <div class="mg-feature-pill">
+                  <div class="mg-feature-pill__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                  </div>
+                  <!-- PLACEHOLDER: Client quality protocol title -->
+                  <div class="mg-feature-pill__text">Kontrol kualitas di setiap tahap panen</div>
+                </div>
+
+                <div class="mg-feature-pill">
+                  <div class="mg-feature-pill__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"></path>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                  </div>
+                  <!-- PLACEHOLDER: Client storage facility title -->
+                  <div class="mg-feature-pill__text">Penyimpanan modern bersuhu stabil</div>
+                </div>
+
+                <div class="mg-feature-pill">
+                  <div class="mg-feature-pill__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M7 20h10"></path>
+                      <path d="M10 20c0-4 2-7 2-10 0-3-1-5-1-5s3 1 4 4c1 2 1 5 0 8"></path>
+                      <path d="M9 13a4 4 0 0 0 5 0"></path>
+                    </svg>
+                  </div>
+                  <!-- PLACEHOLDER: Client eco-farming methods -->
+                  <div class="mg-feature-pill__text">Metode budidaya ramah lingkungan</div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right Column: Video Card with Worker Sorting Mangoes -->
+            <div class="mg-approach__right mg-reveal">
+              <div class="mg-approach__video-card mg-surface--dark">
+                <img src="https://manggoes.id/wp-content/uploads/mg/approach-sorting.webp" alt="Petani memanen buah mangga segar di area perkebunan" class="mg-approach__video-img" width="1200" height="800" loading="lazy">
+                <div class="mg-approach__video-overlay" aria-hidden="true"></div>
+
+                <!-- Center Interactive Play Trigger -->
+                <div class="mg-approach__center-cta">
+                  <button type="button" class="mg-play-trigger" aria-label="Putar video" data-mg-modal="video">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  </button>
+                  <div class="mg-approach__video-caption">Lihat proses panen kebun kami</div>
+                </div>
+
+                <!-- Bottom Harvest Season Badge -->
+                <!-- PLACEHOLDER: Replace with verified client harvest calendar -->
+                <div class="mg-approach__season-badge mg-badge mg-badge--glass">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span class="mg-badge-full">Musim panen: Oktober - Januari</span>
+                  <span class="mg-badge-short">Panen: Okt - Jan</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    <!-- Video Modal Dialog (#mg-video-modal) -->
+    <div id="mg-video-modal" class="mg-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mg-modal-title">
+      <div class="mg-modal-dialog">
+        <button type="button" class="mg-modal-close" aria-label="Tutup video">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <h3 id="mg-modal-title" class="mg-heading-h3" style="color: var(--mg-ink-900);">
+          Proses Panen Kebun Manggoes
+        </h3>
+        <p class="mg-subline" style="font-size: var(--mg-text-sm); margin-top: 4px;">
+          Dokumentasi pemetikan matang pohon dan seleksi kualitas di kebun binaan.
+        </p>
+
+        <!-- PLACEHOLDER: Client to replace placeholder container with YouTube / Vimeo / HTML5 Video Embed -->
+        <div class="mg-modal__video-wrap">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--mg-mango-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8" fill="var(--mg-mango-500)"></polygon>
+          </svg>
+          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 6px;">Video Segera Hadir</div>
+          <div style="font-size: 0.85rem; color: var(--mg-green-200); max-width: 40ch;">
+            Dokumentasi panen musim ini sedang dalam proses penyuntingan dan akan segera dirilis.
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

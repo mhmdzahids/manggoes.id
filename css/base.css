@@ -1,0 +1,255 @@
+/* ==========================================================================
+   Base Styles & Scoped Theme Reset
+   Neutralizes WordPress Astra & Elementor global style leakage
+   ========================================================================== */
+
+/* Scoped Reset - Applied ONLY inside .mg container */
+.mg,
+.mg *,
+.mg *::before,
+.mg *::after {
+  box-sizing: border-box;
+}
+
+.mg {
+  background-color: var(--mg-cream-50);
+  color: var(--mg-ink-900);
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-text-base);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  overflow-x: clip; /* Clean containment without breaking sticky positioning */
+  position: relative;
+}
+
+/* ==========================================================================
+   Zero-Specificity Scoped Reset: :where(.mg) :where(...)
+   Specificity is (0, 0, 0), allowing any single component class (.mg-*)
+   with specificity (0, 1, 0) to override default margins, colors and padding.
+   ========================================================================== */
+
+:where(.mg) :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--mg-font-heading);
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Neutralize Hostile Font Family & Non-Color Leakage */
+.mg h1,
+.mg h2,
+.mg h3,
+.mg h4,
+.mg h5,
+.mg h6 {
+  font-family: var(--mg-font-heading);
+}
+
+.mg a {
+  text-decoration: none;
+}
+
+.mg ul,
+.mg ol {
+  list-style: none;
+}
+
+.mg img {
+  border: 0;
+}
+
+:where(.mg) :where(p) {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+:where(.mg) :where(ul, ol) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:where(.mg) :where(li) {
+  margin: 0;
+  padding: 0;
+}
+
+:where(.mg) :where(a) {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--mg-duration-fast) var(--mg-ease),
+              opacity var(--mg-duration-fast) var(--mg-ease);
+}
+
+:where(.mg) :where(a):hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(.mg) :where(button, input, textarea, select) {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+:where(.mg) :where(button) {
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+:where(.mg) :where(img) {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+:where(.mg) :where(svg) {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Surface Contexts
+   Elements inherit foreground colors naturally from their surface container
+   -------------------------------------------------------------------------- */
+.mg-surface--light {
+  color: var(--mg-on-light);
+}
+
+.mg-surface--dark {
+  color: var(--mg-on-dark);
+}
+
+/* Surface Muted Utilities */
+.mg-muted--light {
+  color: var(--mg-on-light-muted);
+}
+
+.mg-muted--dark {
+  color: var(--mg-on-dark-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Vertical Rhythm & Stacking Utility
+   Consistent vertical spacing: heading -> paragraph -> CTA / button group
+   -------------------------------------------------------------------------- */
+.mg-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-stack > * + * {
+  margin-top: var(--mg-stack-heading-p);
+}
+
+.mg-stack > p + .mg-btn-row,
+.mg-stack > p + .mg-btn,
+.mg-stack > p + a.mg-btn,
+.mg-stack > .mg-subline + .mg-btn-row,
+.mg-stack > .mg-subline + .mg-hero__cta-row {
+  margin-top: var(--mg-stack-p-btn);
+}
+
+/* Accessible Focus Styling (WCAG AA Compliant Focus Ring) */
+.mg a:focus-visible,
+.mg button:focus-visible,
+.mg input:focus-visible,
+.mg [tabindex="0"]:focus-visible {
+  outline: 2px solid var(--mg-mango-500);
+  outline-offset: 3px;
+  border-radius: var(--mg-radius-xs);
+}
+
+/* Skip to Content Navigation */
+.mg-skip-link {
+  position: absolute;
+  top: -60px;
+  left: 24px;
+  z-index: 1000;
+  background-color: var(--mg-green-900);
+  color: var(--mg-cream-50);
+  padding: var(--mg-space-sm) var(--mg-space-lg);
+  border-radius: var(--mg-radius-sm);
+  font-weight: 600;
+  font-size: var(--mg-text-sm);
+  box-shadow: var(--mg-shadow-md);
+  transition: top var(--mg-duration-fast) var(--mg-ease);
+}
+
+.mg-skip-link:focus {
+  top: 16px;
+}
+
+/* Unified Page Container */
+.mg-container {
+  width: 100%;
+  max-width: var(--mg-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--mg-page-gutter);
+  padding-right: var(--mg-page-gutter);
+}
+
+/* Section Wrapper Rhythm */
+.mg-section {
+  width: 100%;
+  padding-top: var(--mg-space-4xl);
+  padding-bottom: var(--mg-space-4xl);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .mg-section {
+    padding-top: var(--mg-space-5xl);
+    padding-bottom: var(--mg-space-5xl);
+  }
+}
+
+@media (min-width: 1200px) {
+  .mg-section {
+    padding-top: var(--mg-space-6xl);
+    padding-bottom: var(--mg-space-6xl);
+  }
+}
+
+/* Screen Reader Only Utility */
+.mg-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mg,
+  .mg *,
+  .mg *::before,
+  .mg *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astra &amp; Elementor CSS Isolation Test: Manggoes</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..500;1,9..40,400..500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ======================================================================
+       HOSTILE THEME CSS SIMULATION
+       Simulates aggressive global styling leakage typical of Astra & Elementor
+       ====================================================================== -->
+  <style id="hostile-theme-styles">
+    /* Hostile Theme & Elementor Container Simulation */
+    body, .ast-container, .entry-content {
+      font-family: "Comic Sans MS", "Chalkboard SE", cursive;
+      font-size: 13px;
+      line-height: 2.4;
+      color: #990000;
+      background-color: #2b0000;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .entry-content h1, .entry-content h2, .entry-content h3 {
+      font-family: "Impact", "Arial Black", fantasy;
+      color: #ff0055;
+      margin: 45px 0 25px 0;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
+
+    p, .entry-content p {
+      margin-bottom: 35px;
+      color: #aa1100;
+      line-height: 2.2;
+    }
+
+    a, .entry-content a {
+      color: #e60000;
+      text-decoration: underline wavy #ff0000 2px;
+      font-weight: 900;
+    }
+
+    button, input[type="button"], input[type="submit"], .ast-button {
+      font-family: "Courier New", monospace;
+      background: #4a0072;
+      color: #ffff00;
+      border: 4px dashed #ff0055;
+      border-radius: 0;
+      padding: 24px 32px;
+      box-shadow: 10px 10px 0 #000000;
+    }
+
+    ul, ol, .entry-content ul {
+      list-style-type: square;
+      margin-left: 40px;
+      padding-left: 20px;
+    }
+
+    li, .entry-content li {
+      margin-bottom: 15px;
+      color: #ff5500;
+    }
+
+    img, .entry-content img {
+      border: 3px solid #ff00ff;
+      border-radius: 0;
+    }
+
+    .elementor-widget-container {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <!-- Manggoes Scoped Stylesheets (Must Override & Neutralize Hostile Leakage) -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/sections.css">
+
+  <!-- Test Harness UI Styles (Scoped to #test-harness) -->
+  <style>
+    #test-harness {
+      position: sticky;
+      top: 0;
+      z-index: 99999;
+      background: #111827;
+      color: #f9fafb;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 12px 20px;
+      border-bottom: 2px solid #374151;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+    #test-harness h2 {
+      font-family: system-ui, -apple-system, sans-serif !important;
+      color: #ffffff !important;
+      font-size: 15px !important;
+      margin: 0 0 8px 0 !important;
+      text-transform: none !important;
+      letter-spacing: 0 !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #test-harness .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    #test-harness .badge-pass { background: #059669; color: #ffffff; }
+    #test-harness .badge-fail { background: #dc2626; color: #ffffff; }
+    #test-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 8px;
+      font-size: 12px;
+    }
+    .test-item {
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .test-item.pass { border-left: 3px solid #10b981; }
+    .test-item.fail { border-left: 3px solid #ef4444; }
+    .test-label { font-weight: 500; }
+    .test-status { font-weight: 700; font-family: monospace; }
+  </style>
+</head>
+<body>
+
+  <!-- Test Harness Dashboard Banner -->
+  <aside id="test-harness" aria-label="Astra Leak Isolation Results">
+    <h2>
+      <span>🛡️ Astra &amp; Elementor CSS Isolation Suite</span>
+      <span id="overall-status" class="badge badge-pass">Testing...</span>
+    </h2>
+    <div id="test-results-grid">
+      <div class="test-item" id="t-font">
+        <span class="test-label">Heading Font Family</span>
+        <span class="test-status" id="s-font">...</span>
+      </div>
+      <div class="test-item" id="t-color">
+        <span class="test-label">Hero Title Color</span>
+        <span class="test-status" id="s-color">...</span>
+      </div>
+      <div class="test-item" id="t-dark-heading">
+        <span class="test-label">Dark Surface Heading</span>
+        <span class="test-status" id="s-dark-heading">...</span>
+      </div>
+      <div class="test-item" id="t-btn-color">
+        <span class="test-label">Primary Button Contrast</span>
+        <span class="test-status" id="s-btn-color">...</span>
+      </div>
+      <div class="test-item" id="t-spacing">
+        <span class="test-label">Vertical Spacing Rhythm</span>
+        <span class="test-status" id="s-spacing">...</span>
+      </div>
+      <div class="test-item" id="t-links">
+        <span class="test-label">Link Decoration / Color</span>
+        <span class="test-status" id="s-links">...</span>
+      </div>
+      <div class="test-item" id="t-btn">
+        <span class="test-label">Button Styles / Borders</span>
+        <span class="test-status" id="s-btn">...</span>
+      </div>
+      <div class="test-item" id="t-img">
+        <span class="test-label">Image Border Neutralization</span>
+        <span class="test-status" id="s-img">...</span>
+      </div>
+      <div class="test-item" id="t-list">
+        <span class="test-label">List Style Neutralization</span>
+        <span class="test-status" id="s-list">...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Manggoes Component Structure Under Hostile Environment -->
+  <div class="mg">
+
+    <a href="#mg-main" class="mg-skip-link">Lewati ke konten utama</a>
+
+    <!-- Section 1: Header -->
+    <header id="mg-header" class="mg-header-wrap" role="banner">
+      <div class="mg-container">
+        <div class="mg-header">
+          <div class="mg-header__left">
+            <button type="button" class="mg-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mg-mobile-nav">
+              <span class="mg-hamburger__line"></span>
+              <span class="mg-hamburger__line"></span>
+            </button>
+            <nav class="mg-nav" aria-label="Navigasi Utama">
+              <a href="#mg-varietas" class="mg-nav__link">Katalog</a>
+              <a href="#mg-pendekatan" class="mg-nav__link">Tentang Kami</a>
+              <a href="#mg-statistik" class="mg-nav__link">Produksi</a>
+              <a href="#mg-footer" class="mg-nav__link">Kontak</a>
+            </nav>
+          </div>
+          <div class="mg-header__center">
+            <a href="#mg-hero" class="mg-logo" aria-label="Manggoes Beranda">
+              <img src="../assets/logo/logo-manggoes.webp" alt="Logo Manggoes" width="300" height="100">
+            </a>
+          </div>
+          <div class="mg-header__right">
+            <a href="tel:+628000000000" class="mg-header__phone">+62 8xx-xxxx-xxxx</a>
+            <a href="#mg-footer" class="mg-btn mg-btn--dark mg-surface--dark mg-header__btn">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="mg-main">
+
+      <!-- Section 2: Hero -->
+      <section id="mg-hero" class="mg-hero" aria-label="Pengenalan Brand Manggoes">
+        <div class="mg-container">
+          <div class="mg-hero__container">
+            <div class="mg-hero__media" aria-hidden="true">
+              <img src="../assets/images/hero-mango-tree.webp" alt="Pohon mangga" width="1920" height="1080">
+            </div>
+            <div class="mg-hero__overlay" aria-hidden="true"></div>
+            <div class="mg-hero__content">
+              <div class="mg-hero__text-col">
+                <h1 class="mg-hero__title" id="test-hero-title">
+                  Manis alami yang bikin jatuh hati.
+                </h1>
+                <p class="mg-hero__subline" id="test-hero-p">
+                  Mangga pilihan nusantara dipetik matang pohon dan dikemas higienis langsung dari kebun binaan kami.
+                </p>
+                <div class="mg-hero__cta-row">
+                  <a href="../assets/images/hero-mango-tree.webp" class="mg-btn mg-btn--primary mg-surface--dark" id="test-cta-btn" download>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Unduh Daftar Harga</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Varieties Sample -->
+      <section id="mg-varietas" class="mg-varieties mg-section">
+        <div class="mg-container">
+          <div class="mg-varieties__grid">
+            <div class="mg-varieties__intro-card mg-surface--dark">
+              <div class="mg-varieties__badge">- 06 -</div>
+              <h2 class="mg-varieties__title" id="test-h2-title">Varietas mangga pilihan nusantara</h2>
+              <p class="mg-varieties__desc">Koleksi varietas unggul dipanen sesuai standar kematangan alami.</p>
+              <a href="#mg-varietas" class="mg-btn mg-btn--ghost">Lihat Katalog</a>
+            </div>
+            <div class="mg-carousel">
+              <div class="mg-carousel__track" tabindex="0">
+                <article class="mg-variety-card">
+                  <div class="mg-variety-card__media">
+                    <img src="../assets/images/variety-harum-manis.webp" alt="Harum Manis" width="800" height="1000" id="test-card-img">
+                  </div>
+                  <div class="mg-variety-card__scrim mg-surface--dark">
+                    <h3 class="mg-variety-card__name">Harum Manis</h3>
+                    <div class="mg-variety-card__season">Musim: Sep - Des</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Stats Sample -->
+      <section id="mg-statistik" class="mg-stats-section">
+        <div class="mg-container">
+          <div class="mg-stats-bar">
+            <div class="mg-stats-grid">
+              <div class="mg-stat-item">
+                <div class="mg-stat-value"><span class="mg-stat-count" data-target="250">250</span>+</div>
+                <div class="mg-stat-label">Hektar Kebun Binaan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: Footer Sample (Lists & Links) -->
+      <footer id="mg-footer" class="mg-footer-section">
+        <div class="mg-container">
+          <div class="mg-footer">
+            <div class="mg-footer__grid">
+              <div>
+                <div class="mg-footer__col-title">Navigasi</div>
+                <ul class="mg-footer__links" id="test-footer-ul">
+                  <li><a href="#mg-varietas" class="mg-footer__link" id="test-footer-link">Katalog Varietas</a></li>
+                  <li><a href="#mg-pendekatan" class="mg-footer__link">Tentang Kebun</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+  </div> <!-- End .mg -->
+
+  <!-- Automation Verification Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var passes = 0;
+      var total = 9;
+
+      function updateItem(id, pass, msg) {
+        var el = document.getElementById(id);
+        var s = document.getElementById(id.replace('t-', 's-'));
+        if (!el || !s) return;
+        if (pass) {
+          el.className = 'test-item pass';
+          s.textContent = 'PASS (' + msg + ')';
+          s.style.color = '#34d399';
+          passes++;
+        } else {
+          el.className = 'test-item fail';
+          s.textContent = 'FAIL (' + msg + ')';
+          s.style.color = '#f87171';
+        }
+      }
+
+      // Test 1: Heading Font Family should NOT be Impact
+      var heroTitle = document.getElementById('test-hero-title');
+      var hStyle = window.getComputedStyle(heroTitle);
+      var fontMatch = hStyle.fontFamily.indexOf('Plus Jakarta Sans') !== -1;
+      var notImpact = hStyle.fontFamily.indexOf('Impact') === -1;
+      updateItem('t-font', fontMatch && notImpact, fontMatch ? 'Plus Jakarta Sans' : hStyle.fontFamily);
+
+      // Test 2: Hero Title Color should be ink (#1E2A17 / rgb(30, 42, 23)), NOT hostile #ff0055
+      var isInk = hStyle.color === 'rgb(30, 42, 23)' || hStyle.color === '#1e2a17';
+      var notHostileColor = hStyle.color !== 'rgb(255, 0, 85)';
+      updateItem('t-color', isInk && notHostileColor, isInk ? '#1E2A17 (Ink)' : hStyle.color);
+
+      // Test 3: Dark Surface Heading should be cream (#F7F3E8 / rgb(247, 243, 232)), NOT near-black or hostile red
+      var darkTitle = document.getElementById('test-h2-title');
+      var dStyle = window.getComputedStyle(darkTitle);
+      var isCream = dStyle.color === 'rgb(247, 243, 232)' || dStyle.color === '#f7f3e8';
+      updateItem('t-dark-heading', isCream, isCream ? '#F7F3E8 (Cream)' : dStyle.color);
+
+      // Test 4: Primary Button text should be white (#FFFFFF / rgb(255, 255, 255)), NOT near-black or hostile yellow
+      var btn = document.getElementById('test-cta-btn');
+      var bStyle = window.getComputedStyle(btn);
+      var isWhiteBtn = bStyle.color === 'rgb(255, 255, 255)' || bStyle.color === '#ffffff';
+      updateItem('t-btn-color', isWhiteBtn, isWhiteBtn ? '#FFFFFF' : bStyle.color);
+
+      // Test 5: Vertical Spacing Rhythm
+      var heroP = document.getElementById('test-hero-p');
+      var pStyle = window.getComputedStyle(heroP);
+      var titleMargin = parseFloat(hStyle.marginBottom) >= 20;
+      var pMargin = parseFloat(pStyle.marginBottom) >= 30;
+      updateItem('t-spacing', titleMargin && pMargin, titleMargin && pMargin ? '24px / 32px' : hStyle.marginBottom + ' / ' + pStyle.marginBottom);
+
+      // Test 6: Footer Link should NOT have wavy underline or hostile red color
+      var footLink = document.getElementById('test-footer-link');
+      var lStyle = window.getComputedStyle(footLink);
+      var noWavy = lStyle.textDecorationLine === 'none' || lStyle.textDecoration.indexOf('wavy') === -1;
+      var notRed = lStyle.color !== 'rgb(230, 0, 0)';
+      updateItem('t-links', noWavy && notRed, noWavy ? 'Scoped Reset' : lStyle.textDecoration);
+
+      // Test 7: Button should NOT have hostile 4px dashed border or yellow color
+      var noDashed = bStyle.borderStyle !== 'dashed' && bStyle.borderWidth !== '4px';
+      var notYellow = bStyle.color !== 'rgb(255, 255, 0)';
+      updateItem('t-btn', noDashed && notYellow, noDashed ? 'Solid / None' : bStyle.border);
+
+      // Test 8: Image should NOT have hostile 3px solid magenta border
+      var cardImg = document.getElementById('test-card-img');
+      var iStyle = window.getComputedStyle(cardImg);
+      var noMagenta = iStyle.borderColor !== 'rgb(255, 0, 255)' && (iStyle.borderWidth === '0px' || iStyle.borderStyle === 'none');
+      updateItem('t-img', noMagenta, noMagenta ? '0px clean' : iStyle.border);
+
+      // Test 9: Footer UL should have list-style none, NOT square
+      var ul = document.getElementById('test-footer-ul');
+      var uStyle = window.getComputedStyle(ul);
+      var listNone = uStyle.listStyleType === 'none';
+      updateItem('t-list', listNone, listNone ? 'none' : uStyle.listStyleType);
+
+      // Update Overall Badge
+      var overall = document.getElementById('overall-status');
+      if (passes === total) {
+        overall.className = 'badge badge-pass';
+        overall.textContent = total + '/' + total + ' TESTS PASSED : 100% ISOLATED';
+      } else {
+        overall.className = 'badge badge-fail';
+        overall.textContent = passes + '/' + total + ' TESTS PASSED';
+      }
+    });
+  </script>
+
+  <!-- Manggoes Vanilla JS -->
+  <script src="../js/main.js"></script>
+</body>
+</html>

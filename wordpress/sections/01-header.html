@@ -1,0 +1,99 @@
+<!-- ======================================================================
+     Manggoes Section 1: Header (#mg-header)
+     Panduan Elementor:
+     1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
+     2. Masukkan widget 'HTML' ke dalam container tersebut.
+     3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
+     ====================================================================== -->
+<div class="mg">
+<header id="mg-header" class="mg-header-wrap" role="banner">
+      <div class="mg-container">
+        <div class="mg-header">
+
+          <!-- Left Cluster: Hamburger & Desktop Navigation -->
+          <div class="mg-header__left">
+            <button type="button" class="mg-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mg-mobile-nav">
+              <span class="mg-hamburger__line"></span>
+              <span class="mg-hamburger__line"></span>
+            </button>
+
+            <nav class="mg-nav" aria-label="Navigasi Utama">
+              <a href="#mg-varietas" class="mg-nav__link">Katalog</a>
+              <a href="#mg-pendekatan" class="mg-nav__link">Tentang Kami</a>
+              <a href="#mg-statistik" class="mg-nav__link">Produksi</a>
+              <a href="#mg-footer" class="mg-nav__link">Kontak</a>
+            </nav>
+          </div>
+
+          <!-- Center Brand Logo -->
+          <div class="mg-header__center">
+            <a href="#mg-hero" class="mg-logo" aria-label="Manggoes Beranda">
+              <!-- PLACEHOLDER: Client to provide high-res vector/SVG logo -->
+              <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes.webp" alt="Logo Manggoes" width="300" height="100">
+            </a>
+          </div>
+
+          <!-- Right Cluster: Phone & Contact CTA -->
+          <div class="mg-header__right">
+            <!-- PLACEHOLDER: Replace with verified client customer service phone -->
+            <a href="tel:+628000000000" class="mg-header__phone">+62 8xx-xxxx-xxxx</a>
+            <!-- PLACEHOLDER: Replace with direct client WhatsApp / sales route -->
+            <a href="#mg-footer" class="mg-btn mg-btn--dark mg-surface--dark mg-header__btn">Hubungi Kami</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mg-mobile-nav" class="mg-drawer" aria-hidden="true" role="dialog" aria-label="Menu Navigasi Mobile">
+        <div class="mg-drawer__top">
+          <a href="#mg-hero" class="mg-logo" aria-label="Manggoes Beranda">
+            <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes-light.webp" alt="Logo Manggoes Terang" width="300" height="100">
+          </a>
+          <button type="button" class="mg-btn mg-btn--icon mg-drawer-close" aria-label="Tutup menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mg-drawer__menu" aria-label="Menu Mobile">
+          <a href="#mg-varietas" class="mg-drawer__link">
+            <span>Katalog Varietas</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#mg-pendekatan" class="mg-drawer__link">
+            <span>Tentang Kebun Kami</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#mg-statistik" class="mg-drawer__link">
+            <span>Kapasitas Produksi</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#mg-footer" class="mg-drawer__link">
+            <span>Kontak & Alamat</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </nav>
+
+        <div class="mg-drawer__bottom">
+          <!-- PLACEHOLDER: Replace with client phone -->
+          <a href="tel:+628000000000" class="mg-drawer__link" style="font-size: 1.1rem;">+62 8xx-xxxx-xxxx</a>
+          <a href="#mg-footer" class="mg-btn mg-btn--primary mg-surface--dark">Hubungi Kami Sekarang</a>
+        </div>
+      </div>
+    </header>
+</div>
