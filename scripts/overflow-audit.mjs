@@ -175,7 +175,7 @@ server.listen(PORT, '127.0.0.1', async () => {
     return evalRes.result.value;
   }
 
-  const widths = [320, 360, 390, 414, 768, 1024, 1440];
+  const widths = [320, 360, 390, 414, 640, 641, 768, 1023, 1024, 1440];
   console.log('======================================================================');
   console.log('              MANGGOES VIEWPORT OVERFLOW AUDIT                        ');
   console.log('======================================================================\n');

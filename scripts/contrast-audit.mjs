@@ -337,81 +337,77 @@ server.listen(PORT, '127.0.0.1', async () => {
     console.log('======================================================================\n');
 
     let totalFailures = 0;
+    let totalChecks = 0;
 
-    // Viewport 1: Desktop 1440px
-    console.log('>>> [1/2] Auditing Desktop Viewport (1440x900)...');
-    const desktopData = await runCdpSession(`http://127.0.0.1:${PORT}/index.html`, { width: 1440, height: 900 }, async (send) => {
-      const resp = await send('Runtime.evaluate', { expression: auditorCode, returnByValue: true });
-      if (resp.exceptionDetails) {
-        console.error('In-page eval exception:', resp.exceptionDetails);
-      }
-      return resp.result.value;
-    });
+    const testWidths = [320, 360, 390, 414, 640, 641, 768, 1023, 1024, 1440];
+    let desktopResults = null;
 
-    console.log(`Evaluated ${desktopData.total} elements / states.`);
-    const desktopFails = desktopData.results.filter(r => !r.pass);
-    if (desktopFails.length > 0) {
-      console.log(`❌ Desktop Failures (${desktopFails.length}):`);
-      desktopFails.forEach(f => {
-        console.log(`  - [${f.state}] ${f.element}: "${f.text}" FG:${f.fg} BG:${f.bg} Ratio:${f.ratio}:1 (Required >= ${f.required}:1)`);
+    for (let idx = 0; idx < testWidths.length; idx++) {
+      const w = testWidths[idx];
+      const isMobile = w < 1024;
+      const h = isMobile ? 844 : 900;
+
+      const vData = await runCdpSession(`http://127.0.0.1:${PORT}/index.html`, { width: w, height: h, mobile: isMobile }, async (send) => {
+        const resp = await send('Runtime.evaluate', { expression: auditorCode, returnByValue: true });
+        if (resp.exceptionDetails) {
+          console.error('In-page eval exception:', resp.exceptionDetails);
+        }
+        return resp.result.value;
       });
-      totalFailures += desktopFails.length;
-    } else {
-      console.log('✓ Desktop: 0 contrast failures. All text pairs exceed WCAG AA requirements.\n');
-    }
 
-    // Viewport 2: Mobile 390px
-    console.log('>>> [2/2] Auditing Mobile Viewport (390x844)...');
-    const mobileData = await runCdpSession(`http://127.0.0.1:${PORT}/index.html`, { width: 390, height: 844, mobile: true }, async (send) => {
-      const resp = await send('Runtime.evaluate', { expression: auditorCode, returnByValue: true });
-      return resp.result.value;
-    });
-
-    console.log(`Evaluated ${mobileData.total} elements / states.`);
-    const mobileFails = mobileData.results.filter(r => !r.pass);
-    if (mobileFails.length > 0) {
-      console.log(`❌ Mobile Failures (${mobileFails.length}):`);
-      mobileFails.forEach(f => {
-        console.log(`  - [${f.state}] ${f.element}: "${f.text}" FG:${f.fg} BG:${f.bg} Ratio:${f.ratio}:1 (Required >= ${f.required}:1)`);
-      });
-      totalFailures += mobileFails.length;
-    } else {
-      console.log('✓ Mobile: 0 contrast failures. All text pairs exceed WCAG AA requirements.\n');
-    }
-
-    // Sample Key Results Summary Table
-    console.log('----------------------------------------------------------------------');
-    console.log('Key Element Contrast Verification Table:');
-    console.log('----------------------------------------------------------------------');
-    const sampled = [
-      'mg-hero__title',
-      'mg-hero__subline',
-      'mg-btn--primary',
-      'mg-btn--dark',
-      'mg-btn--cream',
-      'mg-varieties__heading',
-      'mg-varieties__desc',
-      'mg-variety-card__name',
-      'mg-variety-card__season',
-      'mg-stat-value',
-      'mg-partners-card__title',
-      'mg-partners-card__desc',
-      'mg-footer__tagline',
-      'mg-footer__col-title',
-      'mg-footer__link'
-    ];
-
-    desktopData.results.forEach(r => {
-      const match = sampled.find(s => r.element.indexOf(s) !== -1);
-      if (match && r.state === 'default') {
-        const status = r.pass ? 'PASS' : 'FAIL';
-        console.log(`${r.element.padEnd(28)} | ${r.ratio.toString().padStart(5)}:1 | Req: ${r.required}:1 | ${status} | "${r.text.substring(0, 26)}"`);
+      if (w === 1440) {
+        desktopResults = vData;
       }
-    });
+
+      totalChecks += vData.total;
+      const fails = vData.results.filter(r => !r.pass);
+      const statusMark = fails.length === 0 ? '✓ PASS' : '❌ FAIL';
+      console.log(`[Viewport ${w}px] ${statusMark} | Evaluated ${vData.total} elements / states | Failures: ${fails.length}`);
+
+      if (fails.length > 0) {
+        fails.forEach(f => {
+          console.log(`  - [${f.state}] ${f.element}: "${f.text}" FG:${f.fg} BG:${f.bg} Ratio:${f.ratio}:1 (Required >= ${f.required}:1)`);
+        });
+        totalFailures += fails.length;
+      }
+    }
+    console.log();
+
+    // Sample Key Results Summary Table (from 1440px desktop reference)
+    if (desktopResults) {
+      console.log('----------------------------------------------------------------------');
+      console.log('Key Element Contrast Verification Table (1440px):');
+      console.log('----------------------------------------------------------------------');
+      const sampled = [
+        'mg-hero__title',
+        'mg-hero__subline',
+        'mg-btn--primary',
+        'mg-btn--dark',
+        'mg-btn--cream',
+        'mg-varieties__heading',
+        'mg-varieties__desc',
+        'mg-variety-card__name',
+        'mg-variety-card__season',
+        'mg-stat-value',
+        'mg-partners-card__title',
+        'mg-partners-card__desc',
+        'mg-footer__tagline',
+        'mg-footer__col-title',
+        'mg-footer__link'
+      ];
+
+      desktopResults.results.forEach(r => {
+        const match = sampled.find(s => r.element.indexOf(s) !== -1);
+        if (match && r.state === 'default') {
+          const status = r.pass ? 'PASS' : 'FAIL';
+          console.log(`${r.element.padEnd(28)} | ${r.ratio.toString().padStart(5)}:1 | Req: ${r.required}:1 | ${status} | "${r.text.substring(0, 26)}"`);
+        }
+      });
+    }
 
     console.log('\n======================================================================');
     if (totalFailures === 0) {
-      console.log(`🎉 FINAL AUDIT RESULT: 0 FAILURES (${desktopData.total + mobileData.total} checks passed).`);
+      console.log(`🎉 FINAL AUDIT RESULT: 0 FAILURES (${totalChecks} checks passed across 10 viewports).`);
       console.log('======================================================================\n');
     } else {
       console.log(`⚠️ AUDIT RESULT: ${totalFailures} FAILURES FOUND.`);
