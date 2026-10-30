@@ -845,97 +845,82 @@
   color: var(--mg-white);
   font-family: var(--mg-font-body);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: var(--mg-radius-pill);
-  box-shadow: 0 2px 8px rgba(213, 37, 24, 0.35);
+  padding: 5px 14px;
+  border-radius: 2px; /* Authentic agricultural inspection stamp */
+  box-shadow: 0 2px 10px rgba(213, 37, 24, 0.35);
+}
+
+/* ==========================================================================
+   Artisanal Farm Inspection Stamp Badges
+   High-contrast, crisp architectural rectangular tags (Zero AI rounded dots)
+   ========================================================================== */
+.mg-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-family: var(--mg-font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Variety Stamp Palettes (Artisanal Fruit Identity - High Contrast WCAG AAA) */
+.mg-stamp-badge--gincu {
+  background-color: #991B1B;
+  color: #FFFFFF;
+  border-color: #7F1D1D;
+}
+
+.mg-stamp-badge--golek {
+  background-color: #B45309;
+  color: #FFFFFF;
+  border-color: #92400E;
+}
+
+.mg-stamp-badge--harum {
+  background-color: #15803D;
+  color: #FFFFFF;
+  border-color: #166534;
+}
+
+.mg-stamp-badge--kiojay {
+  background-color: #365314;
+  color: #FFFFFF;
+  border-color: #1A2E05;
+}
+
+.mg-stamp-badge--cengkir {
+  background-color: #C2410C;
+  color: #FFFFFF;
+  border-color: #9A3412;
+}
+
+.mg-stamp-badge--b2b {
+  background-color: #1E293B;
+  color: #FDE68A;
+  border-color: #0F172A;
 }
 
 .mg-badge--ready {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: var(--mg-green-100);
-  color: var(--mg-green-800);
+  background-color: var(--mg-green-800);
+  color: #FFFFFF;
   font-family: var(--mg-font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 11px;
-  border-radius: var(--mg-radius-pill);
-  border: 1px solid var(--mg-green-200);
-}
-
-.mg-badge--ready::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--mg-green-700);
-  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
-}
-
-/* Variety-Specific Flavor Badges (Artisanal Fruit Identity) */
-.mg-badge--gincu {
-  background-color: #FEF2F2;
-  color: #DC2626;
-  border-color: #FECACA;
-}
-.mg-badge--gincu::before {
-  background-color: #DC2626;
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
-}
-
-.mg-badge--golek {
-  background-color: #FFFBEB;
-  color: #B45309;
-  border-color: #FDE68A;
-}
-.mg-badge--golek::before {
-  background-color: #D97706;
-  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
-}
-
-.mg-badge--harum {
-  background-color: #F0FDF4;
-  color: #15803D;
-  border-color: #BBF7D0;
-}
-.mg-badge--harum::before {
-  background-color: #16A34A;
-  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
-}
-
-.mg-badge--kiojay {
-  background-color: #F4F8EE;
-  color: #3F5E1E;
-  border-color: #D5E1C3;
-}
-.mg-badge--kiojay::before {
-  background-color: #4F6F2B;
-  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
-}
-
-.mg-badge--cengkir {
-  background-color: #FFF7ED;
-  color: #C2410C;
-  border-color: #FED7AA;
-}
-.mg-badge--cengkir::before {
-  background-color: #EA580C;
-  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.2);
-}
-
-.mg-badge--b2b {
-  background-color: #FEF3C7;
-  color: #92400E;
-  border-color: #FDE68A;
-}
-.mg-badge--b2b::before {
-  background-color: #D97706;
-  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1322,34 +1307,26 @@
 
 /* ==========================================================================
    SECTION 2: Hero Section (#atas / #mg-hero)
-   Orchard photography, high-impact heading, frosted glass badges & 2 CTA buttons
+   Non-rounded, full-width orchard immersion with architectural high-contrast
+   feature blocks and authentic botanical origin tag (Zero AI Slop)
    ========================================================================== */
-.mg-hero-wrap {
-  width: 100%;
-  padding-top: var(--mg-space-sm);
-  padding-bottom: var(--mg-space-2xl);
-  scroll-margin-top: 100px;
-}
-
 .mg-hero {
   position: relative;
   width: 100%;
-  min-height: 560px;
-  border-radius: var(--mg-radius-2xl);
+  min-height: 600px;
+  border-radius: 0; /* Strictly non-rounded per brand design rule */
   overflow: hidden;
-  background-color: var(--mg-green-900);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: var(--mg-space-2xl) var(--mg-space-lg);
-  box-shadow: var(--mg-shadow-lg);
+  background-color: #121C09;
+  border: none;
+  border-bottom: 3px solid var(--mg-mango-500);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(40px, 5vw, 68px);
+  box-shadow: 0 12px 36px rgba(12, 19, 6, 0.45);
+  scroll-margin-top: 80px;
 }
 
 @media (min-width: 768px) {
   .mg-hero {
-    min-height: 640px;
-    padding: var(--mg-space-4xl) var(--mg-space-3xl);
+    min-height: 660px;
   }
 }
 
@@ -1359,9 +1336,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 30%;
   z-index: 1;
-  filter: brightness(0.85);
+  filter: brightness(0.82) contrast(1.05);
 }
 
 .mg-hero__overlay {
@@ -1370,36 +1347,62 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(31, 45, 16, 0.45) 0%,
-    rgba(31, 45, 16, 0.25) 50%,
-    rgba(31, 45, 16, 0.85) 100%
+    rgba(18, 28, 9, 0.72) 0%,
+    rgba(18, 28, 9, 0.45) 45%,
+    rgba(14, 22, 7, 0.92) 100%
   );
+}
+
+.mg-hero__inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--mg-space-3xl);
+  min-height: 500px;
 }
 
 .mg-hero__content {
   position: relative;
-  z-index: 3;
-  max-width: 740px;
+  max-width: 760px;
   color: var(--mg-white);
 }
 
-.mg-hero__eyebrow {
+/* Artisanal Origin Kicker — Architectural solid tag (replaces AI rounded star badge) */
+.mg-hero__kicker {
   display: inline-flex;
   align-items: center;
-  gap: var(--mg-space-xs);
-  padding: 6px 16px;
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: var(--mg-radius-pill);
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: #0E1707;
+  border: 1px solid rgba(255, 160, 0, 0.55);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: var(--mg-space-lg);
+}
+
+.mg-hero__kicker-tag {
   font-family: var(--mg-font-body);
-  font-size: var(--mg-text-xs);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFA000;
+}
+
+.mg-hero__kicker-sep {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+}
+
+.mg-hero__kicker-sub {
+  font-family: var(--mg-font-body);
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: var(--mg-space-lg);
-  color: var(--mg-cream-50);
+  color: #F5EEDB;
 }
 
 .mg-hero__title-logo {
@@ -1408,7 +1411,7 @@
   height: auto;
   margin-bottom: var(--mg-space-md);
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.4));
 }
 
 @media (min-width: 768px) {
@@ -1422,9 +1425,9 @@
   font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 400;
   line-height: 1.5;
-  color: var(--mg-cream-50);
+  color: #F8F5EC;
   margin-bottom: var(--mg-space-2xl);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   max-width: 580px;
 }
 
@@ -1435,55 +1438,74 @@
   gap: var(--mg-space-md);
 }
 
-/* Frosted Glass Badges inside Hero Bottom */
-.mg-hero__badges-row {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--mg-space-md);
-  margin-top: var(--mg-space-2xl);
+/* Solid Non-Rounded Feature Boxes (Replaces Frosted Glass Bubbles) */
+.mg-hero__features-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 880px;
+  margin-top: auto;
 }
 
-.mg-glass-card {
+@media (min-width: 640px) {
+  .mg-hero__features-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+.mg-hero__feature-box {
   display: flex;
   align-items: center;
-  gap: var(--mg-space-md);
-  padding: 14px 22px;
-  background-color: rgba(250, 247, 238, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: var(--mg-radius-lg);
-  box-shadow: 0 8px 32px rgba(21, 31, 11, 0.16);
-  color: var(--mg-ink-950);
-  min-height: 64px;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #121C09;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 4px solid var(--mg-mango-500);
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.38);
+  transition: border-left-color var(--mg-duration-fast) var(--mg-ease),
+              transform var(--mg-duration-fast) var(--mg-ease);
 }
 
-.mg-glass-card__icon {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--mg-radius-sm);
-  background-color: var(--mg-green-100);
-  color: var(--mg-green-700);
+.mg-hero__feature-box:hover {
+  border-left-color: #FFB300;
+  transform: translateY(-2px);
+}
+
+.mg-hero__feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 2px;
+  background-color: #1C2B0E;
+  border: 1px solid rgba(255, 160, 0, 0.4);
+  color: #FFA000;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.mg-glass-card__title {
-  font-family: var(--mg-font-heading);
-  font-size: var(--mg-text-sm);
-  font-weight: 700;
-  line-height: 1.2;
+.mg-hero__feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.mg-glass-card__desc {
+.mg-hero__feature-title {
+  font-family: var(--mg-font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.mg-hero__feature-desc {
   font-family: var(--mg-font-body);
-  font-size: var(--mg-text-xs);
-  color: var(--mg-ink-600);
-  line-height: 1.3;
+  font-size: 0.8rem;
+  color: #D5CEB8;
+  line-height: 1.35;
 }
 
 /* ==========================================================================
@@ -1947,18 +1969,30 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--mg-cream-100);
-  border-radius: var(--mg-radius-lg);
+  background-color: #FFFFFF;
+  border: 1px solid var(--mg-cream-200);
+  border-left: 4px solid var(--mg-green-700);
+  border-radius: 4px;
   padding: 10px 14px;
-  box-shadow: var(--mg-shadow-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
   gap: 12px;
-  max-width: 280px;
+  max-width: 290px;
   z-index: 3;
+}
+
+.mg-craft-tag {
+  display: inline-block;
+  background-color: var(--mg-green-800);
+  color: #FFFFFF;
+  font-family: var(--mg-font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
 }
 
 .mg-story__packaging-thumb {
@@ -2018,6 +2052,21 @@
   padding: var(--mg-space-4xl) var(--mg-space-xl);
   box-shadow: var(--mg-shadow-lg);
   text-align: center;
+}
+
+.mg-guarantee-seal {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-family: var(--mg-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 14px;
 }
 
 @media (min-width: 768px) {
@@ -2498,17 +2547,16 @@
     min-height: 48px;
   }
 
-  .mg-hero__badges-row {
-    flex-direction: column;
+  .mg-hero__features-bar {
+    grid-template-columns: 1fr;
     width: 100%;
     margin-top: var(--mg-space-xl);
     gap: var(--mg-space-sm);
   }
 
-  .mg-glass-card {
+  .mg-hero__feature-box {
     width: 100%;
-    padding: 10px 14px;
-    min-height: auto;
+    padding: 12px 16px;
   }
 
   .mg-strip__inner {

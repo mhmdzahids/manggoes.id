@@ -429,97 +429,82 @@
   color: var(--mg-white);
   font-family: var(--mg-font-body);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: var(--mg-radius-pill);
-  box-shadow: 0 2px 8px rgba(213, 37, 24, 0.35);
+  padding: 5px 14px;
+  border-radius: 2px; /* Authentic agricultural inspection stamp */
+  box-shadow: 0 2px 10px rgba(213, 37, 24, 0.35);
+}
+
+/* ==========================================================================
+   Artisanal Farm Inspection Stamp Badges
+   High-contrast, crisp architectural rectangular tags (Zero AI rounded dots)
+   ========================================================================== */
+.mg-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-family: var(--mg-font-body);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Variety Stamp Palettes (Artisanal Fruit Identity - High Contrast WCAG AAA) */
+.mg-stamp-badge--gincu {
+  background-color: #991B1B;
+  color: #FFFFFF;
+  border-color: #7F1D1D;
+}
+
+.mg-stamp-badge--golek {
+  background-color: #B45309;
+  color: #FFFFFF;
+  border-color: #92400E;
+}
+
+.mg-stamp-badge--harum {
+  background-color: #15803D;
+  color: #FFFFFF;
+  border-color: #166534;
+}
+
+.mg-stamp-badge--kiojay {
+  background-color: #365314;
+  color: #FFFFFF;
+  border-color: #1A2E05;
+}
+
+.mg-stamp-badge--cengkir {
+  background-color: #C2410C;
+  color: #FFFFFF;
+  border-color: #9A3412;
+}
+
+.mg-stamp-badge--b2b {
+  background-color: #1E293B;
+  color: #FDE68A;
+  border-color: #0F172A;
 }
 
 .mg-badge--ready {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: var(--mg-green-100);
-  color: var(--mg-green-800);
+  background-color: var(--mg-green-800);
+  color: #FFFFFF;
   font-family: var(--mg-font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 11px;
-  border-radius: var(--mg-radius-pill);
-  border: 1px solid var(--mg-green-200);
-}
-
-.mg-badge--ready::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--mg-green-700);
-  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
-}
-
-/* Variety-Specific Flavor Badges (Artisanal Fruit Identity) */
-.mg-badge--gincu {
-  background-color: #FEF2F2;
-  color: #DC2626;
-  border-color: #FECACA;
-}
-.mg-badge--gincu::before {
-  background-color: #DC2626;
-  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
-}
-
-.mg-badge--golek {
-  background-color: #FFFBEB;
-  color: #B45309;
-  border-color: #FDE68A;
-}
-.mg-badge--golek::before {
-  background-color: #D97706;
-  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
-}
-
-.mg-badge--harum {
-  background-color: #F0FDF4;
-  color: #15803D;
-  border-color: #BBF7D0;
-}
-.mg-badge--harum::before {
-  background-color: #16A34A;
-  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
-}
-
-.mg-badge--kiojay {
-  background-color: #F4F8EE;
-  color: #3F5E1E;
-  border-color: #D5E1C3;
-}
-.mg-badge--kiojay::before {
-  background-color: #4F6F2B;
-  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
-}
-
-.mg-badge--cengkir {
-  background-color: #FFF7ED;
-  color: #C2410C;
-  border-color: #FED7AA;
-}
-.mg-badge--cengkir::before {
-  background-color: #EA580C;
-  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.2);
-}
-
-.mg-badge--b2b {
-  background-color: #FEF3C7;
-  color: #92400E;
-  border-color: #FDE68A;
-}
-.mg-badge--b2b::before {
-  background-color: #D97706;
-  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 2px;
 }
 
 /* --------------------------------------------------------------------------
