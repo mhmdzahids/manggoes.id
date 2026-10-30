@@ -446,7 +446,7 @@
   font-family: var(--mg-font-body);
   font-size: 0.75rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: var(--mg-radius-pill);
   border: 1px solid var(--mg-green-200);
 }
@@ -459,6 +459,67 @@
   border-radius: 50%;
   background-color: var(--mg-green-700);
   box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
+}
+
+/* Variety-Specific Flavor Badges (Artisanal Fruit Identity) */
+.mg-badge--gincu {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border-color: #FECACA;
+}
+.mg-badge--gincu::before {
+  background-color: #DC2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+.mg-badge--golek {
+  background-color: #FFFBEB;
+  color: #B45309;
+  border-color: #FDE68A;
+}
+.mg-badge--golek::before {
+  background-color: #D97706;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+}
+
+.mg-badge--harum {
+  background-color: #F0FDF4;
+  color: #15803D;
+  border-color: #BBF7D0;
+}
+.mg-badge--harum::before {
+  background-color: #16A34A;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.mg-badge--kiojay {
+  background-color: #F4F8EE;
+  color: #3F5E1E;
+  border-color: #D5E1C3;
+}
+.mg-badge--kiojay::before {
+  background-color: #4F6F2B;
+  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
+}
+
+.mg-badge--cengkir {
+  background-color: #FFF7ED;
+  color: #C2410C;
+  border-color: #FED7AA;
+}
+.mg-badge--cengkir::before {
+  background-color: #EA580C;
+  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.2);
+}
+
+.mg-badge--b2b {
+  background-color: #FEF3C7;
+  color: #92400E;
+  border-color: #FDE68A;
+}
+.mg-badge--b2b::before {
+  background-color: #D97706;
+  box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
 }
 
 /* --------------------------------------------------------------------------

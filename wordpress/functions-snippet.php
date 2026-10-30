@@ -65,3 +65,33 @@ function manggoes_enqueue_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'manggoes_enqueue_scripts', 99 );
+
+/**
+ * Shortcode: [manggoes_landing]
+ * Memungkinkan pemanggilan seluruh landing page di halaman WordPress mana pun
+ * secara instan tanpa perlu repot copy-paste HTML panjang di Elementor.
+ */
+function manggoes_landing_shortcode( $atts ) {
+    $sections_dir = get_stylesheet_directory() . '/sections/';
+    $upload_dir   = wp_upload_dir();
+    $upload_sections = $upload_dir['basedir'] . '/mg/sections/';
+
+    $base_dir = file_exists( $sections_dir . '01-header.html' ) ? $sections_dir : ( file_exists( $upload_sections . '01-header.html' ) ? $upload_sections : '' );
+
+    if ( ! $base_dir ) {
+        return '<!-- Manggoes sections directory not found -->';
+    }
+
+    ob_start();
+    echo '<div class="mg">';
+    for ( $i = 1; $i <= 11; $i++ ) {
+        $prefix = str_pad( $i, 2, '0', STR_PAD_LEFT );
+        $files = glob( $base_dir . $prefix . '-*.html' );
+        if ( ! empty( $files ) ) {
+            include $files[0];
+        }
+    }
+    echo '</div>';
+    return ob_get_clean();
+}
+add_shortcode( 'manggoes_landing', 'manggoes_landing_shortcode' );
