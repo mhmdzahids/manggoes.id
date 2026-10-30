@@ -80,13 +80,17 @@ Buka editor Elementor pada halaman yang telah diatur ke **Elementor Canvas**:
    - Margin: **0px**
 2. Tarik widget **HTML** ke dalam Container tersebut.
 3. Buka folder lokal `/wordpress/sections/` dan salin kode per file sesuai urutan:
-   - Container 1: Tempelkan kode dari `01-header.html`
-   - Container 2: Tempelkan kode dari `02-hero.html`
-   - Container 3: Tempelkan kode dari `03-varietas.html`
-   - Container 4: Tempelkan kode dari `04-statistik.html`
-   - Container 5: Tempelkan kode dari `05-pendekatan.html` (termasuk modal video)
-   - Container 6: Tempelkan kode dari `06-ulasan.html`
-   - Container 7: Tempelkan kode dari `07-footer.html`
+   - Container 1: Tempelkan kode dari `01-header.html` (Header & Mobile Drawer)
+   - Container 2: Tempelkan kode dari `02-hero.html` (Hero Section)
+   - Container 3: Tempelkan kode dari `03-strip.html` (Strip Kepercayaan)
+   - Container 4: Tempelkan kode dari `04-kenapa.html` (Kenapa Manggoes)
+   - Container 5: Tempelkan kode dari `05-harga.html` (Harga & Special Offer 5 Varietas)
+   - Container 6: Tempelkan kode dari `06-cerita.html` (Cerita Kami)
+   - Container 7: Tempelkan kode dari `07-garansi.html` (Garansi 100%)
+   - Container 8: Tempelkan kode dari `08-testimoni.html` (Testimoni Pelanggan)
+   - Container 9: Tempelkan kode dari `09-cara-pesan.html` (Cara Pesan 3 Langkah)
+   - Container 10: Tempelkan kode dari `10-faq.html` (Pertanyaan Sering Ditanyakan / FAQ)
+   - Container 11: Tempelkan kode dari `11-kontak-footer.html` (Penutup, Footer & Floating WhatsApp)
 4. Klik **Save Draft** atau **Publish**.
 
 ---

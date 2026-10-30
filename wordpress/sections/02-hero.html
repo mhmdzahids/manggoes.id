@@ -1,83 +1,83 @@
 <!-- ======================================================================
-     Manggoes Section 2: Hero (#mg-hero)
+     Manggoes Section 2: Hero Section (#atas)
      Panduan Elementor:
      1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
      2. Masukkan widget 'HTML' ke dalam container tersebut.
      3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
      ====================================================================== -->
 <div class="mg">
-<section id="mg-hero" class="mg-hero" aria-label="Pengenalan Brand Manggoes">
+<section id="atas" class="mg-hero-wrap" aria-labelledby="mg-hero-heading">
         <div class="mg-container">
-          <div class="mg-hero__container mg-reveal">
-
-            <!-- Full-Bleed Orchard Photography -->
-            <div class="mg-hero__media" aria-hidden="true">
-              <img src="https://manggoes.id/wp-content/uploads/mg/hero-mango-tree.webp" alt="Pohon mangga berbuah lebat di kebun tropis" width="1920" height="1080" fetchpriority="high">
-            </div>
-
-            <!-- Legibility Scrim Overlay -->
+          <div class="mg-hero">
+            <!-- Background Orchard Photography -->
+            <img src="https://manggoes.id/wp-content/uploads/mg/hero-mango-tree.webp" alt="Perkebunan Mangga Tropis Indramayu" class="mg-hero__bg" width="1920" height="1080">
             <div class="mg-hero__overlay" aria-hidden="true"></div>
 
-            <!-- Left Aligned Value Proposition -->
+            <!-- Top Content -->
             <div class="mg-hero__content">
-              <h1 class="mg-hero__title mg-heading-h1">
-                Manis alami,<br>
-                yang membuat<br>
-                jatuh hati
-              </h1>
-              <p class="mg-hero__subline">
-                Mangga pilihan dari kebun tropis Nusantara, dirawat alami dan dipanen matang pohon untuk aroma khas serta rasa manis optimal.
+              <div class="mg-hero__eyebrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+                <span>Kebun Mangga Indramayu</span>
+              </div>
+
+              <h1 id="mg-hero-heading" class="mg-sr-only">Manggoes — Premium Fresh Manggoes From Indramayu</h1>
+              <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes-light.webp" alt="Manggoes" class="mg-hero__title-logo" width="440" height="120">
+
+              <p class="mg-hero__subheadline">
+                Premium Fresh Manggoes. From Indramayu, Fresh to your home.
               </p>
-              <!-- PLACEHOLDER: Client to provide official price list PDF -->
-              <a href="#mg-varietas" class="mg-btn mg-btn--primary mg-surface--dark" download="Daftar-Harga-Manggoes.pdf">
-                <span>Unduh Daftar Harga</span>
-                <span class="mg-btn__icon-circle" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
+
+              <!-- Dua Tombol Aksi Sesuai Brief -->
+              <div class="mg-hero__cta-row">
+                <a href="#harga" class="mg-btn mg-btn--mango">
+                  <span>Lihat Harga</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
                   </svg>
-                </span>
-              </a>
+                </a>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--whatsapp">
+                  <span>Pesan Sekarang</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            <!-- Bottom Frosted Glass Feature Cards -->
-            <div class="mg-hero__cards">
-
-              <!-- Left Card: Kebun Ramah Lingkungan -->
-              <div class="mg-hero__card-eco mg-glass-card">
-                <div class="mg-hero__card-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            <!-- Bottom Frosted Glass Cards (Gaya Desain Referensi) -->
+            <div class="mg-hero__badges-row">
+              <div class="mg-glass-card">
+                <div class="mg-glass-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
                   </svg>
                 </div>
                 <div>
-                  <!-- PLACEHOLDER: Client to confirm sustainable farming specifics -->
-                  <div class="mg-hero__card-title">Kebun Ramah Lingkungan</div>
-                  <div class="mg-hero__card-desc">Perawatan alami untuk kualitas buah dan kelestarian tanah.</div>
+                  <div class="mg-glass-card__title">100% Matang Pohon</div>
+                  <div class="mg-glass-card__desc">Alami tanpa karbitan kimia</div>
                 </div>
               </div>
 
-              <!-- Right Card: Dari kebun sampai kemasan -->
-              <div class="mg-hero__card-process mg-glass-card">
-                <div class="mg-hero__card-thumb">
-                  <img src="https://manggoes.id/wp-content/uploads/mg/hero-thumb-process.webp" alt="Kotak mangga segar hasil panen kebun" width="400" height="300" loading="lazy">
+              <div class="mg-glass-card">
+                <div class="mg-glass-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
                 </div>
                 <div>
-                  <div class="mg-hero__card-title">Dari kebun sampai kemasan</div>
-                  <div class="mg-hero__card-desc">Sortasi ketat di setiap tahap panen.</div>
-                </div>
-                <div class="mg-hero__card-action">
-                  <a href="#mg-pendekatan" class="mg-btn mg-btn--icon" aria-label="Pelajari alur produksi kami">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
+                  <div class="mg-glass-card__title">Kirim via Paxel</div>
+                  <div class="mg-glass-card__desc">Segar sampai ke depan pintu</div>
                 </div>
               </div>
-
             </div>
 
           </div>

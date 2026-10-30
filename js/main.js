@@ -1,6 +1,7 @@
 /**
  * Manggoes Interactive Behavior
- * Scoped to .mg namespace, zero globals, resilient to partial rendering & double initialization
+ * Scoped to .mg namespace, zero dependencies, resilient to partial rendering & double initialization
+ * Aligned with MANGGOES Official Website Brief & Brand Guidelines
  */
 (function () {
   'use strict';
@@ -16,7 +17,6 @@
       return;
     }
 
-    // Helper functions strictly scoped to any .mg container
     function query(selector) {
       return document.querySelector('.mg ' + selector) || document.querySelector('.mg' + selector);
     }
@@ -24,8 +24,6 @@
     function queryAll(selector) {
       return document.querySelectorAll('.mg ' + selector + ', .mg' + selector);
     }
-
-    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // 1. Mobile Navigation Drawer
     var hamburger = query('.mg-hamburger');
@@ -76,226 +74,145 @@
       });
     }
 
+    if (drawer) {
+      drawer.addEventListener('click', function (e) {
+        if (e.target === drawer) {
+          closeDrawer(true);
+        }
+      });
+    }
+
     drawerLinks.forEach(function (link) {
       link.addEventListener('click', function () {
         closeDrawer(false);
       });
     });
 
-    // Close mobile drawer automatically if window is resized to desktop breakpoint
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 1024 && drawer && drawer.classList.contains('is-open')) {
         closeDrawer(false);
       }
     });
 
-    // 2. Video Modal Dialog
-    var playTriggers = queryAll('.mg-play-trigger, [data-mg-modal="video"]');
-    var videoModal = query('#mg-video-modal');
-    var modalClose = query('.mg-modal-close');
-    var lastFocusedElement = null;
+    // 2. FAQ Accordion Interaction
+    var accordionItems = queryAll('.mg-accordion__item');
+    accordionItems.forEach(function (item) {
+      var trigger = item.querySelector('.mg-accordion__trigger');
+      if (!trigger) return;
 
-    function openModal() {
-      if (!videoModal) return;
-      lastFocusedElement = document.activeElement;
-      videoModal.classList.add('is-active');
-      videoModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      if (modalClose) {
-        modalClose.focus();
-      }
-    }
+      trigger.addEventListener('click', function () {
+        var isOpen = item.classList.contains('is-open');
 
-    function closeModal() {
-      if (!videoModal) return;
-      videoModal.classList.remove('is-active');
-      videoModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-        lastFocusedElement.focus();
-      }
-    }
+        // Optional: close other accordion items for clean single expansion
+        accordionItems.forEach(function (other) {
+          if (other !== item && other.classList.contains('is-open')) {
+            other.classList.remove('is-open');
+            var otherTrigger = other.querySelector('.mg-accordion__trigger');
+            if (otherTrigger) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
 
-    playTriggers.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        openModal();
+        if (isOpen) {
+          item.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
-    if (modalClose) {
-      modalClose.addEventListener('click', closeModal);
-    }
+    // 3. ScrollSpy & Sticky Header Styling
+    var header = query('.mg-header');
+    var navLinks = queryAll('.mg-nav__link');
+    var sections = [];
 
-    if (videoModal) {
-      videoModal.addEventListener('click', function (e) {
-        if (e.target === videoModal) {
-          closeModal();
-        }
-      });
-    }
-
-    // Shared Escape Key Listener for Overlays
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' || e.key === 'Esc') {
-        if (videoModal && videoModal.classList.contains('is-active')) {
-          closeModal();
-        } else if (drawer && drawer.classList.contains('is-open')) {
-          closeDrawer();
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        var secEl = query(href) || document.querySelector(href);
+        if (secEl) {
+          sections.push({ id: href.substring(1), link: link, element: secEl });
         }
       }
     });
 
-    // 3. Varieties Carousel (Scroll-Snap, Drag, Buttons & Keyboard)
-    var track = query('.mg-carousel__track');
-    var prevBtn = query('.mg-carousel__prev');
-    var nextBtn = query('.mg-carousel__next');
+    function onScroll() {
+      var scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (track) {
-      function getScrollStep() {
-        var firstCard = track.querySelector('.mg-variety-card');
-        if (!firstCard) return 300;
-        var style = window.getComputedStyle(track);
-        var gap = parseFloat(style.gap) || 16;
-        return firstCard.offsetWidth + gap;
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function () {
-          track.scrollBy({ left: -getScrollStep(), behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-        });
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function () {
-          track.scrollBy({ left: getScrollStep(), behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-        });
-      }
-
-      // Keyboard arrow navigation on carousel
-      track.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-        } else if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+      // Header shadow elevation
+      if (header) {
+        if (scrollY > 40) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
         }
-      });
+      }
 
-      // Mouse drag to scroll
-      var isDown = false;
-      var startX = 0;
-      var scrollLeft = 0;
-      var moved = 0;
+      // ScrollSpy active link detection
+      var scrollPos = scrollY + 160;
+      var activeFound = false;
 
-      track.addEventListener('mousedown', function (e) {
-        isDown = true;
-        moved = 0;
-        track.classList.add('is-dragging');
-        startX = e.pageX - track.offsetLeft;
-        scrollLeft = track.scrollLeft;
-      });
+      for (var i = sections.length - 1; i >= 0; i--) {
+        var sec = sections[i];
+        var top = sec.element.offsetTop;
+        var height = sec.element.offsetHeight;
 
-      track.addEventListener('mouseleave', function () {
-        isDown = false;
-        track.classList.remove('is-dragging');
-      });
-
-      track.addEventListener('mouseup', function (e) {
-        isDown = false;
-        track.classList.remove('is-dragging');
-      });
-
-      track.addEventListener('mousemove', function (e) {
-        if (!isDown) return;
-        e.preventDefault();
-        var x = e.pageX - track.offsetLeft;
-        var walk = (x - startX) * 1.4;
-        moved += Math.abs(walk);
-        track.scrollLeft = scrollLeft - walk;
-      });
-
-      // Prevent accidental link or button click if user was dragging
-      track.addEventListener('click', function (e) {
-        if (moved > 10) {
-          e.preventDefault();
-          e.stopPropagation();
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+          sec.link.classList.add('is-active');
+          activeFound = true;
+          break;
         }
-      }, true);
+      }
+
+      if (!activeFound && scrollY < 200) {
+        navLinks.forEach(function (l) { l.classList.remove('is-active'); });
+      }
     }
 
-    // 4. Stats Counter Animation
-    var statNumbers = queryAll('.mg-stat-count');
-    if (statNumbers.length > 0) {
-      function animateCounter(el) {
-        var target = parseInt(el.getAttribute('data-target'), 10) || 0;
-        if (prefersReducedMotion || target === 0) {
-          el.textContent = target.toLocaleString('id-ID');
-          return;
-        }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
-        var duration = 1500;
-        var startTime = null;
+    // 4. Smooth Anchor Scrolling with Header Offset
+    var allAnchorLinks = queryAll('a[href^="#"]');
+    allAnchorLinks.forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#' || targetId.length < 2) return;
 
-        function step(timestamp) {
-          if (!startTime) startTime = timestamp;
-          var progress = Math.min((timestamp - startTime) / duration, 1);
-          // Ease-out cubic curve
-          var easeProgress = 1 - Math.pow(1 - progress, 3);
-          var current = Math.floor(easeProgress * target);
-          el.textContent = current.toLocaleString('id-ID');
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          } else {
-            el.textContent = target.toLocaleString('id-ID');
+        var targetEl = query(targetId) || document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          var offset = 90; // Approximate height of floating sticky navbar
+          var bodyRect = document.body.getBoundingClientRect().top;
+          var elementRect = targetEl.getBoundingClientRect().top;
+          var elementPosition = elementRect - bodyRect;
+          var offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Update URL hash without jump
+          if (history.pushState) {
+            history.pushState(null, null, targetId);
           }
         }
-        window.requestAnimationFrame(step);
+      });
+    });
+
+    // 5. Global Escape Key Listener for Overlays
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        if (drawer && drawer.classList.contains('is-open')) {
+          closeDrawer(true);
+        }
       }
-
-      if ('IntersectionObserver' in window) {
-        var statsObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              animateCounter(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-
-        statNumbers.forEach(function (num) {
-          statsObserver.observe(num);
-        });
-      } else {
-        statNumbers.forEach(function (num) {
-          animateCounter(num);
-        });
-      }
-    }
-
-    // 5. Scroll Reveal Intersection Observer
-    var revealElements = queryAll('.mg-reveal');
-    if (revealElements.length > 0) {
-      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-        revealElements.forEach(function (el) {
-          el.classList.add('is-revealed');
-        });
-      } else {
-        var revealObserver = new IntersectionObserver(function (entries, observer) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(function (el) {
-          revealObserver.observe(el);
-        });
-      }
-    }
+    });
   }
 
   if (document.readyState === 'loading') {

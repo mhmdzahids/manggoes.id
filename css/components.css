@@ -416,3 +416,215 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* --------------------------------------------------------------------------
+   Special Badges (.mg-badge)
+   -------------------------------------------------------------------------- */
+.mg-badge--special {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--mg-crimson-500);
+  color: var(--mg-white);
+  font-family: var(--mg-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--mg-radius-pill);
+  box-shadow: 0 2px 8px rgba(213, 37, 24, 0.35);
+}
+
+.mg-badge--ready {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--mg-green-100);
+  color: var(--mg-green-800);
+  font-family: var(--mg-font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--mg-radius-pill);
+  border: 1px solid var(--mg-green-200);
+}
+
+.mg-badge--ready::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--mg-green-700);
+  box-shadow: 0 0 0 2px rgba(79, 111, 43, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   WhatsApp & Action Buttons
+   -------------------------------------------------------------------------- */
+.mg-btn--whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+.mg-btn--whatsapp:hover {
+  background-color: #20BA5A;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.mg-btn--mango {
+  background-color: var(--mg-mango-500);
+  color: var(--mg-dark-olive);
+  box-shadow: 0 4px 14px rgba(255, 175, 70, 0.35);
+}
+
+.mg-btn--mango:hover {
+  background-color: var(--mg-mango-600);
+  color: var(--mg-dark-olive);
+}
+
+/* --------------------------------------------------------------------------
+   Floating WhatsApp Button (.mg-floating-wa)
+   -------------------------------------------------------------------------- */
+.mg-floating-wa {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 12px 20px 12px 14px;
+  border-radius: var(--mg-radius-pill);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--mg-duration-fast) var(--mg-ease),
+              box-shadow var(--mg-duration-fast) var(--mg-ease);
+}
+
+.mg-floating-wa:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0, 0, 0, 0.15);
+  color: #FFFFFF;
+}
+
+.mg-floating-wa:active {
+  transform: scale(0.96);
+}
+
+.mg-floating-wa__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .mg-floating-wa {
+    bottom: 20px;
+    right: 20px;
+    padding: 14px;
+  }
+  .mg-floating-wa__text {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion Component (.mg-accordion)
+   -------------------------------------------------------------------------- */
+.mg-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mg-space-md);
+  width: 100%;
+}
+
+.mg-accordion__item {
+  background-color: var(--mg-white);
+  border: 1px solid var(--mg-cream-100);
+  border-radius: var(--mg-radius-lg);
+  overflow: hidden;
+  transition: border-color var(--mg-duration-fast) var(--mg-ease),
+              box-shadow var(--mg-duration-fast) var(--mg-ease);
+}
+
+.mg-accordion__item:hover {
+  border-color: var(--mg-green-200);
+  box-shadow: var(--mg-shadow-sm);
+}
+
+.mg-accordion__item.is-open {
+  border-color: var(--mg-green-500);
+  box-shadow: var(--mg-shadow-md);
+}
+
+.mg-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mg-space-md);
+  padding: var(--mg-space-xl) var(--mg-space-2xl);
+  font-family: var(--mg-font-heading);
+  font-size: var(--mg-text-md);
+  font-weight: 700;
+  color: var(--mg-ink-900);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color var(--mg-duration-fast) var(--mg-ease);
+}
+
+.mg-accordion__trigger:hover {
+  color: var(--mg-green-700);
+}
+
+.mg-accordion__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--mg-green-50);
+  color: var(--mg-green-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--mg-duration-base) var(--mg-ease),
+              background-color var(--mg-duration-base) var(--mg-ease);
+}
+
+.mg-accordion__item.is-open .mg-accordion__icon {
+  transform: rotate(180deg);
+  background-color: var(--mg-green-700);
+  color: var(--mg-white);
+}
+
+.mg-accordion__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--mg-duration-base) var(--mg-ease);
+  padding: 0 var(--mg-space-2xl);
+}
+
+.mg-accordion__item.is-open .mg-accordion__content {
+  grid-template-rows: 1fr;
+  padding-bottom: var(--mg-space-xl);
+}
+
+.mg-accordion__body {
+  overflow: hidden;
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-text-base);
+  line-height: 1.7;
+  color: var(--mg-ink-600);
+}

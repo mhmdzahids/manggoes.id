@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manggoes: Mangga Pilihan Segar dari Kebun Tropis Nusantara</title>
-  <meta name="description" content="Manggoes menghadirkan mangga pilihan nusantara dengan standar rasa alami, dipetik matang pohon dan dikemas higienis langsung dari kebun.">
+  <title>Manggoes: Premium Fresh Manggoes from Indramayu</title>
+  <meta name="description" content="Manggoes menghadirkan mangga premium segar langsung dari petani Indramayu. 100% matang pohon, garansi rasa & kualitas.">
 
-  <!-- Google Fonts: Refined Grotesk (Plus Jakarta Sans) & Clean Sans (DM Sans) -->
+  <!-- Google Fonts: Averia Libre (Heading) & Poppins (Body) - Official MANGGOES Brand Guidelines -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..500;1,9..40,400..500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Favicon Brandmark -->
+  <link rel="icon" type="image/webp" href="assets/logo/brandmark.webp">
 
   <!-- Modular Scoped Stylesheets -->
   <link rel="stylesheet" href="css/tokens.css">
@@ -23,16 +26,16 @@
   <div class="mg">
 
     <!-- Accessibility Skip Link -->
-    <a href="#mg-main" class="mg-skip-link">Lewati ke konten utama</a>
+    <a href="#atas" class="mg-skip-link">Lewati ke konten utama</a>
 
     <!-- ======================================================================
-         SECTION 1: Header (#mg-header)
+         SECTION 1: Menu Atas (Sticky Navbar)
          ====================================================================== -->
     <header id="mg-header" class="mg-header-wrap" role="banner">
       <div class="mg-container">
         <div class="mg-header">
 
-          <!-- Left Cluster: Hamburger & Desktop Navigation -->
+          <!-- Left Navigation Cluster -->
           <div class="mg-header__left">
             <button type="button" class="mg-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mg-mobile-nav">
               <span class="mg-hamburger__line"></span>
@@ -40,790 +43,930 @@
             </button>
 
             <nav class="mg-nav" aria-label="Navigasi Utama">
-              <a href="#mg-varietas" class="mg-nav__link">Katalog</a>
-              <a href="#mg-pendekatan" class="mg-nav__link">Tentang Kami</a>
-              <a href="#mg-statistik" class="mg-nav__link">Produksi</a>
-              <a href="#mg-footer" class="mg-nav__link">Kontak</a>
+              <a href="#atas" class="mg-nav__link">Beranda</a>
+              <a href="#kenapa" class="mg-nav__link">Kenapa Kami</a>
+              <a href="#harga" class="mg-nav__link">Harga</a>
+              <a href="#cerita" class="mg-nav__link">Cerita</a>
+              <a href="#garansi" class="mg-nav__link">Garansi</a>
+              <a href="#testimoni" class="mg-nav__link">Testimoni</a>
+              <a href="#faq" class="mg-nav__link">FAQ</a>
             </nav>
           </div>
 
           <!-- Center Brand Logo -->
           <div class="mg-header__center">
-            <a href="#mg-hero" class="mg-logo" aria-label="Manggoes Beranda">
-              <!-- PLACEHOLDER: Client to provide high-res vector/SVG logo -->
-              <img src="assets/logo/logo-manggoes.webp" alt="Logo Manggoes" width="300" height="100">
+            <a href="#atas" class="mg-logo" aria-label="Manggoes Beranda">
+              <img src="assets/logo/logo-manggoes.webp" alt="Logo Manggoes" width="220" height="60">
             </a>
           </div>
 
-          <!-- Right Cluster: Phone & Contact CTA -->
+          <!-- Right Action Cluster -->
           <div class="mg-header__right">
-            <!-- PLACEHOLDER: Replace with verified client customer service phone -->
-            <a href="tel:+628000000000" class="mg-header__phone">+62 8xx-xxxx-xxxx</a>
-            <!-- PLACEHOLDER: Replace with direct client WhatsApp / sales route -->
-            <a href="#mg-footer" class="mg-btn mg-btn--dark mg-surface--dark mg-header__btn">Hubungi Kami</a>
+            <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary">
+              <span>Pesan Sekarang</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
 
-        </div>
-      </div>
-
-      <!-- Mobile Navigation Drawer -->
-      <div id="mg-mobile-nav" class="mg-drawer" aria-hidden="true" role="dialog" aria-label="Menu Navigasi Mobile">
-        <div class="mg-drawer__top">
-          <a href="#mg-hero" class="mg-logo" aria-label="Manggoes Beranda">
-            <img src="assets/logo/logo-manggoes-light.webp" alt="Logo Manggoes Terang" width="300" height="100">
-          </a>
-          <button type="button" class="mg-btn mg-btn--icon mg-drawer-close" aria-label="Tutup menu">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
-        <nav class="mg-drawer__menu" aria-label="Menu Mobile">
-          <a href="#mg-varietas" class="mg-drawer__link">
-            <span>Katalog Varietas</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#mg-pendekatan" class="mg-drawer__link">
-            <span>Tentang Kebun Kami</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#mg-statistik" class="mg-drawer__link">
-            <span>Kapasitas Produksi</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#mg-footer" class="mg-drawer__link">
-            <span>Kontak & Alamat</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-        </nav>
-
-        <div class="mg-drawer__bottom">
-          <!-- PLACEHOLDER: Replace with client phone -->
-          <a href="tel:+628000000000" class="mg-drawer__link" style="font-size: 1.1rem;">+62 8xx-xxxx-xxxx</a>
-          <a href="#mg-footer" class="mg-btn mg-btn--primary mg-surface--dark">Hubungi Kami Sekarang</a>
         </div>
       </div>
     </header>
 
-    <!-- Main Content Container -->
+    <!-- Mobile Navigation Drawer -->
+    <div id="mg-mobile-nav" class="mg-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
+      <div class="mg-drawer__panel">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="assets/logo/logo-manggoes.webp" alt="Manggoes" height="36">
+            <button type="button" class="mg-modal-close mg-drawer-close" aria-label="Tutup menu navigasi">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="mg-drawer__nav" aria-label="Menu Mobile">
+            <a href="#atas" class="mg-drawer__link">Beranda</a>
+            <a href="#kenapa" class="mg-drawer__link">Kenapa Kami</a>
+            <a href="#harga" class="mg-drawer__link">Harga &amp; Special Offer</a>
+            <a href="#cerita" class="mg-drawer__link">Cerita Kami</a>
+            <a href="#garansi" class="mg-drawer__link">Garansi 100%</a>
+            <a href="#testimoni" class="mg-drawer__link">Testimoni</a>
+            <a href="#cara-pesan" class="mg-drawer__link">Cara Pesan</a>
+            <a href="#faq" class="mg-drawer__link">FAQ</a>
+            <a href="#kontak" class="mg-drawer__link">Kontak &amp; Alamat</a>
+          </nav>
+        </div>
+
+        <div>
+          <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--whatsapp" style="width: 100%;">
+            <span>Pesan via WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT WRAPPER -->
     <main id="mg-main">
 
       <!-- ======================================================================
-           SECTION 2: Hero Section (#mg-hero)
+           SECTION 2: Hero (#atas)
            ====================================================================== -->
-      <section id="mg-hero" class="mg-hero" aria-label="Pengenalan Brand Manggoes">
+      <section id="atas" class="mg-hero-wrap" aria-labelledby="mg-hero-heading">
         <div class="mg-container">
-          <div class="mg-hero__container mg-reveal">
-
-            <!-- Full-Bleed Orchard Photography -->
-            <div class="mg-hero__media" aria-hidden="true">
-              <img src="assets/images/hero-mango-tree.webp" alt="Pohon mangga berbuah lebat di kebun tropis" width="1920" height="1080" fetchpriority="high">
-            </div>
-
-            <!-- Legibility Scrim Overlay -->
+          <div class="mg-hero">
+            <!-- Background Orchard Photography -->
+            <img src="assets/images/hero-mango-tree.webp" alt="Perkebunan Mangga Tropis Indramayu" class="mg-hero__bg" width="1920" height="1080">
             <div class="mg-hero__overlay" aria-hidden="true"></div>
 
-            <!-- Left Aligned Value Proposition -->
+            <!-- Top Content -->
             <div class="mg-hero__content">
-              <h1 class="mg-hero__title mg-heading-h1">
-                Manis alami,<br>
-                yang membuat<br>
-                jatuh hati
-              </h1>
-              <p class="mg-hero__subline">
-                Mangga pilihan dari kebun tropis Nusantara, dirawat alami dan dipanen matang pohon untuk aroma khas serta rasa manis optimal.
+              <div class="mg-hero__eyebrow">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+                <span>Kebun Mangga Indramayu</span>
+              </div>
+
+              <h1 id="mg-hero-heading" class="mg-sr-only">Manggoes — Premium Fresh Manggoes From Indramayu</h1>
+              <img src="assets/logo/logo-manggoes-light.webp" alt="Manggoes" class="mg-hero__title-logo" width="440" height="120">
+
+              <p class="mg-hero__subheadline">
+                Premium Fresh Manggoes. From Indramayu, Fresh to your home.
               </p>
-              <!-- PLACEHOLDER: Client to provide official price list PDF -->
-              <a href="#mg-varietas" class="mg-btn mg-btn--primary mg-surface--dark" download="Daftar-Harga-Manggoes.pdf">
-                <span>Unduh Daftar Harga</span>
-                <span class="mg-btn__icon-circle" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
+
+              <!-- Dua Tombol Aksi Sesuai Brief -->
+              <div class="mg-hero__cta-row">
+                <a href="#harga" class="mg-btn mg-btn--mango">
+                  <span>Lihat Harga</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
                   </svg>
-                </span>
-              </a>
+                </a>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--whatsapp">
+                  <span>Pesan Sekarang</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            <!-- Bottom Frosted Glass Feature Cards -->
-            <div class="mg-hero__cards">
-
-              <!-- Left Card: Kebun Ramah Lingkungan -->
-              <div class="mg-hero__card-eco mg-glass-card">
-                <div class="mg-hero__card-icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+            <!-- Bottom Frosted Glass Cards (Gaya Desain Referensi) -->
+            <div class="mg-hero__badges-row">
+              <div class="mg-glass-card">
+                <div class="mg-glass-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
                   </svg>
                 </div>
                 <div>
-                  <!-- PLACEHOLDER: Client to confirm sustainable farming specifics -->
-                  <div class="mg-hero__card-title">Kebun Ramah Lingkungan</div>
-                  <div class="mg-hero__card-desc">Perawatan alami untuk kualitas buah dan kelestarian tanah.</div>
+                  <div class="mg-glass-card__title">100% Matang Pohon</div>
+                  <div class="mg-glass-card__desc">Alami tanpa karbitan kimia</div>
                 </div>
               </div>
 
-              <!-- Right Card: Dari kebun sampai kemasan -->
-              <div class="mg-hero__card-process mg-glass-card">
-                <div class="mg-hero__card-thumb">
-                  <img src="assets/images/hero-thumb-process.webp" alt="Kotak mangga segar hasil panen kebun" width="400" height="300" loading="lazy">
+              <div class="mg-glass-card">
+                <div class="mg-glass-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
                 </div>
                 <div>
-                  <div class="mg-hero__card-title">Dari kebun sampai kemasan</div>
-                  <div class="mg-hero__card-desc">Sortasi ketat di setiap tahap panen.</div>
+                  <div class="mg-glass-card__title">Kirim via Paxel</div>
+                  <div class="mg-glass-card__desc">Segar sampai ke depan pintu</div>
                 </div>
-                <div class="mg-hero__card-action">
-                  <a href="#mg-pendekatan" class="mg-btn mg-btn--icon" aria-label="Pelajari alur produksi kami">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 3: Strip Kepercayaan
+           ====================================================================== -->
+      <section class="mg-strip" aria-label="Kepercayaan Pelanggan">
+        <div class="mg-container">
+          <div class="mg-strip__inner">
+            <div class="mg-strip__avatars" aria-hidden="true">
+              <span class="mg-strip__avatar">BS</span>
+              <span class="mg-strip__avatar">RM</span>
+              <span class="mg-strip__avatar">DP</span>
+              <span class="mg-strip__avatar">AN</span>
+            </div>
+
+            <p class="mg-strip__text">
+              <span class="mg-strip__highlight">100+ pelanggan</span> sudah mempercayakan mangganya ke Manggoes.
+            </p>
+
+            <div class="mg-strip__stars" aria-label="Rating 5 Bintang">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 4: Kenapa Manggoes (#kenapa)
+           ====================================================================== -->
+      <section id="kenapa" class="mg-section mg-why-section" aria-labelledby="mg-why-heading">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-section-header__tag">Kenapa Kami</span>
+            <h2 id="mg-why-heading" class="mg-section-header__title">
+              Hanya yang terbaik yang sampai ke tanganmu.
+            </h2>
+            <p class="mg-section-header__desc">
+              Kami percaya rasa yang utuh butuh waktu. Dari proses petik hingga pengemasan, semua dijaga dengan standar kurasi tanpa kompromi.
+            </p>
+          </div>
+
+          <div class="mg-why-grid">
+            <!-- Card 1 -->
+            <article class="mg-why-card">
+              <div class="mg-why-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+                  <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"></path>
+                  <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"></path>
+                  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path>
+                </svg>
+              </div>
+              <h3 class="mg-why-card__title">Dipetik Tangan</h3>
+              <p class="mg-why-card__desc">
+                Setiap buah dipetik satu per satu saat sudah matang sempurna, bukan saat kami sedang mengejar target.
+              </p>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="mg-why-card">
+              <div class="mg-why-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="mg-why-card__title">Seleksi Ketat</h3>
+              <p class="mg-why-card__desc">
+                Hanya buah dengan ukuran, warna, dan kematangan terbaik yang lolos ke tanganmu.
+              </p>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="mg-why-card">
+              <div class="mg-why-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9a9 9 0 0 0-9-9z"></path>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <h3 class="mg-why-card__title">Lima Varietas Pilihan</h3>
+              <p class="mg-why-card__desc">
+                Gedong Gincu, Golek Madu, Harum Manis, Kiojay, dan Cengkir. Tinggal pilih favoritmu.
+              </p>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="mg-why-card">
+              <div class="mg-why-card__icon" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                  <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                </svg>
+              </div>
+              <h3 class="mg-why-card__title">Makin Banyak, Makin Hemat</h3>
+              <p class="mg-why-card__desc">
+                Mulai pembelian 6 kg, harga per kilonya turun. Selisihnya langsung terasa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 5: Harga: Special Offer (#harga)
+           ====================================================================== -->
+      <section id="harga" class="mg-section mg-pricing-section" aria-labelledby="mg-pricing-heading">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-badge--special">SPECIAL OFFER</span>
+            <h2 id="mg-pricing-heading" class="mg-section-header__title" style="margin-top: 14px;">
+              Harga spesial, stok terbatas.
+            </h2>
+            <p class="mg-section-header__desc">
+              Stok dan harga bisa berubah sewaktu-waktu. Makin cepat pesan, makin pasti kebagian!
+            </p>
+          </div>
+
+          <div class="mg-pricing-grid">
+
+            <!-- Varietas 1: Gedong Gincu -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <span class="mg-badge--ready mg-price-card__badge-pos">Ready Stock</span>
+                <img src="assets/images/variety-gedong-gincu.webp" alt="Mangga Gedong Gincu Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Gedong Gincu</h3>
+                <p class="mg-price-card__flavor">Si Eksotis — Daging oranye kemerahan, aroma harum semerbak, perpaduan manis kaya dengan kesegaran alami.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp33.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Gedong Gincu</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 2: Golek Madu -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <span class="mg-badge--ready mg-price-card__badge-pos">Ready Stock</span>
+                <img src="assets/images/variety-golek-madu.webp" alt="Mangga Golek Madu Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Golek Madu</h3>
+                <p class="mg-price-card__flavor">Bentuk lonjong anggun, manis semanis madu dengan sari buah melimpah di setiap gigitan.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp27.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Golek Madu</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 3: Harum Manis -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <span class="mg-badge--ready mg-price-card__badge-pos">Ready Stock</span>
+                <img src="assets/images/variety-harum-manis.webp" alt="Mangga Harum Manis Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Harum Manis</h3>
+                <p class="mg-price-card__flavor">Si Klasik — Daging tebal butter-soft nyaris tanpa serat. Manis legit, bersih tanpa jejak rasa asam.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp25.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp22.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Harum Manis</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 4: Kiojay -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <span class="mg-badge--ready mg-price-card__badge-pos">Ready Stock</span>
+                <img src="assets/images/variety-kiojay.webp" alt="Mangga Kiojay Jumbo Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Kiojay</h3>
+                <p class="mg-price-card__flavor">Ukuran jumbo memuaskan. Daging buah super tebal, renyah manis dan sangat memanjakan lidah.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp27.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Kiojay</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 5: Cengkir -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <span class="mg-badge--ready mg-price-card__badge-pos">Ready Stock</span>
+                <img src="assets/images/variety-cengkir.webp" alt="Mangga Cengkir Khas Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Cengkir</h3>
+                <p class="mg-price-card__flavor">Ikon khas tanah Indramayu. Tekstur serat padat dan renyah, rasa manis gurih yang unik dan khas.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp25.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp22.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Cengkir</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Kartu ke-6: Bulk Order (>10 kg) -->
+            <article class="mg-price-card mg-price-card--bulk">
+              <div>
+                <span class="mg-badge--ready" style="background-color: rgba(255, 255, 255, 0.2); color: #FFF; border-color: rgba(255, 255, 255, 0.4); margin-bottom: 16px;">
+                  Pesanan Khusus / B2B
+                </span>
+                <h3 class="mg-price-card__title">Butuh lebih dari 10 kg?</h3>
+                <p class="mg-price-card__desc">
+                  Untuk kebutuhan keluarga besar, hampers kantor, hotel, katering, atau reseller toko buah. Hubungi kami, kita bicarakan harga terbaiknya.
+                </p>
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--mango">
+                  <span>Hubungi Kami</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Penutup Bagian Harga: Info Restock Instagram -->
+          <div class="mg-restock-banner">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--mg-dark-olive); flex-shrink: 0;">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span class="mg-restock-banner__text">
+                Info restock kami umumkan lewat Instagram Story. Pantengin terus ya!
+              </span>
+            </div>
+            <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--dark" style="min-height: 38px; padding: 6px 18px; font-size: 0.8rem;">
+              <span>Follow @manggoes.co</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 6: Cerita Kami (#cerita)
+           ====================================================================== -->
+      <section id="cerita" class="mg-section mg-story-section" aria-labelledby="mg-story-heading">
+        <div class="mg-container">
+          <div class="mg-story-wrap">
+            
+            <div class="mg-story__visual">
+              <img src="assets/images/approach-sorting.webp" alt="Petani Mangga di Perkebunan Indramayu" class="mg-story__image" loading="lazy" width="800" height="600">
+              <div class="mg-story__badge">
+                <span>Panen Kebun Indramayu &bull; 2026</span>
+              </div>
+            </div>
+
+            <div class="mg-story__content">
+              <span class="mg-section-header__tag">Cerita Kami</span>
+              <h2 id="mg-story-heading" class="mg-section-header__title" style="text-align: left; margin-bottom: 20px;">
+                Dari kebun Indramayu, untuk mangga Indonesia.
+              </h2>
+
+              <blockquote class="mg-story__quote">
+                &ldquo;Mimpi kami sederhana tapi besar: membuat mangga Indonesia dikenal, dibanggakan, dan dicari.&rdquo;
+              </blockquote>
+
+              <div class="mg-story__body">
+                <p>
+                  Manggoes dimulai dari satu pertanyaan sederhana: <em>kenapa mangga sebagus ini belum dikenal sebagaimana mestinya?</em>
+                </p>
+                <p>
+                  Indramayu sudah lama dikenal sebagai daerah mangga. Di sana, para petani merawat pohonnya bertahun-tahun, dengan tangan dan kesabaran. Waktu kami berbincang dengan petani di tahun 2026, kami melihat sendiri betapa besar potensinya. Para petani berkata bahwa mereka memiliki mimpi bisa menjual mangga yang mereka tanam untuk seluruh Indonesia.
+                </p>
+                <p>
+                  Dari situ aku sadar, masalahnya bukan di mangganya. Mangganya sudah luar biasa. Yang masih kurang adalah jalan supaya mangga-mangga terbaik ini sampai ke tangan orang yang menghargainya, dengan cara yang adil untuk petani.
+                </p>
+                <p>
+                  Maka lahirlah Manggoes. Kami bekerja bersama petani mangga Indramayu, memilih buah satu per satu di waktu yang tepat, lalu mengantarkannya langsung ke pintu rumahmu. Kami tidak mengejar jumlah. Kami mengejar rasa, kepercayaan, dan hasil yang pantas untuk mereka yang menanamnya.
+                </p>
+                <p style="font-weight: 600; color: var(--mg-green-700);">
+                  Terima kasih sudah ikut menjadi bagian dari perjalanan ini.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 7: Garansi (#garansi)
+           ====================================================================== -->
+      <section id="garansi" class="mg-section mg-guarantee-section" aria-labelledby="mg-guarantee-heading">
+        <div class="mg-container">
+          <div class="mg-guarantee-box">
+            
+            <div class="mg-section-header" style="margin-bottom: 0;">
+              <span class="mg-badge--ready" style="background-color: rgba(255, 255, 255, 0.15); color: #FFF; border-color: rgba(255, 255, 255, 0.3); margin-bottom: 12px;">
+                Komitmen Kenyamanan Pembeli
+              </span>
+              <h2 id="mg-guarantee-heading" class="mg-section-header__title">
+                Garansi rasa &amp; kualitas 100%.
+              </h2>
+              <p class="mg-section-header__desc">
+                Kami yakin dengan setiap buah yang kami kirim. Kalau ternyata tidak sesuai harapanmu, kami yang tanggung.
+              </p>
+            </div>
+
+            <div class="mg-guarantee-grid">
+              
+              <!-- Poin 1 -->
+              <div class="mg-guarantee-card">
+                <div class="mg-guarantee-card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <h3 class="mg-guarantee-card__title">Tidak Manis atau Kurang Matang?</h3>
+                <p class="mg-guarantee-card__desc">
+                  Kami ganti buah baru atau kembalikan dana penuh tanpa potongan.
+                </p>
+              </div>
+
+              <!-- Poin 2 -->
+              <div class="mg-guarantee-card">
+                <div class="mg-guarantee-card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3 class="mg-guarantee-card__title">Rusak atau Memar Saat Tiba?</h3>
+                <p class="mg-guarantee-card__desc">
+                  Kirim fotonya dalam 24 jam setelah paket diterima, kami langsung kirim paket pengganti.
+                </p>
+              </div>
+
+              <!-- Poin 3 -->
+              <div class="mg-guarantee-card">
+                <div class="mg-guarantee-card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <h3 class="mg-guarantee-card__title">Tanpa Debat, Tanpa Drama.</h3>
+                <p class="mg-guarantee-card__desc">
+                  Cukup chat tim kami lewat WhatsApp atau DM Instagram. Solusi cepat dan ramah.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="mg-guarantee-footer">
+              &ldquo;Karena kepercayaan itu lebih mahal dari mangga mana pun.&rdquo;
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 8: Testimoni (#testimoni)
+           ====================================================================== -->
+      <section id="testimoni" class="mg-section mg-testimonial-section" aria-labelledby="mg-testimoni-heading">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-section-header__tag">Testimoni</span>
+            <h2 id="mg-testimoni-heading" class="mg-section-header__title">
+              Dipercaya 100+ pelanggan.
+            </h2>
+            <p class="mg-section-header__desc">
+              Ini kata mereka yang sudah mencicipi manisnya mangga segar pohon dari Manggoes.
+            </p>
+          </div>
+
+          <div class="mg-reviews-grid">
+            
+            <!-- Review 1 -->
+            <article class="mg-review-card">
+              <div>
+                <div class="mg-review-card__stars" aria-label="5 dari 5 bintang">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="mg-review-card__text">
+                  &ldquo;Gedong Gincu-nya beneran wangi banget semerbak satu ruangan! Daging buahnya lembut, manisnya pas tanpa asam yang nusuk. Anak-anak di rumah langsung rebutan.&rdquo;
+                </p>
+              </div>
+              <div class="mg-review-card__author">
+                <div class="mg-review-card__avatar">BS</div>
+                <div>
+                  <div class="mg-review-card__name">Budi Santoso</div>
+                  <div class="mg-review-card__meta">Jakarta Selatan &bull; Pembeli 10 kg</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="mg-review-card">
+              <div>
+                <div class="mg-review-card__stars" aria-label="5 dari 5 bintang">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="mg-review-card__text">
+                  &ldquo;Awalnya ragu beli mangga online takut busuk di jalan. Ternyata packing kardusnya rapi dan aman banget lewat Paxel. Harum Manisnya legit legit juara!&rdquo;
+                </p>
+              </div>
+              <div class="mg-review-card__author">
+                <div class="mg-review-card__avatar">RM</div>
+                <div>
+                  <div class="mg-review-card__name">Rina Marlina</div>
+                  <div class="mg-review-card__meta">Bandung &bull; Pelanggan Setia</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="mg-review-card">
+              <div>
+                <div class="mg-review-card__stars" aria-label="5 dari 5 bintang">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <p class="mg-review-card__text">
+                  &ldquo;Pesan varietas Kiojay sama Cengkir buat oleh-oleh kantor. Semua pada nanyain belinya di mana. Garansi kualitasnya beneran terbukti, nggak ada yang zonk sama sekali.&rdquo;
+                </p>
+              </div>
+              <div class="mg-review-card__author">
+                <div class="mg-review-card__avatar">DP</div>
+                <div>
+                  <div class="mg-review-card__name">Dimas Pratama</div>
+                  <div class="mg-review-card__meta">Surabaya &bull; Repeat Order</div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 9: Cara Pesan (#cara-pesan)
+           ====================================================================== -->
+      <section id="cara-pesan" class="mg-section mg-steps-section" aria-labelledby="mg-steps-heading">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-section-header__tag">Panduan Pemesanan</span>
+            <h2 id="mg-steps-heading" class="mg-section-header__title">
+              Tiga langkah, mangga sampai.
+            </h2>
+            <p class="mg-section-header__desc">
+              Pemesanan mudah, cepat, dan terkonfirmasi langsung dengan tim kami.
+            </p>
+          </div>
+
+          <div class="mg-steps-grid">
+            
+            <!-- Step 1 -->
+            <div class="mg-step-card">
+              <div class="mg-step-card__number">1</div>
+              <h3 class="mg-step-card__title">DM atau Klik Link di Bio</h3>
+              <p class="mg-step-card__desc">
+                Konfirmasi alamat pengiriman dan tanggal kirim yang kamu inginkan lewat WhatsApp atau Instagram resmi kami.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mg-step-card">
+              <div class="mg-step-card__number">2</div>
+              <h3 class="mg-step-card__title">Pilih Varietas &amp; Jumlahnya</h3>
+              <p class="mg-step-card__desc">
+                Tentukan varietas favoritmu (Gedong Gincu, Harum Manis, Kiojay, dll.) dan berapa kilogram yang kamu mau.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mg-step-card">
+              <div class="mg-step-card__number">3</div>
+              <h3 class="mg-step-card__title">Terima di Depan Pintu</h3>
+              <p class="mg-step-card__desc">
+                Mangga segar pilihan dipetik, dikemas rapi, dan dikirim aman sampai ke depan rumahmu siap dinikmati.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 10: FAQ (#faq)
+           ====================================================================== -->
+      <section id="faq" class="mg-section mg-faq-section" aria-labelledby="mg-faq-heading">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-section-header__tag">Tanya Jawab</span>
+            <h2 id="mg-faq-heading" class="mg-section-header__title">
+              Pertanyaan yang sering ditanyakan
+            </h2>
+            <p class="mg-section-header__desc">
+              Semua hal yang perlu kamu ketahui tentang kualitas mangga, pengiriman, dan layanan kami.
+            </p>
+          </div>
+
+          <div class="mg-accordion">
+            
+            <!-- Q1 -->
+            <div class="mg-accordion__item is-open">
+              <button type="button" class="mg-accordion__trigger" aria-expanded="true">
+                <span>Kirim ke mana saja?</span>
+                <span class="mg-accordion__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mg-accordion__content">
+                <div class="mg-accordion__body">
+                  Bekerjasama dengan Paxel, Manggoes telah mengirim mangga segar mulai dari area Jabodetabek hingga kota-kota di Indonesia bagian Timur dengan jaminan pendingin dan proteksi buah aman.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="mg-accordion__item">
+              <button type="button" class="mg-accordion__trigger" aria-expanded="false">
+                <span>Kapan restock?</span>
+                <span class="mg-accordion__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mg-accordion__content">
+                <div class="mg-accordion__body">
+                  Info restock dan jadwal petik kebun selalu kami umumkan secara real-time lewat Instagram Story di <strong>@manggoes.co</strong>, jadi pastikan kamu pantengin terus ya!
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="mg-accordion__item">
+              <button type="button" class="mg-accordion__trigger" aria-expanded="false">
+                <span>Bisa pesan lebih dari 10 kg?</span>
+                <span class="mg-accordion__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mg-accordion__content">
+                <div class="mg-accordion__body">
+                  Bisa sekali! Kami melayani pesanan partai besar (B2B), hampers kantor, katering, maupun reseller. Hubungi tim kami via WhatsApp untuk membicarakan harga spesial terbaiknya.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="mg-accordion__item">
+              <button type="button" class="mg-accordion__trigger" aria-expanded="false">
+                <span>Bingung pilih varietas?</span>
+                <span class="mg-accordion__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mg-accordion__content">
+                <div class="mg-accordion__body">
+                  Langsung chat WhatsApp kami saja. Ceritakan selera kesukaanmu (apakah suka yang manis legit lembut, manis beraroma harum semerbak, atau yang manis renyah), nanti kami bantu pilihkan yang paling cocok.
+                </div>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="mg-accordion__item">
+              <button type="button" class="mg-accordion__trigger" aria-expanded="false">
+                <span>Bagaimana cara bayarnya?</span>
+                <span class="mg-accordion__icon" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </span>
+              </button>
+              <div class="mg-accordion__content">
+                <div class="mg-accordion__body">
+                  Pembayaran sangat praktis dan fleksibel, bisa melalui transfer antarbank (BCA, Mandiri, BNI, BRI), berbagai e-wallet (GoPay, OVO, Dana), atau instan scan QRIS resmi.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================================
+           SECTION 11: Penutup & Footer (#kontak / #mg-footer)
+           ====================================================================== -->
+      <section id="kontak" class="mg-section" style="padding-bottom: 0;" aria-labelledby="mg-closing-heading">
+        <div class="mg-container">
+          
+          <!-- Ajakan Penutup Sesuai Brief -->
+          <div class="mg-closing-banner">
+            <h2 id="mg-closing-heading" class="mg-closing-banner__title">
+              Siap merasakan mangga yang berbeda?
+            </h2>
+            <p class="mg-closing-banner__desc">
+              Mau pesan? DM atau klik link di bio. Kami tunggu ya! Dapatkan garansi 100% manis dan segar langsung dari kebun Indramayu.
+            </p>
+            <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--whatsapp" style="font-size: 1.05rem; padding: 14px 36px;">
+              <span>Pesan via WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Main Footer Directory -->
+        <footer id="mg-footer" class="mg-footer" role="contentinfo">
+          <div class="mg-container">
+            <div class="mg-footer-grid">
+              
+              <!-- Brand Identity Column -->
+              <div>
+                <a href="#atas" class="mg-footer__brand-logo" aria-label="Manggoes Beranda">
+                  <img src="assets/logo/logo-manggoes-light.webp" alt="Logo Manggoes" width="240" height="70">
+                </a>
+                <p class="mg-footer__tagline">
+                  Premium Fresh Manggoes. From Indramayu, Fresh to your home. Menghadirkan manis alami pilihan nusantara dengan standar kurasi mutu tinggi langsung ke tanganmu.
+                </p>
+                <div class="mg-footer__social-row">
+                  <!-- Instagram -->
+                  <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="Instagram Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </a>
+                  <!-- TikTok -->
+                  <a href="https://tiktok.com/@manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="TikTok Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.67 6.34 6.34 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.17a8.28 8.28 0 0 0 5-1.74v-3.4a4.86 4.86 0 0 1-1.11.66z"/></svg>
+                  </a>
+                  <!-- WhatsApp Direct -->
+                  <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="WhatsApp Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                   </a>
                 </div>
               </div>
 
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================================
-           SECTION 3: Varieties (#mg-varietas)
-           ====================================================================== -->
-      <section id="mg-varietas" class="mg-varieties mg-section" aria-label="Varietas Mangga Pilihan">
-        <div class="mg-container">
-          <div class="mg-varieties__grid">
-
-            <!-- Left Dark Panel -->
-            <div class="mg-varieties__intro-card mg-surface--dark mg-reveal">
+              <!-- Quick Navigation Directory -->
               <div>
-                <!-- PLACEHOLDER: Total count of active commercial varieties -->
-                <div class="mg-varieties__num-badge">- 06 -</div>
-                <h2 class="mg-varieties__heading mg-heading-h2">
-                  Varietas mangga<br>
-                  pilihan terbaik
-                </h2>
-                <p class="mg-varieties__desc">
-                  Setiap varietas memiliki karakter aroma dan tekstur istimewa, dipetik pada tingkat kematangan optimal untuk pelanggan Anda.
-                </p>
+                <div class="mg-footer__col-title">Navigasi Halaman</div>
+                <div class="mg-footer__links">
+                  <a href="#atas" class="mg-footer__link">Beranda</a>
+                  <a href="#kenapa" class="mg-footer__link">Kenapa Manggoes</a>
+                  <a href="#harga" class="mg-footer__link">Harga: Special Offer</a>
+                  <a href="#cerita" class="mg-footer__link">Cerita Kami</a>
+                  <a href="#garansi" class="mg-footer__link">Garansi Kualitas 100%</a>
+                  <a href="#testimoni" class="mg-footer__link">Testimoni Pelanggan</a>
+                  <a href="#cara-pesan" class="mg-footer__link">Cara Pesan</a>
+                  <a href="#faq" class="mg-footer__link">Pertanyaan (FAQ)</a>
+                </div>
               </div>
 
-              <div class="mg-varieties__action">
-                <!-- PLACEHOLDER: Link to full catalog download or WhatsApp catalog -->
-                <a href="#mg-footer" class="mg-btn mg-btn--ghost">
-                  <span>Lihat Katalog</span>
-                  <span class="mg-btn__icon-circle" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Right Carousel Track -->
-            <div class="mg-carousel mg-reveal">
-              <div class="mg-carousel__track" tabindex="0" role="region" aria-label="Daftar Kartu Varietas Mangga (Gunakan tombol panah atau geser)">
-
-                <!-- Card 1: Harum Manis -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-harum-manis.webp" alt="Buah mangga Harum Manis segar di dahan pohon" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Harum Manis</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Sep - Des</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot is-active"></span>
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Harum Manis">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
+              <!-- Official Client Contact Directory -->
+              <div>
+                <div class="mg-footer__col-title">Kontak &amp; Alamat Kebun</div>
+                <div class="mg-footer__contacts">
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Jalan Kerukunan No.32/C, Lemakmekar, Indramayu, Jawa Barat - 45212</span>
                   </div>
-                </article>
-
-                <!-- Card 2: Gedong Gincu -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-gedong-gincu.webp" alt="Mangga Gedong Gincu matang dengan warna merah jingga" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Gedong Gincu</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Okt - Jan</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot is-active"></span>
-                        <span class="mg-variety-card__dot"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Gedong Gincu">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" style="color: inherit;">+62 878 7482 3918 (WhatsApp)</a>
                   </div>
-                </article>
-
-                <!-- Card 3: Arumanis -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-arumanis.webp" alt="Mangga Arumanis segar dengan potongan buah manis" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Arumanis</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Agu - Nov</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot is-active"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Arumanis">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:mangoes.co@gmail.com" style="color: inherit;">mangoes.co@gmail.com</a>
                   </div>
-                </article>
-
-                <!-- Card 4: Manalagi -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-manalagi.webp" alt="Klaster buah mangga Manalagi hijau segar di dahan" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Manalagi</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Sep - Jan</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot is-active"></span>
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Manalagi">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg>
+                    <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" style="color: inherit;">@manggoes.co</a>
                   </div>
-                </article>
-
-                <!-- Card 5: Golek -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-golek.webp" alt="Mangga Golek lonjong matang kuning keemasan" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Golek</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Okt - Des</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot is-active"></span>
-                        <span class="mg-variety-card__dot"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Golek">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-
-                <!-- Card 6: Indramayu -->
-                <article class="mg-variety-card">
-                  <img src="assets/images/variety-indramayu.webp" alt="Mangga Cengkir Indramayu segar siap kirim" class="mg-variety-card__img" width="800" height="1000" loading="lazy">
-                  <div class="mg-variety-card__scrim mg-surface--dark">
-                    <h3 class="mg-variety-card__name">Indramayu</h3>
-                    <!-- PLACEHOLDER: Harvest season period -->
-                    <div class="mg-variety-card__season">Musim: Sep - Nov</div>
-                    <div class="mg-variety-card__footer">
-                      <div class="mg-variety-card__dots" aria-hidden="true">
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot"></span>
-                        <span class="mg-variety-card__dot is-active"></span>
-                      </div>
-                      <a href="#mg-footer" class="mg-variety-card__btn" aria-label="Informasi varietas Indramayu">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </article>
-
-              </div>
-
-              <!-- Carousel Pagination Arrows -->
-              <div class="mg-carousel__controls">
-                <button type="button" class="mg-btn mg-btn--icon mg-carousel__prev" aria-label="Varietas sebelumnya">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                  </svg>
-                </button>
-                <button type="button" class="mg-btn mg-btn--icon mg-carousel__next" aria-label="Varietas berikutnya">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
+                </div>
               </div>
 
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================================
-           SECTION 4: Stats Bar (#mg-statistik)
-           ====================================================================== -->
-      <section id="mg-statistik" class="mg-stats-section" aria-label="Statistik Kebun Manggoes">
-        <div class="mg-container">
-          <div class="mg-stats-bar mg-reveal">
-            <div class="mg-stats-grid">
-
-              <!-- Stat 1: Luas Kebun -->
-              <!-- PLACEHOLDER: replace with client data - Luas kebun binaan -->
-              <div class="mg-stat-item">
-                <div class="mg-stat-item__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                    <line x1="8" y1="2" x2="8" y2="18"></line>
-                    <line x1="16" y1="6" x2="16" y2="22"></line>
-                  </svg>
-                </div>
-                <div class="mg-stat-item__content">
-                  <div class="mg-stat-item__value">
-                    <span class="mg-stat-count" data-target="250">250</span><span class="mg-stat-plus">+</span>
-                    <span class="mg-stat-unit">ha</span>
-                  </div>
-                  <div class="mg-stat-item__label">Luas kebun binaan</div>
-                </div>
+            <!-- Bottom Copyright & Back to Top -->
+            <div class="mg-footer__bottom">
+              <div>
+                &copy; 2026 Manggoes. Seluruh hak cipta dilindungi undang-undang.
               </div>
-
-              <!-- Stat 2: Hasil Panen -->
-              <!-- PLACEHOLDER: replace with client data - Hasil panen tahunan -->
-              <div class="mg-stat-item">
-                <div class="mg-stat-item__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                  </svg>
-                </div>
-                <div class="mg-stat-item__content">
-                  <div class="mg-stat-item__value">
-                    <span class="mg-stat-count" data-target="25000">25.000</span><span class="mg-stat-plus">+</span>
-                    <span class="mg-stat-unit">ton</span>
-                  </div>
-                  <div class="mg-stat-item__label">Panen per tahun</div>
-                </div>
+              <div>
+                <a href="#atas" style="color: var(--mg-mango-500); font-weight: 600;">Kembali ke Atas &uarr;</a>
               </div>
-
-              <!-- Stat 3: Pengalaman -->
-              <!-- PLACEHOLDER: replace with client data - Tahun pengalaman budidaya -->
-              <div class="mg-stat-item">
-                <div class="mg-stat-item__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                  </svg>
-                </div>
-                <div class="mg-stat-item__content">
-                  <div class="mg-stat-item__value">
-                    <span class="mg-stat-count" data-target="15">15</span><span class="mg-stat-plus">+</span>
-                    <span class="mg-stat-unit">thn</span>
-                  </div>
-                  <div class="mg-stat-item__label">Pengalaman budidaya</div>
-                </div>
-              </div>
-
-              <!-- Stat 4: Mitra Distribusi -->
-              <!-- PLACEHOLDER: replace with client data - Jumlah mitra ritel/kuliner -->
-              <div class="mg-stat-item">
-                <div class="mg-stat-item__icon" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <div class="mg-stat-item__content">
-                  <div class="mg-stat-item__value">
-                    <span class="mg-stat-count" data-target="100">100</span><span class="mg-stat-plus">+</span>
-                    <span class="mg-stat-unit">mitra</span>
-                  </div>
-                  <div class="mg-stat-item__label">Mitra distribusi</div>
-                </div>
-              </div>
-
             </div>
           </div>
-        </div>
-      </section>
+        </footer>
 
-      <!-- ======================================================================
-           SECTION 5: Pendekatan Kami (#mg-pendekatan)
-           ====================================================================== -->
-      <section id="mg-pendekatan" class="mg-approach mg-section" aria-label="Pendekatan dan Kualitas Kerja">
-        <div class="mg-container">
-          <div class="mg-approach__grid">
-
-            <!-- Left Column: Standards & Pillars -->
-            <div class="mg-approach__left mg-reveal">
-              <span class="mg-eyebrow">Pendekatan Kami</span>
-              <h2 class="mg-approach__title mg-heading-h2">
-                Kualitas di setiap detail
-              </h2>
-              <p class="mg-approach__desc mg-subline">
-                Kami menjaga keaslian rasa dan kesegaran sejak bibit unggul ditanam, dipelihara dengan pupuk organik, hingga tiba di meja makan Anda.
-              </p>
-
-              <div class="mg-approach__features">
-
-                <div class="mg-feature-pill">
-                  <div class="mg-feature-pill__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                      <path d="m9 12 2 2 4-4"></path>
-                    </svg>
-                  </div>
-                  <!-- PLACEHOLDER: Client quality protocol title -->
-                  <div class="mg-feature-pill__text">Kontrol kualitas di setiap tahap panen</div>
-                </div>
-
-                <div class="mg-feature-pill">
-                  <div class="mg-feature-pill__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"></path>
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                  </div>
-                  <!-- PLACEHOLDER: Client storage facility title -->
-                  <div class="mg-feature-pill__text">Penyimpanan modern bersuhu stabil</div>
-                </div>
-
-                <div class="mg-feature-pill">
-                  <div class="mg-feature-pill__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M7 20h10"></path>
-                      <path d="M10 20c0-4 2-7 2-10 0-3-1-5-1-5s3 1 4 4c1 2 1 5 0 8"></path>
-                      <path d="M9 13a4 4 0 0 0 5 0"></path>
-                    </svg>
-                  </div>
-                  <!-- PLACEHOLDER: Client eco-farming methods -->
-                  <div class="mg-feature-pill__text">Metode budidaya ramah lingkungan</div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Right Column: Video Card with Worker Sorting Mangoes -->
-            <div class="mg-approach__right mg-reveal">
-              <div class="mg-approach__video-card mg-surface--dark">
-                <img src="assets/images/approach-sorting.webp" alt="Petani memanen buah mangga segar di area perkebunan" class="mg-approach__video-img" width="1200" height="800" loading="lazy">
-                <div class="mg-approach__video-overlay" aria-hidden="true"></div>
-
-                <!-- Center Interactive Play Trigger -->
-                <div class="mg-approach__center-cta">
-                  <button type="button" class="mg-play-trigger" aria-label="Putar video" data-mg-modal="video">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                  </button>
-                  <div class="mg-approach__video-caption">Lihat proses panen kebun kami</div>
-                </div>
-
-                <!-- Bottom Harvest Season Badge -->
-                <!-- PLACEHOLDER: Replace with verified client harvest calendar -->
-                <div class="mg-approach__season-badge mg-badge mg-badge--glass">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                  </svg>
-                  <span class="mg-badge-full">Musim panen: Oktober - Januari</span>
-                  <span class="mg-badge-short">Panen: Okt - Jan</span>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================================
-           SECTION 6: Ulasan Pelanggan (#mg-ulasan)
-           ====================================================================== -->
-      <section id="mg-ulasan" class="mg-reviews-section" aria-label="Ulasan Pelanggan">
-        <div class="mg-container">
-          <div class="mg-reviews-band mg-surface--dark mg-reveal">
-
-            <!-- Faint Orchard Texture Layer -->
-            <img src="assets/images/orchard-texture.webp" alt="" class="mg-reviews-band__bg" aria-hidden="true" width="1600" height="600" loading="lazy">
-
-            <div class="mg-reviews-band__content">
-
-              <!-- Header Row -->
-              <div class="mg-reviews-band__header">
-                <div class="mg-reviews__header-left">
-                  <span class="mg-eyebrow mg-eyebrow--light">ULASAN PELANGGAN</span>
-                  <h2 class="mg-reviews__title mg-heading-h2">
-                    Kata mereka tentang Manggoes
-                  </h2>
-                </div>
-
-                <!-- PLACEHOLDER: Ganti tautan href dengan link Google Maps Profil Bisnis Manggoes klien -->
-                <a href="#" class="mg-btn mg-btn--ghost mg-surface--dark mg-reviews__cta" aria-label="Lihat semua ulasan di Google Maps">
-                  <span>Lihat Semua Ulasan</span>
-                </a>
-              </div>
-
-              <!-- 3 Customer Review Cards (Google Maps Style) -->
-              <div class="mg-reviews-grid" role="region" aria-label="Daftar ulasan pelanggan">
-
-                <!-- Review Card 1 -->
-                <!-- PLACEHOLDER: Ulasan pelanggan riil - ganti dengan ulasan Google Maps asli klien -->
-                <article class="mg-review-card mg-surface--light">
-                  <div class="mg-review-card__header">
-                    <div class="mg-review-card__avatar" style="background-color: var(--mg-green-700); color: #FFFFFF;" aria-hidden="true">B</div>
-                    <div class="mg-review-card__user">
-                      <div class="mg-review-card__name">Budi Santoso</div>
-                      <div class="mg-review-card__time">2 minggu lalu</div>
-                    </div>
-                  </div>
-                  <div class="mg-review-card__stars" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  </div>
-                  <span class="mg-sr-only">Rating 5 dari 5 bintang</span>
-                  <p class="mg-review-card__text">Harum Manisnya luar biasa manis dan legit. Daging buah tebal tanpa serat kasar, kemasan boks tebal aman sampai di rumah tanpa memar.</p>
-                </article>
-
-                <!-- Review Card 2 -->
-                <!-- PLACEHOLDER: Ulasan pelanggan riil - ganti dengan ulasan Google Maps asli klien -->
-                <article class="mg-review-card mg-surface--light">
-                  <div class="mg-review-card__header">
-                    <div class="mg-review-card__avatar" style="background-color: var(--mg-mango-500); color: var(--mg-ink-900);" aria-hidden="true">R</div>
-                    <div class="mg-review-card__user">
-                      <div class="mg-review-card__name">Rina Marlina</div>
-                      <div class="mg-review-card__time">1 bulan lalu</div>
-                    </div>
-                  </div>
-                  <div class="mg-review-card__stars" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  </div>
-                  <span class="mg-sr-only">Rating 5 dari 5 bintang</span>
-                  <p class="mg-review-card__text">Pesan Gedong Gincu untuk hampers keluarga. Wanginya semerbak segar begitu dibuka, tingkat kematangan pas matang pohon.</p>
-                </article>
-
-                <!-- Review Card 3 -->
-                <!-- PLACEHOLDER: Ulasan pelanggan riil - ganti dengan ulasan Google Maps asli klien -->
-                <article class="mg-review-card mg-surface--light">
-                  <div class="mg-review-card__header">
-                    <div class="mg-review-card__avatar" style="background-color: var(--mg-green-900); color: var(--mg-cream-50);" aria-hidden="true">D</div>
-                    <div class="mg-review-card__user">
-                      <div class="mg-review-card__name">Dimas Pratama</div>
-                      <div class="mg-review-card__time">3 minggu lalu</div>
-                    </div>
-                  </div>
-                  <div class="mg-review-card__stars" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#F4A321" stroke="#F4A321" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                  </div>
-                  <span class="mg-sr-only">Rating 5 dari 5 bintang</span>
-                  <p class="mg-review-card__text">Pengiriman cepat dan buahnya benar-benar pilihan. Rasanya konsisten manis segar dari buah pertama sampai buah terakhir di keranjang.</p>
-                </article>
-
-              </div>
-
-            </div>
-
-          </div>
-        </div>
       </section>
 
     </main>
 
     <!-- ======================================================================
-         SECTION 7: Footer (#mg-footer)
+         FLOATING ACTION: WhatsApp Direct Button (Always Visible)
          ====================================================================== -->
-    <footer id="mg-footer" class="mg-footer-section" role="contentinfo">
-      <div class="mg-container">
-        <div class="mg-footer mg-surface--dark mg-reveal">
+    <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-floating-wa" aria-label="Chat WhatsApp Manggoes">
+      <svg class="mg-floating-wa__icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      <span class="mg-floating-wa__text">Pesan Mangga</span>
+    </a>
 
-          <div class="mg-footer__grid">
+  </div>
 
-            <!-- Col 1: Brand Info -->
-            <div class="mg-footer__brand">
-              <a href="#mg-hero" class="mg-footer__logo" aria-label="Manggoes Beranda">
-                <img src="assets/logo/logo-manggoes-light.webp" alt="Logo Manggoes Terang" width="300" height="100" loading="lazy">
-              </a>
-              <p class="mg-footer__tagline">
-                Mangga pilihan nusantara dengan standar rasa alami dan kesegaran terbaik, langsung dari kebun binaan ke tangan Anda.
-              </p>
-            </div>
-
-            <!-- Col 2: Navigation Links -->
-            <div>
-              <div class="mg-footer__col-title">Navigasi</div>
-              <ul class="mg-footer__links">
-                <li><a href="#mg-varietas" class="mg-footer__link">Katalog Varietas</a></li>
-                <li><a href="#mg-pendekatan" class="mg-footer__link">Tentang Kebun</a></li>
-                <li><a href="#mg-statistik" class="mg-footer__link">Standar Produksi</a></li>
-                <li><a href="#mg-ulasan" class="mg-footer__link">Ulasan Pelanggan</a></li>
-              </ul>
-            </div>
-
-            <!-- Col 3: Popular Varieties -->
-            <div>
-              <div class="mg-footer__col-title">Varietas Unggulan</div>
-              <ul class="mg-footer__links">
-                <li><a href="#mg-varietas" class="mg-footer__link">Harum Manis</a></li>
-                <li><a href="#mg-varietas" class="mg-footer__link">Gedong Gincu</a></li>
-                <li><a href="#mg-varietas" class="mg-footer__link">Arumanis</a></li>
-                <li><a href="#mg-varietas" class="mg-footer__link">Manalagi</a></li>
-              </ul>
-            </div>
-
-            <!-- Col 4: Contact & Socials -->
-            <div>
-              <div class="mg-footer__col-title">Kontak Kebun</div>
-              <!-- PLACEHOLDER: Replace address, email and phone with verified client business details -->
-              <div class="mg-footer__contact">
-                <p>Alamat kebun operasional, Indonesia</p>
-                <p><a href="tel:+628000000000">+62 8xx-xxxx-xxxx</a></p>
-                <p><a href="mailto:halo@domain-klien.id">halo@domain-klien.id</a></p>
-              </div>
-
-              <!-- Social Media Icon Links (Inline SVG) -->
-              <!-- PLACEHOLDER: Replace with actual client social media URLs -->
-              <div class="mg-footer__socials" aria-label="Media Sosial Manggoes">
-                <!-- Instagram -->
-                <a href="https://instagram.com" class="mg-social-btn" aria-label="Kunjungi Instagram Manggoes" target="_blank" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </a>
-                <!-- WhatsApp -->
-                <a href="https://wa.me/628000000000" class="mg-social-btn" aria-label="Hubungi WhatsApp Manggoes" target="_blank" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                  </svg>
-                </a>
-                <!-- Facebook -->
-                <a href="https://facebook.com" class="mg-social-btn" aria-label="Kunjungi Facebook Manggoes" target="_blank" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </a>
-                <!-- LinkedIn -->
-                <a href="https://linkedin.com" class="mg-social-btn" aria-label="Kunjungi LinkedIn Manggoes" target="_blank" rel="noopener noreferrer">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom Footer Notice -->
-          <div class="mg-footer__bottom">
-            <!-- PLACEHOLDER: Client legal company name -->
-            <div class="mg-footer__copy">
-              &copy; 2026 Manggoes (Nama Perusahaan). Seluruh hak cipta dilindungi.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-
-    <!-- Video Modal Dialog (#mg-video-modal) -->
-    <div id="mg-video-modal" class="mg-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mg-modal-title">
-      <div class="mg-modal-dialog">
-        <button type="button" class="mg-modal-close" aria-label="Tutup video">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-
-        <h3 id="mg-modal-title" class="mg-heading-h3" style="color: var(--mg-ink-900);">
-          Proses Panen Kebun Manggoes
-        </h3>
-        <p class="mg-subline" style="font-size: var(--mg-text-sm); margin-top: 4px;">
-          Dokumentasi pemetikan matang pohon dan seleksi kualitas di kebun binaan.
-        </p>
-
-        <!-- PLACEHOLDER: Client to replace placeholder container with YouTube / Vimeo / HTML5 Video Embed -->
-        <div class="mg-modal__video-wrap">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--mg-mango-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polygon points="10 8 16 12 10 16 10 8" fill="var(--mg-mango-500)"></polygon>
-          </svg>
-          <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 6px;">Video Segera Hadir</div>
-          <div style="font-size: 0.85rem; color: var(--mg-green-200); max-width: 40ch;">
-            Dokumentasi panen musim ini sedang dalam proses penyuntingan dan akan segera dirilis.
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- End .mg -->
-
-  <!-- Interactive JavaScript Bundle -->
+  <!-- Vanilla JS Engine -->
   <script src="js/main.js"></script>
-
 </body>
 </html>

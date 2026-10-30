@@ -134,65 +134,97 @@ function rewriteAssetUrls(html) {
 
 // Regex extraction helpers
 function extractTagBlock(html, startPattern, endTag) {
-  const startIndex = html.search(startPattern);
-  if (startIndex === -1) return null;
+  const match = html.match(startPattern);
+  if (!match) return null;
+  const startIndex = match.index;
   const endIndex = html.indexOf(endTag, startIndex);
   if (endIndex === -1) return null;
   return html.substring(startIndex, endIndex + endTag.length);
 }
 
 // Section 1: Header + Mobile Drawer
-const headerMatch = extractTagBlock(indexHtml, /<header\s+id=["']mg-header["']/i, '</header>');
+const headerTag = extractTagBlock(indexHtml, /<header\s+id=["']mg-header["']/i, '</header>');
+const drawerTag = extractTagBlock(indexHtml, /<div\s+id=["']mg-mobile-nav["']/i, '</div>\n    </div>');
+const headerCombined = (headerTag || '') + (drawerTag ? '\n\n    <!-- Mobile Navigation Drawer -->\n    ' + drawerTag : '');
+
 // Section 2: Hero
-const heroMatch = extractTagBlock(indexHtml, /<section\s+id=["']mg-hero["']/i, '</section>');
-// Section 3: Varieties
-const varietiesMatch = extractTagBlock(indexHtml, /<section\s+id=["']mg-varietas["']/i, '</section>');
-// Section 4: Stats
-const statsMatch = extractTagBlock(indexHtml, /<section\s+id=["']mg-statistik["']/i, '</section>');
-// Section 5: Approach
-const approachMatch = extractTagBlock(indexHtml, /<section\s+id=["']mg-pendekatan["']/i, '</section>');
-// Section 6: Reviews
-const reviewsMatch = extractTagBlock(indexHtml, /<section\s+id=["']mg-ulasan["']/i, '</section>');
-// Section 7: Footer
-const footerMatch = extractTagBlock(indexHtml, /<footer\s+id=["']mg-footer["']/i, '</footer>');
-// Video Modal Dialog
-const modalMatch = extractTagBlock(indexHtml, /<div\s+id=["']mg-video-modal["']/i, '    </div>\n    </div>');
+const heroMatch = extractTagBlock(indexHtml, /<section\s+id=["']atas["']/i, '</section>');
+// Section 3: Strip Kepercayaan
+const stripMatch = extractTagBlock(indexHtml, /<section\s+class=["']mg-strip["']/i, '</section>');
+// Section 4: Kenapa Kami
+const kenapaMatch = extractTagBlock(indexHtml, /<section\s+id=["']kenapa["']/i, '</section>');
+// Section 5: Harga
+const hargaMatch = extractTagBlock(indexHtml, /<section\s+id=["']harga["']/i, '</section>');
+// Section 6: Cerita
+const ceritaMatch = extractTagBlock(indexHtml, /<section\s+id=["']cerita["']/i, '</section>');
+// Section 7: Garansi
+const garansiMatch = extractTagBlock(indexHtml, /<section\s+id=["']garansi["']/i, '</section>');
+// Section 8: Testimoni
+const testimoniMatch = extractTagBlock(indexHtml, /<section\s+id=["']testimoni["']/i, '</section>');
+// Section 9: Cara Pesan
+const caraPesanMatch = extractTagBlock(indexHtml, /<section\s+id=["']cara-pesan["']/i, '</section>');
+// Section 10: FAQ
+const faqMatch = extractTagBlock(indexHtml, /<section\s+id=["']faq["']/i, '</section>');
+// Section 11: Kontak & Footer
+const kontakMatch = extractTagBlock(indexHtml, /<section\s+id=["']kontak["']/i, '</section>');
+// Floating WhatsApp
+const floatingWaMatch = extractTagBlock(indexHtml, /<a\s+href=["']https:\/\/wa\.link\/5esniw["']\s+target=["']_blank["']\s+rel=["']noopener noreferrer["']\s+class=["']mg-floating-wa["']/i, '</a>');
 
 const sectionsData = [
   {
     filename: '01-header.html',
-    title: 'Section 1: Header (#mg-header)',
-    content: headerMatch
+    title: 'Section 1: Header & Navigation Drawer (#mg-header)',
+    content: headerCombined
   },
   {
     filename: '02-hero.html',
-    title: 'Section 2: Hero (#mg-hero)',
+    title: 'Section 2: Hero Section (#atas)',
     content: heroMatch
   },
   {
-    filename: '03-varietas.html',
-    title: 'Section 3: Varietas (#mg-varietas)',
-    content: varietiesMatch
+    filename: '03-strip.html',
+    title: 'Section 3: Strip Kepercayaan 100+ Pelanggan',
+    content: stripMatch
   },
   {
-    filename: '04-statistik.html',
-    title: 'Section 4: Statistik (#mg-statistik)',
-    content: statsMatch
+    filename: '04-kenapa.html',
+    title: 'Section 4: Kenapa Manggoes (#kenapa)',
+    content: kenapaMatch
   },
   {
-    filename: '05-pendekatan.html',
-    title: 'Section 5: Pendekatan Kami (#mg-pendekatan & #mg-video-modal)',
-    content: (approachMatch || '') + (modalMatch ? '\n\n    <!-- Video Modal Dialog (#mg-video-modal) -->\n    ' + modalMatch : '')
+    filename: '05-harga.html',
+    title: 'Section 5: Harga: Special Offer (#harga)',
+    content: hargaMatch
   },
   {
-    filename: '06-ulasan.html',
-    title: 'Section 6: Ulasan Pelanggan (#mg-ulasan)',
-    content: reviewsMatch
+    filename: '06-cerita.html',
+    title: 'Section 6: Cerita Kami (#cerita)',
+    content: ceritaMatch
   },
   {
-    filename: '07-footer.html',
-    title: 'Section 7: Footer (#mg-footer)',
-    content: footerMatch
+    filename: '07-garansi.html',
+    title: 'Section 7: Garansi Rasa & Kualitas 100% (#garansi)',
+    content: garansiMatch
+  },
+  {
+    filename: '08-testimoni.html',
+    title: 'Section 8: Testimoni Pelanggan (#testimoni)',
+    content: testimoniMatch
+  },
+  {
+    filename: '09-cara-pesan.html',
+    title: 'Section 9: Cara Pesan (#cara-pesan)',
+    content: caraPesanMatch
+  },
+  {
+    filename: '10-faq.html',
+    title: 'Section 10: FAQ Pertanyaan Sering Ditanyakan (#faq)',
+    content: faqMatch
+  },
+  {
+    filename: '11-kontak-footer.html',
+    title: 'Section 11: Penutup & Footer (#kontak & #mg-footer)',
+    content: (kontakMatch || '') + (floatingWaMatch ? '\n\n    <!-- Floating WhatsApp Action -->\n    ' + floatingWaMatch : '')
   }
 ];
 
@@ -220,7 +252,7 @@ ${rewrittenContent}
   console.log(`✓ Generated ${path.relative(rootDir, destPath)}`);
 }
 
-// 5. Generate functions-snippet.php
+// 5. Generate Updated functions-snippet.php
 const phpSnippet = `<?php
 /**
  * Manggoes Landing Page — Asset Enqueue Snippet
@@ -230,30 +262,17 @@ const phpSnippet = `<?php
  *       pada Child Theme Astra Anda (wp-content/themes/astra-child/functions.php).
  * Opsi B: Gunakan plugin 'Code Snippets' atau 'WPCode', buat PHP snippet baru,
  *       dan aktifkan opsi "Run Everywhere" atau "Front-End Only".
- *
- * CATATAN PENTING WORDPRESS MULTISITE & HOSTER:
- * - Pada WordPress Multisite, akun Administrator biasa dibatasi hak akses HTML-nya (unfiltered_html).
- *   Enqueue CSS & JS melalui PHP ini menjamin script & style dimuat resmi oleh core WordPress tanpa diblokir.
- * - File manggoes.css dan manggoes.js harus diletakkan di direktori tema anak (astra-child) ATAU
- *   di folder wp-content/uploads/mg/. Snippet ini otomatis mendeteksi lokasi file.
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+    exit;
 }
 
-/**
- * Konfigurasi Slug Halaman Target
- * Ganti nilai 'beranda' di bawah dengan slug halaman tempat Manggoes ditampilkan.
- * Contoh: 'beranda', 'home', atau 'mangga'.
- * Jika ingin ditampilkan pada halaman depan utama (Front Page), biarkan $target_page_slug = 'front';
- */
 $GLOBALS['mg_target_page_slug'] = 'beranda';
 
 function manggoes_enqueue_scripts() {
     $target_slug = isset( $GLOBALS['mg_target_page_slug'] ) ? $GLOBALS['mg_target_page_slug'] : 'beranda';
 
-    // Cek apakah halaman yang dibuka adalah halaman target atau front page yang ditentukan
     $is_target = false;
     if ( $target_slug === 'front' && is_front_page() ) {
         $is_target = true;
@@ -265,88 +284,46 @@ function manggoes_enqueue_scripts() {
         return;
     }
 
-    // 1. Google Fonts Preconnect & Stylesheet (Plus Jakarta Sans & DM Sans)
+    // Google Fonts (Averia Libre & Poppins)
     wp_enqueue_style(
         'manggoes-google-fonts',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..500;1,9..40,400..500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap',
+        'https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap',
         array(),
         null
     );
 
-    // 2. Deteksi Lokasi File manggoes.css
-    // Lokasi Prioritas 1: Child Theme Directory
+    // CSS file detection
     $theme_css_path = get_stylesheet_directory() . '/manggoes.css';
     $theme_css_uri  = get_stylesheet_directory_uri() . '/manggoes.css';
 
-    // Lokasi Prioritas 2: Uploads Folder (wp-content/uploads/mg/manggoes.css)
     $upload_dir      = wp_upload_dir();
     $upload_css_path = $upload_dir['basedir'] . '/mg/manggoes.css';
     $upload_css_uri  = $upload_dir['baseurl'] . '/mg/manggoes.css';
 
-    $css_path = file_exists( $theme_css_path ) ? $theme_css_path : $upload_css_path;
-    $css_uri  = file_exists( $theme_css_path ) ? $theme_css_uri : $upload_css_uri;
-    $css_ver  = file_exists( $css_path ) ? filemtime( $css_path ) : '1.0.0';
+    if ( file_exists( $theme_css_path ) ) {
+        wp_enqueue_style( 'manggoes-custom-css', $theme_css_uri, array(), filemtime( $theme_css_path ) );
+    } elseif ( file_exists( $upload_css_path ) ) {
+        wp_enqueue_style( 'manggoes-custom-css', $upload_css_uri, array(), filemtime( $upload_css_path ) );
+    }
 
-    wp_enqueue_style(
-        'manggoes-custom-styles',
-        $css_uri,
-        array(),
-        $css_ver
-    );
-
-    // 3. Deteksi Lokasi File manggoes.js
+    // JS file detection
     $theme_js_path = get_stylesheet_directory() . '/manggoes.js';
     $theme_js_uri  = get_stylesheet_directory_uri() . '/manggoes.js';
 
     $upload_js_path = $upload_dir['basedir'] . '/mg/manggoes.js';
     $upload_js_uri  = $upload_dir['baseurl'] . '/mg/manggoes.js';
 
-    $js_path = file_exists( $theme_js_path ) ? $theme_js_path : $upload_js_path;
-    $js_uri  = file_exists( $theme_js_path ) ? $theme_js_uri : $upload_js_uri;
-    $js_ver  = file_exists( $js_path ) ? filemtime( $js_path ) : '1.0.0';
-
-    wp_enqueue_script(
-        'manggoes-custom-script',
-        $js_uri,
-        array(),
-        $js_ver,
-        true // Muat di footer sebelum </body>
-    );
+    if ( file_exists( $theme_js_path ) ) {
+        wp_enqueue_script( 'manggoes-custom-js', $theme_js_uri, array(), filemtime( $theme_js_path ), true );
+    } elseif ( file_exists( $upload_js_path ) ) {
+        wp_enqueue_script( 'manggoes-custom-js', $upload_js_uri, array(), filemtime( $upload_js_path ), true );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'manggoes_enqueue_scripts', 99 );
-
-/**
- * Optimasi Kecepatan: Tambahkan rel="preconnect" untuk Google Fonts
- */
-function manggoes_resource_hints( $urls, $relation_type ) {
-    if ( 'preconnect' === $relation_type ) {
-        $urls[] = array(
-            'href' => 'https://fonts.googleapis.com',
-            'crossorigin' => 'anonymous',
-        );
-        $urls[] = array(
-            'href' => 'https://fonts.gstatic.com',
-            'crossorigin' => 'anonymous',
-        );
-    }
-    return $urls;
-}
-add_filter( 'wp_resource_hints', 'manggoes_resource_hints', 10, 2 );
-
-/**
- * Tambahkan atribut defer pada script manggoes.js
- */
-function manggoes_defer_script( $tag, $handle ) {
-    if ( 'manggoes-custom-script' === $handle ) {
-        return str_replace( ' src', ' defer src', $tag );
-    }
-    return $tag;
-}
-add_filter( 'script_loader_tag', 'manggoes_defer_script', 10, 2 );
 `;
 
-const phpSnippetPath = path.join(wpDir, 'functions-snippet.php');
-fs.writeFileSync(phpSnippetPath, phpSnippet, 'utf8');
-console.log(`✓ Generated ${path.relative(rootDir, phpSnippetPath)}`);
+const snippetPath = path.join(wpDir, 'functions-snippet.php');
+fs.writeFileSync(snippetPath, phpSnippet, 'utf8');
+console.log(`✓ Generated ${path.relative(rootDir, snippetPath)}`);
 
 console.log('\n--- WordPress Export Completed Successfully! ---');

@@ -1,35 +1,54 @@
 /* ==========================================================================
    Design Tokens: Manggoes Brand System
    Scoped strictly to .mg to isolate custom properties from host theme
+   Updated based on official MANGGOES Brand Guidelines (August 2026)
    ========================================================================== */
 
 .mg {
-  /* Brand Palette (Derived from logo & agricultural identity) */
-  --mg-green-900: #1F3A14;
-  --mg-green-800: #254718;
-  --mg-green-700: #2F5A1E;
-  --mg-green-600: #42782A;
-  --mg-green-500: #5B9A3A;
-  --mg-green-200: #CDE2B8;
-  --mg-green-100: #E6EFD9;
-  --mg-green-50:  #F2F7EC;
+  /* Brand Guidelines Official Palette */
+  --mg-color-primary-green: #4F6F2B; /* Brand Green (RGB 79, 111, 43) */
+  --mg-color-dark-olive:    #423610; /* Dark Olive / Umber (RGB 66, 54, 16) */
+  --mg-color-leaf-green:    #8A8F2B; /* Olive Leaf Green (RGB 138, 143, 43) */
+  --mg-color-mango-gold:    #FFAF46; /* Warm Mango Gold (RGB 255, 175, 70) */
+  --mg-color-crimson:       #D52518; /* Ripe Crimson Red (RGB 213, 37, 24) */
+  --mg-color-cream:         #F8F4E8; /* Light Cream Canvas (RGB 248, 244, 232) */
+  --mg-color-coral:         #F17142; /* Coral Tangerine (RGB 241, 113, 66) */
 
-  --mg-mango-600: #E0880B;
-  --mg-mango-500: #F4A21B;
-  --mg-mango-400: #F6B344;
-  --mg-mango-200: #FCD997;
-  --mg-mango-100: #FDEBC8;
-  --mg-mango-50:  #FFF8ED;
+  /* Semantic Color Aliases & Shades */
+  --mg-green-900: #273815; /* Extra deep forest for footer & dark cards */
+  --mg-green-800: #384F1F;
+  --mg-green-700: var(--mg-color-primary-green); /* #4F6F2B */
+  --mg-green-600: #5D8233;
+  --mg-green-500: var(--mg-color-leaf-green);    /* #8A8F2B */
+  --mg-green-200: #D8E4C3;
+  --mg-green-100: #EBF2DF;
+  --mg-green-50:  #F4F8EE;
 
-  --mg-cream-100: #EFE9D6;
-  --mg-cream-50:  #F7F3E8;
-  --mg-cream-0:   #FDFAF3;
+  --mg-olive-900: var(--mg-color-dark-olive);    /* #423610 */
+  --mg-olive-800: #554615;
+  --mg-olive-600: #756220;
 
-  --mg-ink-900: #1E2A17;
-  --mg-ink-700: #2F3E28;
-  --mg-ink-600: #45573D;
-  --mg-ink-400: #6D8064;
-  --mg-ink-200: #A8B8A0;
+  --mg-mango-600: #E69528;
+  --mg-mango-500: var(--mg-color-mango-gold);    /* #FFAF46 */
+  --mg-mango-400: #FFBD66;
+  --mg-mango-200: #FFE1B3;
+  --mg-mango-100: #FFF2DD;
+  --mg-mango-50:  #FFF9F0;
+
+  --mg-crimson-600: #BD1E12;
+  --mg-crimson-500: var(--mg-color-crimson);     /* #D52518 */
+  --mg-crimson-100: #FBE6E4;
+  --mg-crimson-50:  #FDF2F1;
+
+  --mg-cream-100: #EFE8D3;
+  --mg-cream-50:  var(--mg-color-cream);          /* #F8F4E8 */
+  --mg-cream-0:   #FDFAF4;
+
+  --mg-ink-900: #292415; /* Deep olive-ink for high-contrast reading */
+  --mg-ink-700: #423610;
+  --mg-ink-600: #5C5236;
+  --mg-ink-400: #8C8266;
+  --mg-ink-200: #C7C0AD;
 
   --mg-white: #FFFFFF;
   --mg-white-alpha-12: rgba(255, 255, 255, 0.12);
@@ -39,24 +58,25 @@
   --mg-white-alpha-75: rgba(255, 255, 255, 0.75);
   --mg-white-alpha-90: rgba(255, 255, 255, 0.90);
 
-  --mg-green-alpha-15: rgba(31, 58, 20, 0.15);
-  --mg-green-alpha-30: rgba(31, 58, 20, 0.30);
-  --mg-green-alpha-65: rgba(31, 58, 20, 0.65);
-  --mg-green-alpha-85: rgba(31, 58, 20, 0.85);
+  --mg-dark-alpha-10: rgba(66, 54, 16, 0.10);
+  --mg-dark-alpha-20: rgba(66, 54, 16, 0.20);
+  --mg-dark-alpha-40: rgba(66, 54, 16, 0.40);
+  --mg-dark-alpha-60: rgba(39, 56, 21, 0.60);
+  --mg-dark-alpha-85: rgba(39, 56, 21, 0.85);
 
   /* Surface Context Foreground Tokens */
   --mg-on-dark: var(--mg-cream-50);
   --mg-on-dark-muted: var(--mg-green-100);
   --mg-on-light: var(--mg-ink-900);
-  --mg-on-light-muted: var(--mg-ink-700);
+  --mg-on-light-muted: var(--mg-ink-600);
 
   /* Vertical Rhythm Stacking Scale */
   --mg-stack-heading-p: var(--mg-space-md);  /* 16px */
   --mg-stack-p-btn: var(--mg-space-2xl);     /* 32px */
 
-  /* Typography Families */
-  --mg-font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --mg-font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Typography Families (Official Brand Guideline: Averia Libre + Poppins) */
+  --mg-font-heading: 'Averia Libre', Georgia, 'Times New Roman', serif;
+  --mg-font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Type Scale */
   --mg-text-xs:   0.75rem;    /* 12px */
@@ -94,11 +114,11 @@
   --mg-radius-pill: 9999px;
 
   /* Shadows */
-  --mg-shadow-sm: 0 2px 6px rgba(31, 58, 20, 0.05);
-  --mg-shadow-md: 0 8px 24px rgba(31, 58, 20, 0.08);
-  --mg-shadow-lg: 0 16px 40px rgba(31, 58, 20, 0.12);
-  --mg-shadow-glass: 0 12px 36px rgba(18, 36, 12, 0.14);
-  --mg-shadow-card: 0 10px 30px -5px rgba(31, 58, 20, 0.09);
+  --mg-shadow-sm: 0 2px 6px rgba(66, 54, 16, 0.05);
+  --mg-shadow-md: 0 8px 24px rgba(66, 54, 16, 0.08);
+  --mg-shadow-lg: 0 16px 40px rgba(66, 54, 16, 0.12);
+  --mg-shadow-glass: 0 12px 36px rgba(40, 56, 21, 0.14);
+  --mg-shadow-card: 0 10px 30px -5px rgba(66, 54, 16, 0.08);
 
   /* Animation & Transitions */
   --mg-ease: cubic-bezier(0.16, 1, 0.3, 1);
