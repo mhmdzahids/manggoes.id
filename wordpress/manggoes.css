@@ -9,36 +9,38 @@
    Design Tokens: Manggoes Brand System
    Scoped strictly to .mg to isolate custom properties from host theme
    Updated based on official MANGGOES Brand Guidelines (August 2026)
+   Crafted with human intentionality: high contrast, organic warmth, cohesive restraint
    ========================================================================== */
 
 .mg {
-  /* Brand Guidelines Official Palette */
+  /* Brand Guidelines Official Palette (Hal. 24) */
   --mg-color-primary-green: #4F6F2B; /* Brand Green (RGB 79, 111, 43) */
   --mg-color-dark-olive:    #423610; /* Dark Olive / Umber (RGB 66, 54, 16) */
   --mg-color-leaf-green:    #8A8F2B; /* Olive Leaf Green (RGB 138, 143, 43) */
   --mg-color-mango-gold:    #FFAF46; /* Warm Mango Gold (RGB 255, 175, 70) */
   --mg-color-crimson:       #D52518; /* Ripe Crimson Red (RGB 213, 37, 24) */
-  --mg-color-cream:         #F8F4E8; /* Light Cream Canvas (RGB 248, 244, 232) */
+  --mg-color-cream:         #FAF7EE; /* Light Artisan Cream Canvas */
   --mg-color-coral:         #F17142; /* Coral Tangerine (RGB 241, 113, 66) */
 
   /* Semantic Color Aliases & Shades */
-  --mg-green-900: #273815; /* Extra deep forest for footer & dark cards */
-  --mg-green-800: #384F1F;
-  --mg-green-700: var(--mg-color-primary-green); /* #4F6F2B */
+  --mg-green-950: #151F0B; /* Deepest orchard night */
+  --mg-green-900: #1F2D10; /* Deep orchard green for footer & hero ground */
+  --mg-green-800: #2E4218; /* Rich forest green */
+  --mg-green-700: var(--mg-color-primary-green); /* #4F6F2B Primary Brand Green */
   --mg-green-600: #5D8233;
   --mg-green-500: var(--mg-color-leaf-green);    /* #8A8F2B */
-  --mg-green-200: #D8E4C3;
-  --mg-green-100: #EBF2DF;
-  --mg-green-50:  #F4F8EE;
+  --mg-green-200: #D5E1C3;
+  --mg-green-100: #E6EED9;
+  --mg-green-50:  #F3F7ED;
 
   --mg-olive-900: var(--mg-color-dark-olive);    /* #423610 */
   --mg-olive-800: #554615;
   --mg-olive-600: #756220;
 
-  --mg-mango-600: #E69528;
+  --mg-mango-600: #E89520;
   --mg-mango-500: var(--mg-color-mango-gold);    /* #FFAF46 */
   --mg-mango-400: #FFBD66;
-  --mg-mango-200: #FFE1B3;
+  --mg-mango-200: #FFE2B8;
   --mg-mango-100: #FFF2DD;
   --mg-mango-50:  #FFF9F0;
 
@@ -48,13 +50,15 @@
   --mg-crimson-50:  #FDF2F1;
 
   --mg-cream-100: #EFE8D3;
-  --mg-cream-50:  var(--mg-color-cream);          /* #F8F4E8 */
-  --mg-cream-0:   #FDFAF4;
+  --mg-cream-50:  var(--mg-color-cream);          /* #FAF7EE */
+  --mg-cream-0:   #FDFBF7;
 
-  --mg-ink-900: #292415; /* Deep olive-ink for high-contrast reading */
-  --mg-ink-700: #423610;
-  --mg-ink-600: #5C5236;
-  --mg-ink-400: #8C8266;
+  /* High-Contrast Tactile Olive-Ink Hierarchy */
+  --mg-ink-950: #1B160B; /* Headlines & strong anchors */
+  --mg-ink-900: #241E0F; /* Section titles & primary text */
+  --mg-ink-700: #3E351B; /* Subtitles & body reading */
+  --mg-ink-600: #574B2A; /* Secondary descriptions */
+  --mg-ink-400: #7A6C45; /* Metadata & muted captions */
   --mg-ink-200: #C7C0AD;
 
   --mg-white: #FFFFFF;
@@ -65,16 +69,15 @@
   --mg-white-alpha-75: rgba(255, 255, 255, 0.75);
   --mg-white-alpha-90: rgba(255, 255, 255, 0.90);
 
-  --mg-dark-alpha-10: rgba(66, 54, 16, 0.10);
-  --mg-dark-alpha-20: rgba(66, 54, 16, 0.20);
-  --mg-dark-alpha-40: rgba(66, 54, 16, 0.40);
-  --mg-dark-alpha-60: rgba(39, 56, 21, 0.60);
-  --mg-dark-alpha-85: rgba(39, 56, 21, 0.85);
+  /* Precise Hairline Borders */
+  --mg-border-subtle: rgba(66, 54, 16, 0.08);
+  --mg-border-card:   rgba(66, 54, 16, 0.10);
+  --mg-border-hover:  rgba(79, 111, 43, 0.30);
 
   /* Surface Context Foreground Tokens */
-  --mg-on-dark: var(--mg-cream-50);
+  --mg-on-dark:       var(--mg-cream-50);
   --mg-on-dark-muted: var(--mg-green-100);
-  --mg-on-light: var(--mg-ink-900);
+  --mg-on-light:       var(--mg-ink-900);
   --mg-on-light-muted: var(--mg-ink-600);
 
   /* Vertical Rhythm Stacking Scale */
@@ -83,8 +86,8 @@
 
   /* Typography Families (Official MANGGOES Brand Specification) */
   --mg-font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --mg-font-serif: 'Averia Libre', Georgia, 'Times New Roman', serif;
-  --mg-font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mg-font-serif:   'Averia Libre', Georgia, 'Times New Roman', serif;
+  --mg-font-body:    'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Type Scale */
   --mg-text-xs:   0.75rem;    /* 12px */
@@ -112,25 +115,25 @@
   --mg-space-6xl: 80px;
   --mg-space-7xl: 96px;
 
-  /* Border Radii */
+  /* Unified Geometric Border Radii */
   --mg-radius-xs:   4px;
   --mg-radius-sm:   8px;
   --mg-radius-md:   14px;
-  --mg-radius-lg:   20px;
-  --mg-radius-xl:   32px;
-  --mg-radius-2xl:  40px;
+  --mg-radius-lg:   18px;
+  --mg-radius-xl:   24px;  /* Unified standard radius for all primary cards */
+  --mg-radius-2xl:  32px;  /* Hero, guarantee container, closing banner */
   --mg-radius-pill: 9999px;
 
-  /* Shadows */
-  --mg-shadow-sm: 0 2px 6px rgba(66, 54, 16, 0.05);
-  --mg-shadow-md: 0 8px 24px rgba(66, 54, 16, 0.08);
-  --mg-shadow-lg: 0 16px 40px rgba(66, 54, 16, 0.12);
-  --mg-shadow-glass: 0 12px 36px rgba(40, 56, 21, 0.14);
-  --mg-shadow-card: 0 10px 30px -5px rgba(66, 54, 16, 0.08);
+  /* Multi-Layered Organic Ambient Shadows */
+  --mg-shadow-sm:         0 2px 8px -1px rgba(66, 54, 16, 0.04);
+  --mg-shadow-card:       0 4px 20px -2px rgba(66, 54, 16, 0.05);
+  --mg-shadow-card-hover: 0 16px 36px -4px rgba(66, 54, 16, 0.09);
+  --mg-shadow-md:         0 8px 24px -3px rgba(66, 54, 16, 0.07);
+  --mg-shadow-lg:         0 20px 48px -6px rgba(31, 45, 16, 0.16);
 
   /* Animation & Transitions */
   --mg-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --mg-duration-fast: 160ms;
+  --mg-duration-fast: 180ms;
   --mg-duration-base: 280ms;
   --mg-duration-slow: 480ms;
 
@@ -876,28 +879,31 @@
 
 /* --------------------------------------------------------------------------
    WhatsApp & Action Buttons
+   Refined with organic contrast, avoiding harsh neon AI-slop artifacts
    -------------------------------------------------------------------------- */
 .mg-btn--whatsapp {
-  background-color: #25D366;
+  background-color: #1F8A44;
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 4px 16px rgba(31, 138, 68, 0.28);
 }
 
 .mg-btn--whatsapp:hover {
-  background-color: #20BA5A;
+  background-color: #176B34;
   color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 8px 24px rgba(31, 138, 68, 0.40);
 }
 
 .mg-btn--mango {
   background-color: var(--mg-mango-500);
-  color: var(--mg-dark-olive);
-  box-shadow: 0 4px 14px rgba(255, 175, 70, 0.35);
+  color: var(--mg-ink-950);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(255, 175, 70, 0.30);
 }
 
 .mg-btn--mango:hover {
   background-color: var(--mg-mango-600);
-  color: var(--mg-dark-olive);
+  color: var(--mg-ink-950);
+  box-shadow: 0 8px 22px rgba(232, 149, 32, 0.40);
 }
 
 /* --------------------------------------------------------------------------
@@ -911,22 +917,24 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #25D366;
+  background-color: #1F8A44;
   color: #FFFFFF;
   padding: 12px 20px 12px 14px;
   border-radius: var(--mg-radius-pill);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45), 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 28px rgba(31, 138, 68, 0.38), 0 2px 6px rgba(0, 0, 0, 0.08);
   font-family: var(--mg-font-body);
   font-size: var(--mg-text-sm);
   font-weight: 600;
   text-decoration: none;
   transition: transform var(--mg-duration-fast) var(--mg-ease),
-              box-shadow var(--mg-duration-fast) var(--mg-ease);
+              box-shadow var(--mg-duration-fast) var(--mg-ease),
+              background-color var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-floating-wa:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #176B34;
+  box-shadow: 0 12px 36px rgba(31, 138, 68, 0.48), 0 4px 10px rgba(0, 0, 0, 0.12);
   color: #FFFFFF;
 }
 
@@ -963,20 +971,21 @@
 
 .mg-accordion__item {
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-card);
   border-radius: var(--mg-radius-lg);
   overflow: hidden;
+  box-shadow: var(--mg-shadow-sm);
   transition: border-color var(--mg-duration-fast) var(--mg-ease),
               box-shadow var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-accordion__item:hover {
-  border-color: var(--mg-green-200);
-  box-shadow: var(--mg-shadow-sm);
+  border-color: var(--mg-border-hover);
+  box-shadow: var(--mg-shadow-card);
 }
 
 .mg-accordion__item.is-open {
-  border-color: var(--mg-green-500);
+  border-color: var(--mg-green-700);
   box-shadow: var(--mg-shadow-md);
 }
 
@@ -1265,9 +1274,10 @@
   position: relative;
   width: 100%;
   min-height: 560px;
-  border-radius: var(--mg-radius-xl);
+  border-radius: var(--mg-radius-2xl);
   overflow: hidden;
   background-color: var(--mg-green-900);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1279,7 +1289,6 @@
   .mg-hero {
     min-height: 640px;
     padding: var(--mg-space-4xl) var(--mg-space-3xl);
-    border-radius: var(--mg-radius-2xl);
   }
 }
 
@@ -1300,9 +1309,9 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(39, 56, 21, 0.45) 0%,
-    rgba(39, 56, 21, 0.25) 50%,
-    rgba(39, 56, 21, 0.85) 100%
+    rgba(31, 45, 16, 0.45) 0%,
+    rgba(31, 45, 16, 0.25) 50%,
+    rgba(31, 45, 16, 0.85) 100%
   );
 }
 
@@ -1379,20 +1388,21 @@
   display: flex;
   align-items: center;
   gap: var(--mg-space-md);
-  padding: 12px 20px;
-  background-color: rgba(248, 244, 232, 0.85);
+  padding: 14px 22px;
+  background-color: rgba(250, 247, 238, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--mg-radius-lg);
-  box-shadow: 0 8px 32px rgba(39, 56, 21, 0.18);
-  color: var(--mg-ink-900);
+  box-shadow: 0 8px 32px rgba(21, 31, 11, 0.16);
+  color: var(--mg-ink-950);
+  min-height: 64px;
 }
 
 .mg-glass-card__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--mg-radius-sm);
   background-color: var(--mg-green-100);
   color: var(--mg-green-700);
   display: flex;
@@ -1432,10 +1442,16 @@
   gap: var(--mg-space-md) var(--mg-space-2xl);
   padding: var(--mg-space-lg) var(--mg-space-xl);
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
-  border-radius: var(--mg-radius-pill);
+  border: 1px solid var(--mg-border-card);
+  border-radius: var(--mg-radius-xl);
   box-shadow: var(--mg-shadow-sm);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .mg-strip__inner {
+    border-radius: var(--mg-radius-pill);
+  }
 }
 
 .mg-strip__avatars {
@@ -1506,12 +1522,12 @@
 }
 
 .mg-section-header__title {
-  font-family: var(--mg-font-heading);
-  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
-  font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-  color: var(--mg-ink-900);
+  font-family: var(--mg-font-serif);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--mg-ink-950);
   margin-bottom: var(--mg-space-md);
 }
 
@@ -1542,11 +1558,13 @@
 
 .mg-why-card {
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-card);
   border-radius: var(--mg-radius-xl);
   padding: var(--mg-space-2xl) var(--mg-space-xl);
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-shadow: var(--mg-shadow-card);
   transition: transform var(--mg-duration-fast) var(--mg-ease),
               box-shadow var(--mg-duration-fast) var(--mg-ease),
               border-color var(--mg-duration-fast) var(--mg-ease);
@@ -1554,8 +1572,8 @@
 
 .mg-why-card:hover {
   transform: translateY(-4px);
-  border-color: var(--mg-green-200);
-  box-shadow: var(--mg-shadow-card);
+  border-color: var(--mg-border-hover);
+  box-shadow: var(--mg-shadow-card-hover);
 }
 
 .mg-why-card__icon {
@@ -1564,6 +1582,7 @@
   border-radius: var(--mg-radius-md);
   background-color: var(--mg-green-50);
   color: var(--mg-green-700);
+  border: 1px solid rgba(79, 111, 43, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1576,6 +1595,7 @@
   font-weight: 700;
   color: var(--mg-ink-900);
   margin-bottom: var(--mg-space-sm);
+  min-height: 28px;
 }
 
 .mg-why-card__desc {
@@ -1583,11 +1603,12 @@
   font-size: var(--mg-text-sm);
   color: var(--mg-ink-600);
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 /* ==========================================================================
    SECTION 5: Harga: Special Offer (#harga)
-   "Harga spesial, stok terbatas." (5 varietas + kartu ke-6 B2B)
+   "Harga spesial, stok terbatas." (Symmetrical 6-card grid)
    ========================================================================== */
 .mg-pricing-section {
   scroll-margin-top: 100px;
@@ -1617,19 +1638,22 @@
 
 .mg-price-card {
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-card);
   border-radius: var(--mg-radius-xl);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--mg-shadow-sm);
+  height: 100%;
+  box-shadow: var(--mg-shadow-card);
   transition: transform var(--mg-duration-fast) var(--mg-ease),
-              box-shadow var(--mg-duration-fast) var(--mg-ease);
+              box-shadow var(--mg-duration-fast) var(--mg-ease),
+              border-color var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-price-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--mg-shadow-lg);
+  border-color: var(--mg-border-hover);
+  box-shadow: var(--mg-shadow-card-hover);
 }
 
 .mg-price-card__image-wrap {
@@ -1663,13 +1687,14 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  justify-content: space-between;
 }
 
 .mg-price-card__title {
   font-family: var(--mg-font-serif);
   font-size: var(--mg-text-2xl);
   font-weight: 700;
-  color: var(--mg-ink-900);
+  color: var(--mg-ink-950);
   margin-bottom: var(--mg-space-xs);
 }
 
@@ -1678,7 +1703,8 @@
   font-size: var(--mg-text-xs);
   color: var(--mg-ink-600);
   margin-bottom: var(--mg-space-lg);
-  line-height: 1.4;
+  line-height: 1.5;
+  min-height: 42px;
 }
 
 /* Tiered Pricing Table */
@@ -1688,14 +1714,17 @@
   border-radius: var(--mg-radius-md);
   padding: var(--mg-space-md);
   margin-bottom: var(--mg-space-xl);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .mg-price-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 0;
+  padding: 4px 0;
   border-bottom: 1px dashed var(--mg-cream-100);
 }
 
@@ -1721,30 +1750,6 @@
   color: var(--mg-crimson-500);
 }
 
-/* Kartu ke-6 (Bulk Order) */
-.mg-price-card--bulk {
-  background: linear-gradient(145deg, var(--mg-color-primary-green) 0%, var(--mg-green-900) 100%);
-  color: var(--mg-white);
-  border: none;
-  justify-content: center;
-  padding: var(--mg-space-3xl) var(--mg-space-2xl);
-  text-align: center;
-}
-
-.mg-price-card--bulk .mg-price-card__title {
-  color: var(--mg-white);
-  font-size: var(--mg-text-2xl);
-  margin-bottom: var(--mg-space-md);
-}
-
-.mg-price-card--bulk .mg-price-card__desc {
-  font-family: var(--mg-font-body);
-  font-size: var(--mg-text-base);
-  color: var(--mg-cream-100);
-  margin-bottom: var(--mg-space-2xl);
-  line-height: 1.6;
-}
-
 /* Restock Banner */
 .mg-restock-banner {
   margin-top: var(--mg-space-3xl);
@@ -1762,7 +1767,7 @@
 .mg-restock-banner__text {
   font-family: var(--mg-font-heading);
   font-size: var(--mg-text-sm);
-  color: var(--mg-dark-olive);
+  color: var(--mg-ink-900);
   font-weight: 600;
 }
 
@@ -1881,8 +1886,9 @@
 }
 
 .mg-guarantee-box {
-  background: linear-gradient(180deg, var(--mg-green-900) 0%, #17240E 100%);
+  background-color: var(--mg-green-900);
   color: var(--mg-white);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--mg-radius-2xl);
   padding: var(--mg-space-4xl) var(--mg-space-xl);
   box-shadow: var(--mg-shadow-lg);
@@ -1918,28 +1924,32 @@
 }
 
 .mg-guarantee-card {
-  background-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--mg-radius-xl);
   padding: var(--mg-space-2xl) var(--mg-space-xl);
   display: flex;
   flex-direction: column;
-  transition: transform var(--mg-duration-fast) var(--mg-ease);
+  height: 100%;
+  transition: transform var(--mg-duration-fast) var(--mg-ease),
+              background-color var(--mg-duration-fast) var(--mg-ease),
+              border-color var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-guarantee-card:hover {
   transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .mg-guarantee-card__icon {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: var(--mg-radius-md);
   background-color: var(--mg-mango-500);
-  color: var(--mg-dark-olive);
+  color: var(--mg-ink-950);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1952,7 +1962,8 @@
   font-weight: 700;
   color: var(--mg-white);
   margin-bottom: var(--mg-space-sm);
-  line-height: 1.3;
+  line-height: 1.35;
+  min-height: 48px;
 }
 
 .mg-guarantee-card__desc {
@@ -1960,12 +1971,13 @@
   font-size: var(--mg-text-sm);
   color: var(--mg-green-100);
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .mg-guarantee-footer {
   margin-top: var(--mg-space-3xl);
-  font-family: var(--mg-font-heading);
-  font-size: var(--mg-text-md);
+  font-family: var(--mg-font-serif);
+  font-size: var(--mg-text-lg);
   font-style: italic;
   color: var(--mg-mango-200);
 }
@@ -1992,20 +2004,23 @@
 
 .mg-review-card {
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-card);
   border-radius: var(--mg-radius-xl);
   padding: var(--mg-space-2xl) var(--mg-space-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--mg-shadow-sm);
+  height: 100%;
+  box-shadow: var(--mg-shadow-card);
   transition: transform var(--mg-duration-fast) var(--mg-ease),
-              box-shadow var(--mg-duration-fast) var(--mg-ease);
+              box-shadow var(--mg-duration-fast) var(--mg-ease),
+              border-color var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-review-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--mg-shadow-card);
+  border-color: var(--mg-border-hover);
+  box-shadow: var(--mg-shadow-card-hover);
 }
 
 .mg-review-card__stars {
@@ -2022,6 +2037,7 @@
   color: var(--mg-ink-700);
   font-style: italic;
   margin-bottom: var(--mg-space-xl);
+  flex-grow: 1;
 }
 
 .mg-review-card__author {
@@ -2079,23 +2095,34 @@
 
 .mg-step-card {
   background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
+  border: 1px solid var(--mg-border-card);
   border-radius: var(--mg-radius-xl);
   padding: var(--mg-space-2xl) var(--mg-space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  box-shadow: var(--mg-shadow-card);
+  transition: transform var(--mg-duration-fast) var(--mg-ease),
+              box-shadow var(--mg-duration-fast) var(--mg-ease),
+              border-color var(--mg-duration-fast) var(--mg-ease);
+}
+
+.mg-step-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--mg-border-hover);
+  box-shadow: var(--mg-shadow-card-hover);
 }
 
 .mg-step-card__number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--mg-radius-md);
   background-color: var(--mg-green-700);
   color: var(--mg-white);
   font-family: var(--mg-font-heading);
   font-size: var(--mg-text-lg);
-  font-weight: 700;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2108,6 +2135,7 @@
   font-weight: 700;
   color: var(--mg-ink-900);
   margin-bottom: var(--mg-space-sm);
+  min-height: 28px;
 }
 
 .mg-step-card__desc {
@@ -2115,6 +2143,7 @@
   font-size: var(--mg-text-sm);
   color: var(--mg-ink-600);
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 /* ==========================================================================
@@ -2134,7 +2163,8 @@
    ========================================================================== */
 .mg-closing-banner {
   scroll-margin-top: 100px;
-  background: linear-gradient(135deg, var(--mg-color-primary-green) 0%, var(--mg-green-900) 100%);
+  background-color: var(--mg-green-900);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--mg-white);
   border-radius: var(--mg-radius-2xl);
   padding: var(--mg-space-4xl) var(--mg-space-2xl);
@@ -2144,8 +2174,8 @@
 }
 
 .mg-closing-banner__title {
-  font-family: var(--mg-font-heading);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-family: var(--mg-font-serif);
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
   font-weight: 700;
   color: var(--mg-white);
   margin-bottom: var(--mg-space-md);
@@ -2162,8 +2192,9 @@
 
 /* Main Footer Container */
 .mg-footer {
-  background-color: var(--mg-green-900);
+  background-color: var(--mg-green-950);
   color: var(--mg-cream-50);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--mg-radius-2xl) var(--mg-radius-2xl) 0 0;
   padding: var(--mg-space-5xl) 0 var(--mg-space-2xl);
 }
