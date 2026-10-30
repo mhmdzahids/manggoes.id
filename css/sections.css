@@ -215,11 +215,11 @@
   min-height: 600px;
   border-radius: 0; /* Strictly non-rounded per brand design rule */
   overflow: hidden;
-  background-color: #121C09;
+  background-color: var(--mg-green-900);
   border: none;
-  border-bottom: 3px solid var(--mg-mango-500);
+  border-bottom: 3px solid var(--mg-color-mango-gold);
   padding: clamp(48px, 6vw, 80px) 0 clamp(40px, 5vw, 68px);
-  box-shadow: 0 12px 36px rgba(12, 19, 6, 0.45);
+  box-shadow: 0 12px 36px rgba(46, 66, 24, 0.40);
   scroll-margin-top: 80px;
 }
 
@@ -237,7 +237,7 @@
   object-fit: cover;
   object-position: center 30%;
   z-index: 1;
-  filter: brightness(0.82) contrast(1.05);
+  filter: brightness(0.85) contrast(1.05);
 }
 
 .mg-hero__overlay {
@@ -246,9 +246,9 @@
   z-index: 2;
   background: linear-gradient(
     180deg,
-    rgba(18, 28, 9, 0.72) 0%,
-    rgba(18, 28, 9, 0.45) 45%,
-    rgba(14, 22, 7, 0.92) 100%
+    rgba(46, 66, 24, 0.68) 0%,
+    rgba(46, 66, 24, 0.38) 45%,
+    rgba(31, 45, 16, 0.90) 100%
   );
 }
 
@@ -268,17 +268,17 @@
   color: var(--mg-white);
 }
 
-/* Artisanal Origin Kicker — Fresh, bright botanical tag (non-dark, high-visibility) */
+/* Artisanal Origin Kicker — Official Cream Canvas & Brand Palette */
 .mg-hero__kicker {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background-color: #FFFDF7;
-  border: 1px solid rgba(255, 160, 0, 0.65);
-  border-left: 4px solid #FFA000;
+  background-color: var(--mg-color-cream);
+  border: 1px solid var(--mg-color-mango-gold);
+  border-left: 4px solid var(--mg-color-primary-green);
   border-radius: 2px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 4px 16px rgba(66, 54, 16, 0.24);
   margin-bottom: var(--mg-space-lg);
 }
 
@@ -288,11 +288,11 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #1E2E0D;
+  color: var(--mg-color-dark-olive);
 }
 
 .mg-hero__kicker-sep {
-  color: #D97706;
+  color: var(--mg-color-mango-gold);
   font-size: 0.8rem;
   font-weight: 800;
   margin: 0 2px;
@@ -304,7 +304,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #B45309;
+  color: var(--mg-color-primary-green);
 }
 
 .mg-hero__title-logo {
@@ -362,38 +362,38 @@
   align-items: center;
   gap: 16px;
   padding: 16px 20px;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  border-left: 4px solid var(--mg-mango-500);
+  background-color: var(--mg-color-cream);
+  border: 1px solid var(--mg-cream-100);
+  border-left: 4px solid var(--mg-color-mango-gold);
   border-radius: 2px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 24px rgba(66, 54, 16, 0.16);
   transition: transform var(--mg-duration-fast) var(--mg-ease),
               box-shadow var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-hero__feature-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 12px 32px rgba(66, 54, 16, 0.24);
 }
 
 .mg-hero__feature-box:first-child {
-  border-left-color: #4F6F2B; /* Fresh Orchard Green */
+  border-left-color: var(--mg-color-primary-green); /* #4F6F2B Brand Green */
 }
 
 .mg-hero__feature-box:first-child .mg-hero__feature-icon {
-  background-color: #EBF3E2;
-  border-color: #D2E3C0;
-  color: #2F4D14;
+  background-color: var(--mg-green-100);
+  border-color: var(--mg-green-200);
+  color: var(--mg-color-primary-green);
 }
 
 .mg-hero__feature-box:last-child {
-  border-left-color: #FFA000; /* Mango Gold */
+  border-left-color: var(--mg-color-mango-gold); /* #FFAF46 Mango Gold */
 }
 
 .mg-hero__feature-box:last-child .mg-hero__feature-icon {
-  background-color: #FFF3DE;
-  border-color: #FEDEAA;
-  color: #B45309;
+  background-color: var(--mg-mango-100);
+  border-color: var(--mg-mango-200);
+  color: var(--mg-color-dark-olive);
 }
 
 .mg-hero__feature-icon {
@@ -417,14 +417,14 @@
   font-family: var(--mg-font-heading);
   font-size: 0.95rem;
   font-weight: 700;
-  color: #172408;
+  color: var(--mg-color-dark-olive);
   line-height: 1.25;
 }
 
 .mg-hero__feature-desc {
   font-family: var(--mg-font-body);
   font-size: 0.8rem;
-  color: #485437;
+  color: var(--mg-ink-700);
   line-height: 1.35;
   font-weight: 500;
 }
@@ -890,12 +890,12 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--mg-cream-200);
-  border-left: 4px solid var(--mg-green-700);
+  background-color: var(--mg-color-cream);
+  border: 1px solid var(--mg-cream-100);
+  border-left: 4px solid var(--mg-color-primary-green);
   border-radius: 4px;
   padding: 10px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 10px 30px rgba(66, 54, 16, 0.16);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -905,7 +905,7 @@
 
 .mg-craft-tag {
   display: inline-block;
-  background-color: var(--mg-green-800);
+  background-color: var(--mg-color-primary-green);
   color: #FFFFFF;
   font-family: var(--mg-font-body);
   font-size: 0.65rem;

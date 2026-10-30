@@ -457,41 +457,41 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* Variety Stamp Palettes (Artisanal Fruit Identity - High Contrast WCAG AAA) */
+/* Variety Stamp Palettes (Artisanal Fruit Identity - Mapped to Brand Guidelines Hal. 24) */
 .mg-stamp-badge--gincu {
-  background-color: #991B1B;
+  background-color: var(--mg-color-crimson); /* #D52518 Ripe Crimson */
   color: #FFFFFF;
-  border-color: #7F1D1D;
+  border-color: #BD1E12;
 }
 
 .mg-stamp-badge--golek {
-  background-color: #B45309;
+  background-color: #B45309; /* Warm Ripe Honey Amber */
   color: #FFFFFF;
   border-color: #92400E;
 }
 
 .mg-stamp-badge--harum {
-  background-color: #15803D;
+  background-color: var(--mg-color-primary-green); /* #4F6F2B Brand Green */
   color: #FFFFFF;
-  border-color: #166534;
+  border-color: #3B5420;
 }
 
 .mg-stamp-badge--kiojay {
-  background-color: #365314;
+  background-color: var(--mg-color-leaf-green); /* #8A8F2B Leaf Green */
   color: #FFFFFF;
-  border-color: #1A2E05;
+  border-color: #6E731F;
 }
 
 .mg-stamp-badge--cengkir {
-  background-color: #C2410C;
+  background-color: var(--mg-color-coral); /* #F17142 Coral Tangerine */
   color: #FFFFFF;
-  border-color: #9A3412;
+  border-color: #D4572B;
 }
 
 .mg-stamp-badge--b2b {
-  background-color: #1E293B;
-  color: #FDE68A;
-  border-color: #0F172A;
+  background-color: var(--mg-color-dark-olive); /* #423610 Dark Olive */
+  color: var(--mg-color-mango-gold); /* #FFAF46 Warm Mango Gold */
+  border-color: #2D250B;
 }
 
 .mg-badge--ready {
