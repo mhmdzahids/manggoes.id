@@ -268,16 +268,17 @@
   color: var(--mg-white);
 }
 
-/* Artisanal Origin Kicker — Architectural solid tag (replaces AI rounded star badge) */
+/* Artisanal Origin Kicker — Fresh, bright botanical tag (non-dark, high-visibility) */
 .mg-hero__kicker {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background-color: #0E1707;
-  border: 1px solid rgba(255, 160, 0, 0.55);
+  background-color: #FFFDF7;
+  border: 1px solid rgba(255, 160, 0, 0.65);
+  border-left: 4px solid #FFA000;
   border-radius: 2px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
   margin-bottom: var(--mg-space-lg);
 }
 
@@ -287,21 +288,23 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #FFA000;
+  color: #1E2E0D;
 }
 
 .mg-hero__kicker-sep {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.75rem;
+  color: #D97706;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin: 0 2px;
 }
 
 .mg-hero__kicker-sub {
   font-family: var(--mg-font-body);
   font-size: 0.74rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #F5EEDB;
+  color: #B45309;
 }
 
 .mg-hero__title-logo {
@@ -359,27 +362,45 @@
   align-items: center;
   gap: 16px;
   padding: 16px 20px;
-  background-color: #121C09;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-left: 4px solid var(--mg-mango-500);
   border-radius: 2px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.38);
-  transition: border-left-color var(--mg-duration-fast) var(--mg-ease),
-              transform var(--mg-duration-fast) var(--mg-ease);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+  transition: transform var(--mg-duration-fast) var(--mg-ease),
+              box-shadow var(--mg-duration-fast) var(--mg-ease);
 }
 
 .mg-hero__feature-box:hover {
-  border-left-color: #FFB300;
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+}
+
+.mg-hero__feature-box:first-child {
+  border-left-color: #4F6F2B; /* Fresh Orchard Green */
+}
+
+.mg-hero__feature-box:first-child .mg-hero__feature-icon {
+  background-color: #EBF3E2;
+  border-color: #D2E3C0;
+  color: #2F4D14;
+}
+
+.mg-hero__feature-box:last-child {
+  border-left-color: #FFA000; /* Mango Gold */
+}
+
+.mg-hero__feature-box:last-child .mg-hero__feature-icon {
+  background-color: #FFF3DE;
+  border-color: #FEDEAA;
+  color: #B45309;
 }
 
 .mg-hero__feature-icon {
   width: 44px;
   height: 44px;
   border-radius: 2px;
-  background-color: #1C2B0E;
-  border: 1px solid rgba(255, 160, 0, 0.4);
-  color: #FFA000;
+  border: 1px solid transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -396,15 +417,16 @@
   font-family: var(--mg-font-heading);
   font-size: 0.95rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #172408;
   line-height: 1.25;
 }
 
 .mg-hero__feature-desc {
   font-family: var(--mg-font-body);
   font-size: 0.8rem;
-  color: #D5CEB8;
+  color: #485437;
   line-height: 1.35;
+  font-weight: 500;
 }
 
 /* ==========================================================================
