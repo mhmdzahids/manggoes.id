@@ -458,117 +458,75 @@
 }
 
 /* ==========================================================================
-   Hero Leaf Clusters (Right Side: Cluster A & Cluster B)
+   Hero Branch Props (Right Side: Branch A & Branch B)
    ========================================================================== */
-.mg-cluster {
+.mg-branch {
   position: absolute;
-  width: 0;
-  height: 0;
   pointer-events: none;
   user-select: none;
   z-index: 2;
 }
 
-.mg-cluster__sway {
+.mg-branch__sway {
   position: relative;
-  width: 0;
-  height: 0;
-  transform-origin: 0 0;
+  display: block;
+  transform-origin: 50% 90%;
 }
 
-.mg-cluster__leaf {
-  position: absolute;
+.mg-branch__img {
   display: block;
   max-width: none;
   pointer-events: none;
   user-select: none;
-  transform-origin: center center;
 }
 
-/* Cluster A (Top-Right, 2 leaves): wrapper anchor at 70% x / 21% y */
-.mg-cluster--a {
+/* Branch A (Top-Right, 2-leaf branch):
+   /assets/hero/branch-2.webp, anchor 70% x / 21% y,
+   width about 96px, rotate -24deg, scaleX(-1), no blur,
+   drop-shadow(0 8px 10px rgba(40,50,30,.14)).
+   Layer: below product and seal (z-index: 2). */
+.mg-branch--a {
   left: 70%;
   top: 21%;
+  width: 96px;
+  margin-left: -48px;
+  margin-top: -52px;
 }
 
-.mg-cluster--a .mg-cluster__sway {
-  animation: mg-sway-cluster-a 9s ease-in-out infinite;
-  transform-origin: 0 0;
+.mg-branch--a .mg-branch__sway {
+  animation: mg-sway-branch-a 8s ease-in-out infinite;
+  transform: scaleX(-1) rotate(-24deg);
 }
 
-/* A1: existing sharp leaf, ~64px, rotate 30deg */
-.mg-cluster__leaf--a1 {
-  left: 0;
-  top: 0;
-  width: 64px;
+.mg-branch--a .mg-branch__img {
+  width: 96px;
   height: auto;
-  z-index: 2;
-  transform: translate(-50%, -50%) rotate(30deg);
-  animation: mg-sway-leaf-a1 9s ease-in-out infinite;
-  animation-delay: 0s;
+  filter: drop-shadow(0 8px 10px rgba(40, 50, 30, 0.14));
 }
 
-/* A2: leaf-2, ~46px, rotate 62deg, offset +20px x / +16px y from A1, blur 1px */
-.mg-cluster__leaf--a2 {
-  left: 20px;
-  top: 16px;
-  width: 46px;
-  height: auto;
-  z-index: 1;
-  filter: blur(1px);
-  transform: translate(-50%, -50%) rotate(62deg);
-  animation: mg-sway-leaf-a2 9s ease-in-out infinite;
-  animation-delay: 0.4s;
-}
-
-/* Cluster B (Bottom-Right, 3 leaves): wrapper anchor at 71% x / 75% y */
-.mg-cluster--b {
+/* Branch B (Bottom-Right, 3-leaf branch):
+   /assets/hero/branch-3.webp, anchor 71% x / 75% y,
+   width about 150px, rotate 28deg, no blur,
+   drop-shadow(0 12px 14px rgba(40,50,30,.18)).
+   Layer: below product and seal (z-index: 2). */
+.mg-branch--b {
   left: 71%;
   top: 75%;
+  width: 150px;
+  margin-left: -75px;
+  margin-top: -82px;
 }
 
-.mg-cluster--b .mg-cluster__sway {
-  animation: mg-sway-cluster-b 11s ease-in-out infinite;
-  animation-delay: -3.8s;
-  transform-origin: 0 0;
+.mg-branch--b .mg-branch__sway {
+  animation: mg-sway-branch-b 10s ease-in-out infinite;
+  animation-delay: -3.5s;
+  transform: rotate(28deg);
 }
 
-/* B1: existing large leaf, ~110x140px, rotate 35deg, blur 1px */
-.mg-cluster__leaf--b1 {
-  left: 0;
-  top: 0;
-  width: 110px;
+.mg-branch--b .mg-branch__img {
+  width: 150px;
   height: auto;
-  z-index: 3;
-  filter: blur(1px);
-  transform: translate(-50%, -50%) rotate(35deg);
-  animation: mg-sway-leaf-b1 11s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-/* B2: leaf-3, ~84x108px, rotate 8deg, offset -34px x / +24px y, sharp, scaleX(-1) */
-.mg-cluster__leaf--b2 {
-  left: -34px;
-  top: 24px;
-  width: 84px;
-  height: auto;
-  z-index: 2;
-  transform: translate(-50%, -50%) scaleX(-1) rotate(8deg);
-  animation: mg-sway-leaf-b2 11s ease-in-out infinite;
-  animation-delay: 0.4s;
-}
-
-/* B3: leaf-1, ~58x76px, rotate 66deg, offset +30px x / +52px y, blur 2px */
-.mg-cluster__leaf--b3 {
-  left: 30px;
-  top: 52px;
-  width: 58px;
-  height: auto;
-  z-index: 1;
-  filter: blur(2px);
-  transform: translate(-50%, -50%) rotate(66deg);
-  animation: mg-sway-leaf-b3 11s ease-in-out infinite;
-  animation-delay: 0.8s;
+  filter: drop-shadow(0 12px 14px rgba(40, 50, 30, 0.18));
 }
 
 /* 2. Large leaf left edge — positioned cleanly inside frame without cropping */
@@ -801,63 +759,55 @@
   50% { transform: translate(-50%, -50%) rotate(-17deg); }
 }
 
-/* Cluster Keyframe Animations */
-@keyframes mg-sway-cluster-a {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+/* Branch Keyframe Animations */
+@keyframes mg-sway-branch-a {
+  0%, 100% { transform: scaleX(-1) rotate(-26.5deg); }
+  50% { transform: scaleX(-1) rotate(-21.5deg); }
 }
 
-@keyframes mg-sway-cluster-b {
-  0%, 100% { transform: rotate(3deg); }
-  50% { transform: rotate(-3deg); }
+@keyframes mg-sway-branch-b {
+  0%, 100% { transform: rotate(25.5deg); }
+  50% { transform: rotate(30.5deg); }
 }
 
-@keyframes mg-sway-leaf-a1 {
-  0%, 100% { transform: translate(-50%, -50%) rotate(30deg); }
-  50% { transform: translate(-50%, -50%) rotate(32deg); }
-}
-
-@keyframes mg-sway-leaf-a2 {
-  0%, 100% { transform: translate(-50%, -50%) rotate(62deg); }
-  50% { transform: translate(-50%, -50%) rotate(64.5deg); }
-}
-
-@keyframes mg-sway-leaf-b1 {
-  0%, 100% { transform: translate(-50%, -50%) rotate(35deg); }
-  50% { transform: translate(-50%, -50%) rotate(37deg); }
-}
-
-@keyframes mg-sway-leaf-b2 {
-  0%, 100% { transform: translate(-50%, -50%) scaleX(-1) rotate(8deg); }
-  50% { transform: translate(-50%, -50%) scaleX(-1) rotate(6deg); }
-}
-
-@keyframes mg-sway-leaf-b3 {
-  0%, 100% { transform: translate(-50%, -50%) rotate(66deg); }
-  50% { transform: translate(-50%, -50%) rotate(68.5deg); }
-}
-
-/* Responsive Rules for Clusters */
+/* Responsive Rules for Branches */
 @media (max-width: 1099px) {
-  .mg-cluster--a .mg-cluster__leaf--a2 {
-    display: none !important;
+  .mg-branch--a {
+    width: 77px;
+    margin-left: -38px;
+    margin-top: -42px;
   }
-  .mg-cluster--b .mg-cluster__leaf--b3 {
-    display: none !important;
+  .mg-branch--a .mg-branch__img {
+    width: 77px;
+  }
+  .mg-branch--b {
+    width: 120px;
+    margin-left: -60px;
+    margin-top: -66px;
+  }
+  .mg-branch--b .mg-branch__img {
+    width: 120px;
   }
 }
 
 @media (max-width: 767px) {
-  .mg-cluster--a {
+  .mg-branch--a {
     display: none !important;
+  }
+  .mg-branch--b {
+    width: 105px;
+    margin-left: -52px;
+    margin-top: -57px;
+  }
+  .mg-branch--b .mg-branch__img {
+    width: 105px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .mg-stage__product,
   .mg-prop,
-  .mg-cluster__sway,
-  .mg-cluster__leaf {
+  .mg-branch__sway {
     animation: none !important;
   }
 }
