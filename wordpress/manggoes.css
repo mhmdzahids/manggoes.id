@@ -1851,13 +1851,13 @@
   animation: mg-leaf-sway-1 9s ease-in-out infinite;
 }
 
-/* 2. Large blurred leaf left edge: 2% x / 69% y, ~130x180px, blur 6px */
+/* 2. Large leaf left edge — positioned cleanly inside frame without cropping */
 .mg-prop--leaf-2 {
-  left: 2%;
-  top: 69%;
-  width: 140px;
+  left: 9%;
+  top: 65%;
+  width: 125px;
   height: auto;
-  filter: blur(6px);
+  filter: blur(3px);
   transform: translate(-50%, -50%) rotate(-15deg);
   z-index: 3;
   animation: mg-leaf-sway-2 11s ease-in-out infinite;
@@ -1886,14 +1886,14 @@
   animation: mg-leaf-sway-1 8s ease-in-out infinite;
 }
 
-/* 5. Huge blurred leaf in bottom-left corner: 6% x / 93% y, blur 8px (IN FRONT of mango half) */
+/* 5. Foreground leaf in bottom-left — positioned cleanly inside frame */
 .mg-prop--leaf-5 {
-  left: 6%;
-  top: 93%;
-  width: 180px;
+  left: 14%;
+  top: 86%;
+  width: 140px;
   height: auto;
-  filter: blur(8px);
-  transform: translate(-50%, -50%) rotate(40deg);
+  filter: blur(4px);
+  transform: translate(-50%, -50%) rotate(35deg);
   z-index: 4;
 }
 
