@@ -1886,13 +1886,13 @@
   animation: mg-leaf-sway-1 8s ease-in-out infinite;
 }
 
-/* 5. Foreground leaf in bottom-left — positioned cleanly inside frame */
+/* 5. Foreground leaf in bottom-left — 3-leaf sprig creating lush natural depth */
 .mg-prop--leaf-5 {
   left: 14%;
   top: 86%;
-  width: 140px;
+  width: 160px;
   height: auto;
-  filter: blur(4px);
+  filter: blur(3.5px);
   transform: translate(-50%, -50%) rotate(35deg);
   z-index: 4;
 }
