@@ -6,57 +6,13 @@
      3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
      ====================================================================== -->
 <div class="mg">
-<header id="mg-header" class="mg-header-wrap" role="banner">
-      <div class="mg-container">
-        <div class="mg-header">
-
-          <!-- Left Navigation Cluster -->
-          <div class="mg-header__left">
-            <button type="button" class="mg-hamburger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mg-mobile-nav">
-              <span class="mg-hamburger__line"></span>
-              <span class="mg-hamburger__line"></span>
-            </button>
-
-            <nav class="mg-nav" aria-label="Navigasi Utama">
-              <a href="#atas" class="mg-nav__link">Beranda</a>
-              <a href="#kenapa" class="mg-nav__link">Kenapa Kami</a>
-              <a href="#harga" class="mg-nav__link">Harga</a>
-              <a href="#cerita" class="mg-nav__link">Cerita</a>
-              <a href="#garansi" class="mg-nav__link">Garansi</a>
-              <a href="#testimoni" class="mg-nav__link">Testimoni</a>
-              <a href="#faq" class="mg-nav__link">FAQ</a>
-            </nav>
-          </div>
-
-          <!-- Center Brand Logo -->
-          <div class="mg-header__center">
-            <a href="#atas" class="mg-logo" aria-label="Manggoes Beranda">
-              <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes.webp" alt="Logo Manggoes" width="220" height="60">
-            </a>
-          </div>
-
-          <!-- Right Action Cluster -->
-          <div class="mg-header__right">
-            <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary">
-              <span>Pesan Sekarang</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile Navigation Drawer -->
+<!-- Mobile Navigation Drawer -->
     <div id="mg-mobile-nav" class="mg-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
       <div class="mg-drawer__panel">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes.webp" alt="Manggoes" height="36">
-            <button type="button" class="mg-modal-close mg-drawer-close" aria-label="Tutup menu navigasi">
+            <button type="button" class="mg-modal-close mg-drawer-close" id="mg-drawer-close" aria-label="Tutup menu navigasi">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -67,7 +23,7 @@
           <nav class="mg-drawer__nav" aria-label="Menu Mobile">
             <a href="#atas" class="mg-drawer__link">Beranda</a>
             <a href="#kenapa" class="mg-drawer__link">Kenapa Kami</a>
-            <a href="#harga" class="mg-drawer__link">Harga &amp; Special Offer</a>
+            <a href="#harga" class="mg-drawer__link">Varietas &amp; Harga</a>
             <a href="#cerita" class="mg-drawer__link">Cerita Kami</a>
             <a href="#garansi" class="mg-drawer__link">Garansi 100%</a>
             <a href="#testimoni" class="mg-drawer__link">Testimoni</a>
@@ -78,7 +34,7 @@
         </div>
 
         <div>
-          <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--whatsapp" style="width: 100%;">
+          <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn-pill mg-btn-pill--primary" style="width: 100%; height: 48px;">
             <span>Pesan via WhatsApp</span>
           </a>
         </div>

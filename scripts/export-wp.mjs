@@ -51,33 +51,24 @@ fs.mkdirSync(imagesDir, { recursive: true });
 // 1. Copy Images & Logos into /wordpress/images/
 const srcImagesDir = path.join(rootDir, 'assets', 'images');
 const srcLogoDir = path.join(rootDir, 'assets', 'logo');
+const srcHeroDir = path.join(rootDir, 'assets', 'hero');
 
 const copiedFiles = [];
 
-if (fs.existsSync(srcImagesDir)) {
-  const imgFiles = fs.readdirSync(srcImagesDir);
-  for (const file of imgFiles) {
-    const srcPath = path.join(srcImagesDir, file);
-    const destPath = path.join(imagesDir, file);
-    if (fs.statSync(srcPath).isFile()) {
-      fs.copyFileSync(srcPath, destPath);
-      copiedFiles.push(file);
+for (const dir of [srcImagesDir, srcLogoDir, srcHeroDir]) {
+  if (fs.existsSync(dir)) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+      const srcPath = path.join(dir, file);
+      const destPath = path.join(imagesDir, file);
+      if (fs.statSync(srcPath).isFile()) {
+        fs.copyFileSync(srcPath, destPath);
+        copiedFiles.push(file);
+      }
     }
   }
 }
-
-if (fs.existsSync(srcLogoDir)) {
-  const logoFiles = fs.readdirSync(srcLogoDir);
-  for (const file of logoFiles) {
-    const srcPath = path.join(srcLogoDir, file);
-    const destPath = path.join(imagesDir, file);
-    if (fs.statSync(srcPath).isFile()) {
-      fs.copyFileSync(srcPath, destPath);
-      copiedFiles.push(file);
-    }
-  }
-}
-console.log(`✓ Copied ${copiedFiles.length} images/logos to /wordpress/images/`);
+console.log(`✓ Copied ${copiedFiles.length} images/logos/props to /wordpress/images/`);
 
 // 2. Concatenate CSS & Rewrite Asset URLs
 const cssFiles = [
@@ -103,7 +94,7 @@ for (const file of cssFiles) {
 }
 
 // Rewrite relative asset paths in CSS
-concatenatedCss = concatenatedCss.replace(/url\(\s*['"]?(?:\.\.\/)?assets\/(?:images|logo)\/([^'")]+)['"]?\s*\)/g, (match, filename) => {
+concatenatedCss = concatenatedCss.replace(/url\(\s*['"]?(?:\.\.\/)?assets\/(?:images|logo|hero)\/([^'")]+)['"]?\s*\)/g, (match, filename) => {
   return `url('${baseUrl}${filename}')`;
 });
 
@@ -126,7 +117,7 @@ const indexHtmlPath = path.join(rootDir, 'index.html');
 const indexHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
 function rewriteAssetUrls(html) {
-  return html.replace(/(?:src|href)=['"](?:\.\.\/)?assets\/(?:images|logo)\/([^'"]+)['"]/g, (match, filename) => {
+  return html.replace(/(?:src|href)=['"](?:\.\.\/)?assets\/(?:images|logo|hero)\/([^'"]+)['"]/g, (match, filename) => {
     const attr = match.startsWith('href') ? 'href' : 'src';
     return `${attr}="${baseUrl}${filename}"`;
   });
@@ -148,25 +139,25 @@ const drawerTag = extractTagBlock(indexHtml, /<div\s+id=["']mg-mobile-nav["']/i,
 const headerCombined = (headerTag || '') + (drawerTag ? '\n\n    <!-- Mobile Navigation Drawer -->\n    ' + drawerTag : '');
 
 // Section 2: Hero
-const heroMatch = extractTagBlock(indexHtml, /<section\s+id=["']atas["']/i, '</section>');
+const heroMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']atas["']/i, '</section>');
 // Section 3: Strip Kepercayaan
-const stripMatch = extractTagBlock(indexHtml, /<section\s+class=["']mg-strip["']/i, '</section>');
+const stripMatch = extractTagBlock(indexHtml, /<section[^>]*class=["'][^"']*mg-strip[^"']*["']/i, '</section>');
 // Section 4: Kenapa Kami
-const kenapaMatch = extractTagBlock(indexHtml, /<section\s+id=["']kenapa["']/i, '</section>');
+const kenapaMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']kenapa["']/i, '</section>');
 // Section 5: Harga
-const hargaMatch = extractTagBlock(indexHtml, /<section\s+id=["']harga["']/i, '</section>');
+const hargaMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']harga["']/i, '</section>');
 // Section 6: Cerita
-const ceritaMatch = extractTagBlock(indexHtml, /<section\s+id=["']cerita["']/i, '</section>');
+const ceritaMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']cerita["']/i, '</section>');
 // Section 7: Garansi
-const garansiMatch = extractTagBlock(indexHtml, /<section\s+id=["']garansi["']/i, '</section>');
+const garansiMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']garansi["']/i, '</section>');
 // Section 8: Testimoni
-const testimoniMatch = extractTagBlock(indexHtml, /<section\s+id=["']testimoni["']/i, '</section>');
+const testimoniMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']testimoni["']/i, '</section>');
 // Section 9: Cara Pesan
-const caraPesanMatch = extractTagBlock(indexHtml, /<section\s+id=["']cara-pesan["']/i, '</section>');
+const caraPesanMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']cara-pesan["']/i, '</section>');
 // Section 10: FAQ
-const faqMatch = extractTagBlock(indexHtml, /<section\s+id=["']faq["']/i, '</section>');
+const faqMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']faq["']/i, '</section>');
 // Section 11: Kontak & Footer
-const kontakMatch = extractTagBlock(indexHtml, /<section\s+id=["']kontak["']/i, '</section>');
+const kontakMatch = extractTagBlock(indexHtml, /<section[^>]*id=["']kontak["']/i, '</section>');
 // Floating WhatsApp
 const floatingWaMatch = extractTagBlock(indexHtml, /<a\s+href=["']https:\/\/wa\.link\/5esniw["']\s+target=["']_blank["']\s+rel=["']noopener noreferrer["']\s+class=["']mg-floating-wa["']/i, '</a>');
 
