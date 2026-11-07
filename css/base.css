@@ -12,10 +12,10 @@
 }
 
 .mg {
-  background-color: var(--mg-cream-50);
-  color: var(--mg-ink-900);
+  background-color: var(--mg-canvas);
+  color: var(--mg-ink);
   font-family: var(--mg-font-body);
-  font-size: var(--mg-text-base);
+  font-size: var(--mg-fs-body);
   line-height: 1.6;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -179,20 +179,21 @@
 /* Skip to Content Navigation */
 .mg-skip-link {
   position: absolute;
-  top: -60px;
+  top: -9999px;
   left: 24px;
   z-index: 1000;
-  background-color: var(--mg-green-900);
-  color: var(--mg-cream-50);
-  padding: var(--mg-space-sm) var(--mg-space-lg);
-  border-radius: var(--mg-radius-sm);
+  background-color: var(--mg-green-700);
+  color: var(--mg-white);
+  padding: 8px 16px;
+  border-radius: var(--mg-r-pill);
   font-weight: 600;
-  font-size: var(--mg-text-sm);
-  box-shadow: var(--mg-shadow-md);
-  transition: top var(--mg-duration-fast) var(--mg-ease);
+  font-size: var(--mg-fs-small);
+  box-shadow: var(--mg-sh-card);
+  transition: top var(--mg-dur-1) var(--mg-ease-out);
 }
 
-.mg-skip-link:focus {
+.mg-skip-link:focus,
+.mg-skip-link:focus-visible {
   top: 16px;
 }
 

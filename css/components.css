@@ -680,3 +680,272 @@
   line-height: 1.7;
   color: var(--mg-ink-600);
 }
+
+/* ==========================================================================
+   FRESHSEAL DESIGN SYSTEM COMPONENTS
+   ========================================================================== */
+
+/* 1. Pill Buttons (.mg-btn-pill) */
+.mg-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--mg-r-pill);
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-fs-btn);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
+              color var(--mg-dur-1) var(--mg-ease-out),
+              border-color var(--mg-dur-1) var(--mg-ease-out),
+              transform var(--mg-dur-1) var(--mg-ease-out),
+              box-shadow var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-btn-pill svg {
+  transition: transform var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-btn-pill--primary {
+  background-color: var(--mg-green-700);
+  color: var(--mg-white);
+  border: none;
+  box-shadow: 0 4px 14px rgba(46, 91, 52, 0.22);
+}
+
+.mg-btn-pill--primary:hover {
+  background-color: var(--mg-green-800);
+  color: var(--mg-white);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(38, 76, 43, 0.32);
+}
+
+.mg-btn-pill--primary:hover svg {
+  transform: translateX(3px);
+}
+
+.mg-btn-pill--secondary {
+  background-color: transparent;
+  color: var(--mg-green-700);
+  border: 1.5px solid var(--mg-green-700);
+}
+
+.mg-btn-pill--secondary:hover {
+  background-color: rgba(46, 91, 52, 0.08);
+  color: var(--mg-green-800);
+}
+
+/* 2. Sage Round Arrow Buttons (.mg-btn-sage) */
+.mg-btn-sage {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--mg-green-400);
+  color: var(--mg-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(127, 156, 116, 0.3);
+  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
+              transform var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-btn-sage:hover {
+  background-color: var(--mg-green-700);
+  transform: scale(1.05);
+}
+
+.mg-btn-sage:active {
+  transform: scale(0.95);
+}
+
+/* 3. Icon Chips (.mg-icon-chip) */
+.mg-icon-chip {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--mg-chip);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--mg-green-700);
+}
+
+.mg-icon-chip svg {
+  stroke-width: 1.75;
+  color: var(--mg-green-700);
+}
+
+/* 4. Glass Cards (.mg-card) */
+.mg-card {
+  background: var(--mg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--mg-glass-border);
+  border-radius: var(--mg-r-card);
+  padding: 24px;
+  box-shadow: var(--mg-sh-card);
+  transition: transform var(--mg-dur-1) var(--mg-ease-out),
+              box-shadow var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 56px -20px rgba(40, 50, 30, 0.24);
+}
+
+/* 5. Dash Pagination (.mg-pager) */
+.mg-pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mg-pager__dash {
+  height: 3px;
+  width: 14px;
+  background-color: var(--mg-dash-off);
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  cursor: pointer;
+  transition: width 300ms var(--mg-ease-out),
+              background-color 300ms var(--mg-ease-out);
+}
+
+.mg-pager__dash.is-active {
+  width: 32px;
+  background-color: var(--mg-green-700);
+}
+
+/* 6. Round Seal Symbol (.mg-seal) */
+.mg-seal {
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  filter: drop-shadow(var(--mg-sh-card));
+  pointer-events: none;
+  user-select: none;
+}
+
+.mg-seal__text {
+  font-family: var(--mg-font-display);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  fill: var(--mg-green-700);
+  text-transform: uppercase;
+}
+
+.mg-seal__text--sm {
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+}
+
+/* 7. Sticky Compact Bar (.mg-sticky-bar) */
+.mg-sticky-bar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-120%);
+  z-index: 1000;
+  width: calc(100% - 32px);
+  max-width: 960px;
+  background: var(--mg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--mg-glass-border);
+  border-radius: var(--mg-r-pill);
+  box-shadow: 0 16px 40px -10px rgba(40, 50, 30, 0.18);
+  padding: 8px 18px 8px 24px;
+  transition: transform 350ms var(--mg-ease-out),
+              opacity 350ms var(--mg-ease-out);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mg-sticky-bar.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mg-sticky-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.mg-sticky-bar__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.mg-sticky-bar__nav {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .mg-sticky-bar__nav {
+    display: flex;
+  }
+}
+
+.mg-sticky-bar__link {
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-fs-nav);
+  font-weight: 500;
+  color: var(--mg-ink);
+  text-decoration: none;
+  transition: color var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-sticky-bar__link:hover {
+  color: var(--mg-green-700);
+}
+
+.mg-sticky-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mg-sticky-bar__cta {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 0.875rem;
+}
+
+.mg-sticky-bar__hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .mg-sticky-bar__hamburger {
+    display: none;
+  }
+}
+

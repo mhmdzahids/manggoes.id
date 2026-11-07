@@ -1,58 +1,115 @@
 /* ==========================================================================
    Design Tokens: Manggoes Brand System
    Scoped strictly to .mg to isolate custom properties from host theme
-   Updated based on official MANGGOES Brand Guidelines (August 2026)
-   Crafted with human intentionality: high contrast, organic warmth, cohesive restraint
+   Updated to match FreshSeal client reference & editorial orchard language
    ========================================================================== */
 
 .mg {
-  /* Brand Guidelines Official Palette (Hal. 24) */
-  --mg-color-primary-green: #4F6F2B; /* Brand Green (RGB 79, 111, 43) */
-  --mg-color-dark-olive:    #423610; /* Dark Olive / Umber (RGB 66, 54, 16) */
-  --mg-color-leaf-green:    #8A8F2B; /* Olive Leaf Green (RGB 138, 143, 43) */
-  --mg-color-mango-gold:    #FFAF46; /* Warm Mango Gold (RGB 255, 175, 70) */
-  --mg-color-crimson:       #D52518; /* Ripe Crimson Red (RGB 213, 37, 24) */
-  --mg-color-cream:         #F8F4E8; /* Official Light Cream Canvas (Hal. 24: RGB 248, 244, 232) */
-  --mg-color-coral:         #F17142; /* Coral Tangerine (RGB 241, 113, 66) */
+  /* ==========================================================================
+     PRIMARY DESIGN TOKENS (FreshSeal Specification)
+     ========================================================================== */
+  --mg-canvas: #ECE8DF;
+  --mg-surface: #F4F1E8;
+  --mg-surface-raised: #FBF9F3;
+  --mg-hero-bg: radial-gradient(55% 60% at 55% 50%, #FBF9F3 0%, #F4F1E8 55%, #EDE9DD 100%);
+  --mg-glass: rgba(255, 255, 255, 0.72);
+  --mg-glass-border: rgba(255, 255, 255, 0.85);
+  --mg-chip: #EEEBE1;
+  --mg-line: #D9D5C9;
+  --mg-dash-off: #D3D0C6;
+  --mg-ink: #141A14;
+  --mg-text: #2A2F29;
+  --mg-muted: #5E6057;            /* >=4.5:1 on surface */
+  --mg-green-900: #1F3D24;        /* footer, dark blocks */
+  --mg-green-800: #264C2B;        /* button hover */
+  --mg-green-700: #2E5B34;        /* PRIMARY: buttons, icons, active nav */
+  --mg-green-400: #7F9C74;        /* sage: round arrow buttons */
+  --mg-leaf: #4F8A3C;
+  --mg-mango: #F5A623;            /* accent only, ~5% of any viewport, never a button */
 
-  /* Semantic Color Aliases & Shades */
-  --mg-green-950: #151F0B; /* Deepest orchard night */
-  --mg-green-900: #1F2D10; /* Deep orchard green for footer & hero ground */
-  --mg-green-800: #2E4218; /* Rich forest green */
-  --mg-green-700: var(--mg-color-primary-green); /* #4F6F2B Primary Brand Green */
-  --mg-green-600: #5D8233;
-  --mg-green-500: var(--mg-color-leaf-green);    /* #8A8F2B */
-  --mg-green-200: #D5E1C3;
-  --mg-green-100: #E6EED9;
-  --mg-green-50:  #F3F7ED;
+  /* Typography */
+  --mg-font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --mg-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --mg-olive-900: var(--mg-color-dark-olive);    /* #423610 */
-  --mg-olive-800: #554615;
-  --mg-olive-600: #756220;
+  /* Type Scale */
+  --mg-fs-h1: clamp(2.75rem, 5.2vw, 4.75rem);
+  --mg-lh-h1: 1.02;
+  --mg-ls-h1: -0.035em;
+  --mg-fw-h1: 700;
+  --mg-fs-h2: clamp(2rem, 3.6vw, 3.25rem);
+  --mg-fs-eyebrow: 0.75rem;
+  --mg-ls-eyebrow: 0.16em;
+  --mg-fw-eyebrow: 600;
+  --mg-fs-nav: 0.875rem;
+  --mg-fs-btn: 0.9375rem;
+  --mg-fs-small: 0.8125rem;
+  --mg-fs-body: 1rem;
 
-  --mg-mango-600: #E89520;
-  --mg-mango-500: var(--mg-color-mango-gold);    /* #FFAF46 */
+  /* Geometry & Scale */
+  --mg-r-frame: 28px;
+  --mg-r-card: 20px;
+  --mg-r-thumb: 14px;
+  --mg-r-pill: 999px;
+  --mg-frame-gap: 24px;
+  --mg-frame-pad: clamp(20px, 3.4vw, 48px);
+
+  /* Shadows */
+  --mg-sh-frame: 0 30px 80px -30px rgba(40, 50, 30, 0.25);
+  --mg-sh-card: 0 20px 50px -20px rgba(40, 50, 30, 0.18);
+  --mg-sh-product: 0 40px 60px -30px rgba(120, 90, 20, 0.35);
+
+  /* Motion & Dynamics */
+  --mg-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --mg-dur-1: 200ms;
+  --mg-dur-2: 400ms;
+  --mg-dur-3: 700ms;
+  --mg-hero-tilt: 18deg;          /* reference is about 20deg, tune +-3 per asset */
+
+  /* ==========================================================================
+     COMPATIBILITY MAPPINGS (Preserves styling of existing sections 03-11)
+     ========================================================================== */
+  --mg-color-primary-green: var(--mg-green-700);
+  --mg-color-dark-olive:    var(--mg-ink);
+  --mg-color-leaf-green:    var(--mg-leaf);
+  --mg-color-mango-gold:    var(--mg-mango);
+  --mg-color-crimson:       #D52518;
+  --mg-color-cream:         var(--mg-surface);
+  --mg-color-coral:         #F17142;
+
+  --mg-green-950: #151F0B;
+  --mg-green-800: var(--mg-green-800);
+  --mg-green-600: #3B7243;
+  --mg-green-500: var(--mg-leaf);
+  --mg-green-200: #D0DEC9;
+  --mg-green-100: #E6EEDF;
+  --mg-green-50:  #F3F7EF;
+
+  --mg-olive-900: var(--mg-ink);
+  --mg-olive-800: #2C3527;
+  --mg-olive-600: #4B5A42;
+
+  --mg-mango-600: #E09618;
+  --mg-mango-500: var(--mg-mango);
   --mg-mango-400: #FFBD66;
   --mg-mango-200: #FFE2B8;
   --mg-mango-100: #FFF2DD;
   --mg-mango-50:  #FFF9F0;
 
   --mg-crimson-600: #BD1E12;
-  --mg-crimson-500: var(--mg-color-crimson);     /* #D52518 */
+  --mg-crimson-500: #D52518;
   --mg-crimson-100: #FBE6E4;
   --mg-crimson-50:  #FDF2F1;
 
   --mg-cream-100: #EFE8D3;
-  --mg-cream-50:  var(--mg-color-cream);          /* #FAF7EE */
-  --mg-cream-0:   #FDFBF7;
+  --mg-cream-50:  var(--mg-surface);
+  --mg-cream-0:   var(--mg-surface-raised);
 
-  /* High-Contrast Tactile Olive-Ink Hierarchy */
-  --mg-ink-950: #1B160B; /* Headlines & strong anchors */
-  --mg-ink-900: #241E0F; /* Section titles & primary text */
-  --mg-ink-700: #3E351B; /* Subtitles & body reading */
-  --mg-ink-600: #574B2A; /* Secondary descriptions */
-  --mg-ink-400: #7A6C45; /* Metadata & muted captions */
-  --mg-ink-200: #C7C0AD;
+  --mg-ink-950: var(--mg-ink);
+  --mg-ink-900: var(--mg-ink);
+  --mg-ink-700: var(--mg-text);
+  --mg-ink-600: var(--mg-muted);
+  --mg-ink-400: var(--mg-muted);
+  --mg-ink-200: var(--mg-line);
 
   --mg-white: #FFFFFF;
   --mg-white-alpha-12: rgba(255, 255, 255, 0.12);
@@ -62,37 +119,17 @@
   --mg-white-alpha-75: rgba(255, 255, 255, 0.75);
   --mg-white-alpha-90: rgba(255, 255, 255, 0.90);
 
-  /* Precise Hairline Borders */
-  --mg-border-subtle: rgba(66, 54, 16, 0.08);
-  --mg-border-card:   rgba(66, 54, 16, 0.10);
-  --mg-border-hover:  rgba(79, 111, 43, 0.30);
+  --mg-border-subtle: var(--mg-line);
+  --mg-border-card:   var(--mg-line);
+  --mg-border-hover:  var(--mg-green-400);
 
-  /* Surface Context Foreground Tokens */
-  --mg-on-dark:       var(--mg-cream-50);
+  --mg-on-dark:       var(--mg-surface-raised);
   --mg-on-dark-muted: var(--mg-green-100);
-  --mg-on-light:       var(--mg-ink-900);
-  --mg-on-light-muted: var(--mg-ink-600);
+  --mg-on-light:       var(--mg-ink);
+  --mg-on-light-muted: var(--mg-muted);
 
-  /* Vertical Rhythm Stacking Scale */
-  --mg-stack-heading-p: var(--mg-space-md);  /* 16px */
-  --mg-stack-p-btn: var(--mg-space-2xl);     /* 32px */
-
-  /* Typography Families (Official MANGGOES Brand Specification) */
-  --mg-font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --mg-font-serif:   'Averia Libre', Georgia, 'Times New Roman', serif;
-  --mg-font-body:    'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  /* Type Scale */
-  --mg-text-xs:   0.75rem;    /* 12px */
-  --mg-text-sm:   0.84375rem; /* 13.5px */
-  --mg-text-base: 0.9375rem;  /* 15px */
-  --mg-text-md:   1.0625rem;  /* 17px */
-  --mg-text-lg:   1.25rem;    /* 20px */
-  --mg-text-xl:   1.5rem;     /* 24px */
-  --mg-text-2xl:  1.875rem;   /* 30px */
-  --mg-text-3xl:  2.25rem;    /* 36px */
-  --mg-text-4xl:  3rem;       /* 48px */
-  --mg-text-5xl:  3.75rem;    /* 60px */
+  --mg-font-heading: var(--mg-font-display);
+  --mg-font-serif:   var(--mg-font-display);
 
   /* Spacing Scale */
   --mg-space-2xs: 4px;
@@ -108,41 +145,16 @@
   --mg-space-6xl: 80px;
   --mg-space-7xl: 96px;
 
-  /* Unified Geometric Border Radii */
   --mg-radius-xs:   4px;
   --mg-radius-sm:   8px;
   --mg-radius-md:   14px;
   --mg-radius-lg:   18px;
-  --mg-radius-xl:   24px;  /* Unified standard radius for all primary cards */
-  --mg-radius-2xl:  32px;  /* Hero, guarantee container, closing banner */
-  --mg-radius-pill: 9999px;
+  --mg-radius-xl:   24px;
+  --mg-radius-2xl:  var(--mg-r-frame);
+  --mg-radius-pill: var(--mg-r-pill);
 
-  /* Multi-Layered Organic Ambient Shadows */
-  --mg-shadow-sm:         0 2px 8px -1px rgba(66, 54, 16, 0.04);
-  --mg-shadow-card:       0 4px 20px -2px rgba(66, 54, 16, 0.05);
-  --mg-shadow-card-hover: 0 16px 36px -4px rgba(66, 54, 16, 0.09);
-  --mg-shadow-md:         0 8px 24px -3px rgba(66, 54, 16, 0.07);
-  --mg-shadow-lg:         0 20px 48px -6px rgba(31, 45, 16, 0.16);
-
-  /* Animation & Transitions */
-  --mg-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --mg-duration-fast: 180ms;
-  --mg-duration-base: 280ms;
-  --mg-duration-slow: 480ms;
-
-  /* Layout Boundaries */
-  --mg-container-max: 1280px;
-  --mg-page-gutter: 20px;
-}
-
-@media (min-width: 768px) {
-  .mg {
-    --mg-page-gutter: 32px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .mg {
-    --mg-page-gutter: 48px;
-  }
+  --mg-ease:        var(--mg-ease-out);
+  --mg-duration-fast: var(--mg-dur-1);
+  --mg-duration-normal: var(--mg-dur-2);
+  --mg-duration-slow: var(--mg-dur-3);
 }

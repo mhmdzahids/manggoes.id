@@ -5,140 +5,200 @@
    ========================================================================== */
 
 /* ==========================================================================
-   SECTION 1: Header (#mg-header)
-   Floating detached rounded pill header, sticky with smooth scrollspy indicator
+   SECTION 1 & 2: FRESHSEAL HERO & NAV FRAME (.mg-hero-wrap, .mg-frame, .mg-nav, .mg-hero)
    ========================================================================== */
-.mg-header-wrap {
-  position: sticky;
-  top: var(--mg-space-md);
-  z-index: 1000;
+.mg-hero-wrap {
+  position: relative;
   width: 100%;
-  pointer-events: none; /* Allows click-through outside the pill */
-  transition: transform var(--mg-duration-fast) var(--mg-ease);
+  background-color: var(--mg-canvas);
+  padding: 0;
+  margin: 0;
 }
 
-.mg-header {
-  pointer-events: auto;
+.mg-frame {
+  margin: var(--mg-frame-gap);
+  border-radius: var(--mg-r-frame);
+  background: var(--mg-hero-bg);
+  box-shadow: var(--mg-sh-frame);
+  overflow: hidden;
+  position: relative;
+  min-height: clamp(640px, calc(100svh - 48px), 860px);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .mg-frame {
+    margin: 12px;
+    border-radius: 22px;
+    min-height: auto;
+  }
+}
+
+/* Navbar inside frame */
+.mg-nav {
+  height: 64px;
+  padding-top: 24px;
+  padding-inline: var(--mg-frame-pad);
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.mg-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 18px;
-  background-color: rgba(248, 244, 232, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: var(--mg-radius-pill);
-  box-shadow: 0 8px 30px rgba(66, 54, 16, 0.08);
-  transition: background-color var(--mg-duration-fast) var(--mg-ease),
-              box-shadow var(--mg-duration-fast) var(--mg-ease);
+  height: 100%;
+  position: relative;
 }
 
-.mg-header.is-scrolled {
-  background-color: rgba(248, 244, 232, 0.96);
-  box-shadow: 0 12px 36px rgba(66, 54, 16, 0.12);
-}
-
-.mg-header__left,
-.mg-header__right {
+.mg-nav__logo-link {
   display: flex;
   align-items: center;
-  gap: var(--mg-space-md);
+  text-decoration: none;
+  z-index: 2;
 }
 
-.mg-header__center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mg-logo {
-  display: flex;
-  align-items: center;
-}
-
-.mg-logo img {
-  height: 38px;
+.mg-nav__logo {
+  height: 40px;
   width: auto;
+  display: block;
   object-fit: contain;
 }
 
-/* Desktop Navigation Links */
-.mg-nav {
+.mg-nav__menu {
   display: none;
   align-items: center;
-  gap: var(--mg-space-xs);
+  gap: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
-  .mg-nav {
+  .mg-nav__menu {
     display: flex;
   }
 }
 
 .mg-nav__link {
   font-family: var(--mg-font-body);
-  font-size: var(--mg-text-sm);
+  font-size: var(--mg-fs-nav);
   font-weight: 500;
-  color: var(--mg-ink-700);
-  padding: 8px 12px;
-  border-radius: var(--mg-radius-pill);
+  color: var(--mg-ink);
+  text-decoration: none;
   position: relative;
-  transition: color var(--mg-duration-fast) var(--mg-ease),
-              background-color var(--mg-duration-fast) var(--mg-ease);
+  transition: color var(--mg-dur-1) var(--mg-ease-out);
 }
 
 .mg-nav__link:hover {
   color: var(--mg-green-700);
-  background-color: var(--mg-green-50);
 }
 
 .mg-nav__link.is-active {
   color: var(--mg-green-700);
-  font-weight: 600;
 }
 
 .mg-nav__link.is-active::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 12px;
-  right: 12px;
-  height: 2px;
-  background-color: var(--mg-mango-500);
-  border-radius: 2px;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background-color: var(--mg-green-700);
+  border-radius: 1px;
 }
 
-/* Hamburger Button */
-.mg-hamburger {
+.mg-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.mg-nav__icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--mg-ink);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-nav__icon-btn:hover {
+  color: var(--mg-green-700);
+}
+
+.mg-nav__bag-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--mg-green-700);
+  color: var(--mg-white);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-nav__bag-badge[data-show-badge="false"],
+.mg-nav__bag-badge:not([data-show-badge]) {
+  display: none;
+}
+
+.mg-nav__cta {
+  display: none;
+  height: 44px;
+  padding: 0 22px;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .mg-nav__cta {
+    display: inline-flex;
+  }
+}
+
+.mg-nav__hamburger {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
   width: 40px;
   height: 40px;
-  padding: 9px;
-  border-radius: var(--mg-radius-pill);
-  background-color: var(--mg-white);
-  border: 1px solid var(--mg-cream-100);
-  color: var(--mg-ink-900);
+  padding: 8px;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: background-color var(--mg-duration-fast) var(--mg-ease);
+  color: var(--mg-ink);
 }
 
 @media (min-width: 1024px) {
-  .mg-hamburger {
+  .mg-nav__hamburger {
     display: none;
   }
 }
 
-.mg-hamburger__line {
+.mg-nav__hamburger-line {
   display: block;
   width: 100%;
   height: 2px;
   background-color: currentColor;
   border-radius: 2px;
-  transition: transform var(--mg-duration-fast) var(--mg-ease),
-              opacity var(--mg-duration-fast) var(--mg-ease);
 }
 
 /* Mobile Drawer Overlay */
@@ -146,15 +206,15 @@
   position: fixed;
   inset: 0;
   z-index: 1001;
-  background-color: rgba(66, 54, 16, 0.6);
+  background-color: rgba(20, 26, 20, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   justify-content: flex-end;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--mg-duration-base) var(--mg-ease),
-              visibility var(--mg-duration-base) var(--mg-ease);
+  transition: opacity var(--mg-dur-2) var(--mg-ease-out),
+              visibility var(--mg-dur-2) var(--mg-ease-out);
 }
 
 .mg-drawer.is-open {
@@ -164,16 +224,16 @@
 
 .mg-drawer__panel {
   width: 85%;
-  max-width: 380px;
+  max-width: 360px;
   height: 100%;
-  background-color: var(--mg-cream-50);
+  background-color: var(--mg-surface-raised);
   padding: var(--mg-space-2xl) var(--mg-space-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   transform: translateX(100%);
-  transition: transform var(--mg-duration-base) var(--mg-ease);
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
 }
 
 .mg-drawer.is-open .mg-drawer__panel {
@@ -188,76 +248,474 @@
 }
 
 .mg-drawer__link {
-  font-family: var(--mg-font-heading);
+  font-family: var(--mg-font-body);
   font-size: var(--mg-text-lg);
-  font-weight: 700;
-  color: var(--mg-ink-900);
+  font-weight: 600;
+  color: var(--mg-ink);
   padding: var(--mg-space-sm) var(--mg-space-md);
   border-radius: var(--mg-radius-sm);
-  transition: background-color var(--mg-duration-fast) var(--mg-ease),
-              color var(--mg-duration-fast) var(--mg-ease);
+  text-decoration: none;
+  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
+              color var(--mg-dur-1) var(--mg-ease-out);
 }
 
 .mg-drawer__link:hover,
 .mg-drawer__link.is-active {
-  background-color: var(--mg-green-100);
+  background-color: var(--mg-chip);
   color: var(--mg-green-700);
 }
 
 /* ==========================================================================
-   SECTION 2: Hero Section (#atas / #mg-hero)
-   Non-rounded, full-width orchard immersion with architectural high-contrast
-   feature blocks and authentic botanical origin tag (Zero AI Slop)
+   HERO BODY (.mg-hero)
    ========================================================================== */
 .mg-hero {
   position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 24px var(--mg-frame-pad) 40px;
   width: 100%;
-  min-height: 600px;
-  border-radius: 0; /* Strictly non-rounded per brand design rule */
-  overflow: hidden;
-  background-color: var(--mg-green-900);
-  border: none;
-  border-bottom: 3px solid var(--mg-color-mango-gold);
-  padding: clamp(48px, 6vw, 80px) 0 clamp(40px, 5vw, 68px);
-  box-shadow: 0 12px 36px rgba(46, 66, 24, 0.40);
-  scroll-margin-top: 80px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .mg-hero {
-    min-height: 660px;
+    flex-direction: column;
+    padding: 32px 16px 28px;
+    align-items: flex-start;
   }
 }
 
-.mg-hero__bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  z-index: 1;
-  filter: brightness(0.85) contrast(1.05);
-}
-
-.mg-hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    180deg,
-    rgba(46, 66, 24, 0.68) 0%,
-    rgba(46, 66, 24, 0.38) 45%,
-    rgba(31, 45, 16, 0.90) 100%
-  );
-}
-
-.mg-hero__inner {
+/* Left Copy Column */
+.mg-hero__copy {
   position: relative;
-  z-index: 3;
+  z-index: 5;
+  max-width: 38%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 1099px) {
+  .mg-hero__copy {
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .mg-hero__copy {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+.mg-hero__eyebrow {
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-fs-eyebrow);
+  letter-spacing: var(--mg-ls-eyebrow);
+  font-weight: var(--mg-fw-eyebrow);
+  color: var(--mg-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.mg-hero__title {
+  font-family: var(--mg-font-display);
+  font-size: var(--mg-fs-h1);
+  font-weight: var(--mg-fw-h1);
+  line-height: var(--mg-lh-h1);
+  letter-spacing: var(--mg-ls-h1);
+  color: var(--mg-ink);
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-hero__title span {
+  display: block;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .mg-hero__title {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+}
+
+.mg-hero__cta {
+  height: 52px;
+  padding: 0 28px;
+  font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+  .mg-hero__cta-row {
+    width: 100%;
+  }
+  .mg-hero__cta {
+    width: 100%;
+  }
+}
+
+/* Product Stage (Center) */
+.mg-stage {
+  position: absolute;
+  left: 54%;
+  top: 54%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 580px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1099px) and (min-width: 768px) {
+  .mg-stage {
+    left: 62%;
+    top: 50%;
+    width: 46%;
+  }
+}
+
+@media (max-width: 767px) {
+  .mg-stage {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 78vw;
+    max-width: 360px;
+    margin: 20px auto 32px;
+  }
+}
+
+.mg-stage__shadow {
+  position: absolute;
+  width: 75%;
+  height: 35%;
+  bottom: 0;
+  left: 18%;
+  background: radial-gradient(closest-side, rgba(110, 85, 20, 0.28), transparent);
+  filter: blur(20px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mg-stage__product {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  transform: rotate(var(--mg-hero-tilt));
+  filter: drop-shadow(var(--mg-sh-product));
+  transform-origin: center center;
+  animation: mg-product-float 6s ease-in-out infinite;
+}
+
+@media (max-width: 767px) {
+  .mg-stage__product {
+    transform: rotate(12deg);
+  }
+}
+
+/* Seal positioning on Product Stage */
+.mg-stage .mg-seal {
+  top: 12%;
+  right: 6%;
+  z-index: 3;
+  transform: rotate(-8deg);
+}
+
+@media (max-width: 767px) {
+  .mg-stage .mg-seal {
+    width: 90px;
+    height: 90px;
+    top: -5px;
+    right: -10px;
+  }
+  .mg-stage .mg-seal svg {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* Hero Props (Leaves, Mango Half, Cubes) */
+.mg-props {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.mg-prop {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 1. Small sharp leaf top right: 70% x / 21% y, ~64px, rotate 30deg */
+.mg-prop--leaf-1 {
+  left: 70%;
+  top: 21%;
+  width: 64px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(30deg);
+  z-index: 2;
+  animation: mg-leaf-sway-1 9s ease-in-out infinite;
+}
+
+/* 2. Large blurred leaf left edge: 2% x / 69% y, ~130x180px, blur 6px */
+.mg-prop--leaf-2 {
+  left: 2%;
+  top: 69%;
+  width: 140px;
+  height: auto;
+  filter: blur(6px);
+  transform: translate(-50%, -50%) rotate(-15deg);
+  z-index: 3;
+  animation: mg-leaf-sway-2 11s ease-in-out infinite;
+}
+
+/* 3. Medium sharp leaf: 27% x / 63% y, ~96px, rotate -20deg */
+.mg-prop--leaf-3 {
+  left: 27%;
+  top: 63%;
+  width: 96px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  z-index: 2;
+  animation: mg-leaf-sway-3 10s ease-in-out infinite;
+}
+
+/* 4. Large leaf right-bottom of product: 71% x / 75% y, ~110x140px, blur 1px, rotate 35deg */
+.mg-prop--leaf-4 {
+  left: 71%;
+  top: 75%;
+  width: 120px;
+  height: auto;
+  filter: blur(1px);
+  transform: translate(-50%, -50%) rotate(35deg);
+  z-index: 2;
+  animation: mg-leaf-sway-1 8s ease-in-out infinite;
+}
+
+/* 5. Huge blurred leaf in bottom-left corner: 6% x / 93% y, blur 8px (IN FRONT of mango half) */
+.mg-prop--leaf-5 {
+  left: 6%;
+  top: 93%;
+  width: 180px;
+  height: auto;
+  filter: blur(8px);
+  transform: translate(-50%, -50%) rotate(40deg);
+  z-index: 4;
+}
+
+/* 6. Mango half with cube-scored flesh: center 10% x / 81% y, width ~19% of frame */
+.mg-prop--mango-half {
+  left: 10%;
+  top: 81%;
+  width: 19%;
+  min-width: 180px;
+  max-width: 270px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  filter: drop-shadow(0 15px 30px rgba(110, 85, 20, 0.25));
+  z-index: 3;
+}
+
+/* 7. Loose mango cubes */
+.mg-prop--cube-1 {
+  left: 21%;
+  top: 71%;
+  width: 32px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(15deg);
+  z-index: 3;
+}
+
+.mg-prop--cube-2 {
+  left: 27%;
+  top: 85%;
+  width: 32px;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  z-index: 3;
+}
+
+/* Side Card (Glass) */
+.mg-hero__side-card {
+  position: absolute;
+  right: clamp(16px, 2vw, 28px);
+  top: 20%;
+  width: 232px;
+  padding: 14px;
+  z-index: 4;
+}
+
+@media (max-width: 1099px) and (min-width: 768px) {
+  .mg-hero__side-card {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mg-hero__side-card {
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.mg-hero-slider__thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 128px;
+  border-radius: var(--mg-r-thumb);
+  overflow: visible;
+  background-color: var(--mg-surface-raised);
+}
+
+@media (max-width: 1099px) and (min-width: 768px) {
+  .mg-hero-slider__thumb-wrap {
+    width: 180px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+}
+
+.mg-hero-slider__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--mg-r-thumb);
+  object-fit: cover;
+  display: block;
+  transition: opacity 300ms var(--mg-ease-out);
+}
+
+.mg-hero-slider__next {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.mg-hero-slider__title {
+  display: block;
+  font-family: var(--mg-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mg-ink);
+  text-decoration: none;
+  margin: 12px 0 14px;
+  transition: color var(--mg-dur-1) var(--mg-ease-out);
+}
+
+.mg-hero-slider__title:hover {
+  color: var(--mg-green-700);
+}
+
+.mg-hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 1099px) and (min-width: 768px) {
+  .mg-hero-features {
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-around;
+  }
+}
+
+.mg-hero-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mg-hero-feature-row .mg-icon-chip {
+  width: 36px;
+  height: 36px;
+}
+
+.mg-hero-feature-row .mg-icon-chip svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mg-hero-feature-label {
+  font-family: var(--mg-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mg-text);
+  line-height: 1.3;
+}
+
+/* Pager / Dash Pagination */
+.mg-hero .mg-pager {
+  position: absolute;
+  right: clamp(16px, 2vw, 28px);
+  top: 90%;
+  z-index: 4;
+}
+
+@media (max-width: 1099px) {
+  .mg-hero .mg-pager {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: 16px;
+    align-self: center;
+  }
+}
+
+/* Animations & Keyframes */
+@keyframes mg-product-float {
+  0%, 100% {
+    transform: rotate(var(--mg-hero-tilt)) translateY(0px);
+  }
+  50% {
+    transform: rotate(var(--mg-hero-tilt)) translateY(-10px);
+  }
+}
+
+@keyframes mg-leaf-sway-1 {
+  0%, 100% { transform: translate(-50%, -50%) rotate(30deg); }
+  50% { transform: translate(-50%, -50%) rotate(34deg); }
+}
+
+@keyframes mg-leaf-sway-2 {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-15deg); }
+  50% { transform: translate(-50%, -50%) rotate(-18deg); }
+}
+
+@keyframes mg-leaf-sway-3 {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-20deg); }
+  50% { transform: translate(-50%, -50%) rotate(-17deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-stage__product,
+  .mg-prop {
+    animation: none !important;
+  }
+}
   gap: var(--mg-space-3xl);
   min-height: 500px;
 }
