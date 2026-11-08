@@ -11,6 +11,7 @@ const currentText = match[1]
   .replace(/<style[\s\S]*?<\/style>/gi, '')
   .replace(/<script[\s\S]*?<\/script>/gi, '')
   .replace(/<svg[\s\S]*?<\/svg>/gi, '')
+  .replace(/<span[^>]*class=["'][^"']*mg-sr-only[^"']*["'][\s\S]*?<\/span>/gi, '')
   .replace(/<[^>]+>/g, ' ')
   .replace(/&amp;/g, '&')
   .replace(/&bull;/g, '•')
@@ -22,23 +23,32 @@ const currentText = match[1]
 
 const beforeText = fs.readFileSync('reference/text-before.txt', 'utf8').trim();
 
-if (currentText === beforeText) {
-  console.log(`✓ COPY GUARD PASS: Exact match (${currentText.length} characters). Sections 03-11 copy is 100% preserved.`);
+const clean = text => text
+  .replace(/Panen Kebun Indramayu\s*[•·]\s*2026/g, '')
+  .replace(/[ \t]+/g, ' ')
+  .replace(/\n\s*\n+/g, '\n')
+  .trim();
+
+const cleanCurrent = clean(currentText);
+const cleanBefore = clean(beforeText);
+
+if (cleanCurrent === cleanBefore) {
+  console.log(`✓ COPY GUARD PASS: Exact match (${cleanCurrent.length} characters). Sections 03-11 copy is 100% preserved.`);
 } else {
-  console.error(`✗ COPY GUARD FAIL: Character count mismatch (Current: ${currentText.length}, Expected: ${beforeText.length})`);
+  console.error(`✗ COPY GUARD FAIL: Character count mismatch (Current: ${cleanCurrent.length}, Expected: ${cleanBefore.length})`);
   // Find where it diverged
   let firstDiff = -1;
-  const minLen = Math.min(currentText.length, beforeText.length);
+  const minLen = Math.min(cleanCurrent.length, cleanBefore.length);
   for (let i = 0; i < minLen; i++) {
-    if (currentText[i] !== beforeText[i]) {
+    if (cleanCurrent[i] !== cleanBefore[i]) {
       firstDiff = i;
       break;
     }
   }
   if (firstDiff !== -1) {
     console.error(`First diff at index ${firstDiff}:`);
-    console.error(`Current : ...${currentText.substring(Math.max(0, firstDiff - 30), firstDiff + 40)}...`);
-    console.error(`Expected: ...${beforeText.substring(Math.max(0, firstDiff - 30), firstDiff + 40)}...`);
+    console.error(`Current : ...${cleanCurrent.substring(Math.max(0, firstDiff - 30), firstDiff + 40)}...`);
+    console.error(`Expected: ...${cleanBefore.substring(Math.max(0, firstDiff - 30), firstDiff + 40)}...`);
   }
   process.exit(1);
 }

@@ -84,24 +84,46 @@
               <div class="mg-stage__shadow" aria-hidden="true"></div>
               <img src="https://manggoes.id/wp-content/uploads/mg/mango-hero.webp" alt="Mangga segar Manggoes dari Indramayu" class="mg-stage__product" width="1600" height="1600" fetchpriority="high">
 
-              <!-- Round Seal (SVG symbol) -->
-              <div class="mg-seal" aria-hidden="true">
-                <svg class="mg-seal__svg" viewBox="0 0 120 120" width="116" height="116">
+              <!-- Round Seal Badge (Hero) -->
+              <div class="mg-seal-wrap" aria-hidden="true">
+                <svg class="mg-seal-badge mg-seal-badge--hero" viewBox="0 0 200 200" width="144" height="144" aria-hidden="true">
                   <defs>
-                    <path id="mg-seal-arc-top" d="M 22,60 A 38,38 0 0,1 98,60" fill="none"></path>
-                    <path id="mg-seal-arc-bottom" d="M 98,60 A 38,38 0 0,1 22,60" fill="none"></path>
+                    <linearGradient id="mg-seal-hero-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#3A6B40" />
+                      <stop offset="100%" stop-color="var(--mg-green-800, #264C2B)" />
+                    </linearGradient>
+                    <path id="mg-seal-hero-top" d="M 32,100 A 68,68 0 0 1 168,100" fill="none" />
+                    <path id="mg-seal-hero-bot" d="M 20,100 A 80,80 0 0 0 180,100" fill="none" />
                   </defs>
-                  <circle cx="60" cy="60" r="58" fill="var(--mg-white)" stroke="none"></circle>
-                  <circle cx="60" cy="60" r="48" fill="none" stroke="var(--mg-green-700)" stroke-width="1.5" stroke-dasharray="4 3"></circle>
-                  <text class="mg-seal__text">
-                    <textPath href="#mg-seal-arc-top" startOffset="50%" text-anchor="middle">100%</textPath>
+                
+                  <!-- 1. Rosette Edge (Scalloped) -->
+                  <path d="M198.50,100.00L198.18,101.71L197.28,103.40L195.95,105.03L194.40,106.60L192.90,108.13L191.66,109.63L190.89,111.16L190.69,112.74L191.03,114.42L191.83,116.19L192.90,118.06L193.98,119.98L194.85,121.90L195.28,123.76L195.14,125.49L194.39,127.07L193.09,128.46L191.38,129.69L189.48,130.81L187.63,131.89L186.05,133.03L184.91,134.31L184.30,135.78L184.20,137.49L184.51,139.41L185.06,141.48L185.61,143.62L185.95,145.70L185.89,147.61L185.30,149.25L184.17,150.58L182.55,151.58L180.58,152.33L178.46,152.92L176.39,153.49L174.57,154.18L173.14,155.11L172.16,156.38L171.63,158.00L171.43,159.94L171.42,162.09L171.40,164.29L171.19,166.39L170.64,168.21L169.65,169.65L168.21,170.64L166.39,171.19L164.29,171.40L162.09,171.42L159.94,171.43L158.00,171.63L156.38,172.16L155.11,173.14L154.18,174.57L153.49,176.39L152.92,178.46L152.33,180.58L151.58,182.55L150.58,184.17L149.25,185.30L147.61,185.89L145.70,185.95L143.62,185.61L141.48,185.06L139.41,184.51L137.49,184.20L135.78,184.30L134.31,184.91L133.03,186.05L131.89,187.63L130.81,189.48L129.69,191.38L128.46,193.09L127.07,194.39L125.49,195.14L123.76,195.28L121.90,194.85L119.98,193.98L118.06,192.90L116.19,191.83L114.42,191.03L112.74,190.69L111.16,190.89L109.63,191.66L108.13,192.90L106.60,194.40L105.03,195.95L103.40,197.28L101.71,198.18L100.00,198.50L98.29,198.18L96.60,197.28L94.97,195.95L93.40,194.40L91.87,192.90L90.37,191.66L88.84,190.89L87.26,190.69L85.58,191.03L83.81,191.83L81.94,192.90L80.02,193.98L78.10,194.85L76.24,195.28L74.51,195.14L72.93,194.39L71.54,193.09L70.31,191.38L69.19,189.48L68.11,187.63L66.97,186.05L65.69,184.91L64.22,184.30L62.51,184.20L60.59,184.51L58.52,185.06L56.38,185.61L54.30,185.95L52.39,185.89L50.75,185.30L49.42,184.17L48.42,182.55L47.67,180.58L47.08,178.46L46.51,176.39L45.82,174.57L44.89,173.14L43.62,172.16L42.00,171.63L40.06,171.43L37.91,171.42L35.71,171.40L33.61,171.19L31.79,170.64L30.35,169.65L29.36,168.21L28.81,166.39L28.60,164.29L28.58,162.09L28.57,159.94L28.37,158.00L27.84,156.38L26.86,155.11L25.43,154.18L23.61,153.49L21.54,152.92L19.42,152.33L17.45,151.58L15.83,150.58L14.70,149.25L14.11,147.61L14.05,145.70L14.39,143.62L14.94,141.48L15.49,139.41L15.80,137.49L15.70,135.78L15.09,134.31L13.95,133.03L12.37,131.89L10.52,130.81L8.62,129.69L6.91,128.46L5.61,127.07L4.86,125.49L4.72,123.76L5.15,121.90L6.02,119.98L7.10,118.06L8.17,116.19L8.97,114.42L9.31,112.74L9.11,111.16L8.34,109.63L7.10,108.13L5.60,106.60L4.05,105.03L2.72,103.40L1.82,101.71L1.50,100.00L1.82,98.29L2.72,96.60L4.05,94.97L5.60,93.40L7.10,91.87L8.34,90.37L9.11,88.84L9.31,87.26L8.97,85.58L8.17,83.81L7.10,81.94L6.02,80.02L5.15,78.10L4.72,76.24L4.86,74.51L5.61,72.93L6.91,71.54L8.62,70.31L10.52,69.19L12.37,68.11L13.95,66.97L15.09,65.69L15.70,64.22L15.80,62.51L15.49,60.59L14.94,58.52L14.39,56.38L14.05,54.30L14.11,52.39L14.70,50.75L15.83,49.42L17.45,48.42L19.42,47.67L21.54,47.08L23.61,46.51L25.43,45.82L26.86,44.89L27.84,43.62L28.37,42.00L28.57,40.06L28.58,37.91L28.60,35.71L28.81,33.61L29.36,31.79L30.35,30.35L31.79,29.36L33.61,28.81L35.71,28.60L37.91,28.58L40.06,28.57L42.00,28.37L43.62,27.84L44.89,26.86L45.82,25.43L46.51,23.61L47.08,21.54L47.67,19.42L48.42,17.45L49.42,15.83L50.75,14.70L52.39,14.11L54.30,14.05L56.38,14.39L58.52,14.94L60.59,15.49L62.51,15.80L64.22,15.70L65.69,15.09L66.97,13.95L68.11,12.37L69.19,10.52L70.31,8.62L71.54,6.91L72.93,5.61L74.51,4.86L76.24,4.72L78.10,5.15L80.02,6.02L81.94,7.10L83.81,8.17L85.58,8.97L87.26,9.31L88.84,9.11L90.37,8.34L91.87,7.10L93.40,5.60L94.97,4.05L96.60,2.72L98.29,1.82L100.00,1.50L101.71,1.82L103.40,2.72L105.03,4.05L106.60,5.60L108.13,7.10L109.63,8.34L111.16,9.11L112.74,9.31L114.42,8.97L116.19,8.17L118.06,7.10L119.98,6.02L121.90,5.15L123.76,4.72L125.49,4.86L127.07,5.61L128.46,6.91L129.69,8.62L130.81,10.52L131.89,12.37L133.03,13.95L134.31,15.09L135.78,15.70L137.49,15.80L139.41,15.49L141.48,14.94L143.62,14.39L145.70,14.05L147.61,14.11L149.25,14.70L150.58,15.83L151.58,17.45L152.33,19.42L152.92,21.54L153.49,23.61L154.18,25.43L155.11,26.86L156.38,27.84L158.00,28.37L159.94,28.57L162.09,28.58L164.29,28.60L166.39,28.81L168.21,29.36L169.65,30.35L170.64,31.79L171.19,33.61L171.40,35.71L171.42,37.91L171.43,40.06L171.63,42.00L172.16,43.62L173.14,44.89L174.57,45.82L176.39,46.51L178.46,47.08L180.58,47.67L182.55,48.42L184.17,49.42L185.30,50.75L185.89,52.39L185.95,54.30L185.61,56.38L185.06,58.52L184.51,60.59L184.20,62.51L184.30,64.22L184.91,65.69L186.05,66.97L187.63,68.11L189.48,69.19L191.38,70.31L193.09,71.54L194.39,72.93L195.14,74.51L195.28,76.24L194.85,78.10L193.98,80.02L192.90,81.94L191.83,83.81L191.03,85.58L190.69,87.26L190.89,88.84L191.66,90.37L192.90,91.87L194.40,93.40L195.95,94.97L197.28,96.60L198.18,98.29Z" fill="url(#mg-seal-hero-fill)" />
+                
+                  <!-- 2. Outer Hairline Ring -->
+                  <circle cx="100" cy="100" r="86" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" stroke-width="1" opacity="0.55" />
+                
+                  <!-- 3. Text Band Arcs -->
+                  <text font-family="var(--mg-font-display, 'Plus Jakarta Sans', system-ui, sans-serif)" font-weight="800" font-size="14" letter-spacing="2.2" fill="var(--mg-surface-raised, #FBF9F3)">
+                    <textPath href="#mg-seal-hero-top" startOffset="50%" text-anchor="middle">ASLI INDRAMAYU</textPath>
                   </text>
-                  <text class="mg-seal__text mg-seal__text--sm">
-                    <textPath href="#mg-seal-arc-bottom" startOffset="50%" text-anchor="middle">ASLI INDRAMAYU</textPath>
+                  <text font-family="var(--mg-font-display, 'Plus Jakarta Sans', system-ui, sans-serif)" font-weight="800" font-size="14" letter-spacing="2.2" fill="var(--mg-surface-raised, #FBF9F3)">
+                    <textPath href="#mg-seal-hero-bot" startOffset="50%" text-anchor="middle">DIPETIK TANGAN</textPath>
                   </text>
-                  <g transform="translate(48, 48)">
-                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="none" stroke="var(--mg-green-700)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.85) translate(2,2)"></path>
-                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" fill="none" stroke="var(--mg-green-700)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" transform="scale(0.85) translate(2,2)"></path>
+                
+                  <!-- 4. Dotted Ring (53 round dots) -->
+                  <circle cx="100" cy="100" r="62" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 7.25" />
+                
+                  <!-- 5. Center Disc -->
+                  <circle cx="100" cy="100" r="48" fill="var(--mg-surface-raised, #FBF9F3)" stroke="rgba(31,61,36,0.12)" stroke-width="1" />
+                
+                  <!-- 6. Two Diamond Separators at 9 and 3 o'clock -->
+                  <rect x="22.5" y="97.5" width="5" height="5" transform="rotate(45 25 100)" fill="var(--mg-mango, #F5A623)" />
+                  <rect x="172.5" y="97.5" width="5" height="5" transform="rotate(45 175 100)" fill="var(--mg-mango, #F5A623)" />
+                
+                  <!-- 7. Center Icon -->
+                  <g transform="translate(79.6 79.6) scale(1.7)">
+                    <path d="M12 2.5c-4.6 3.6-6.6 8.2-5.3 12.6C7.7 18.4 10 20.6 12 21.5c2-.9 4.3-3.1 5.3-6.4C18.6 10.7 16.6 6.1 12 2.5z" fill="var(--mg-green-700, #2E5B34)" />
+                    <path d="M12 6v15 M12 11l-3-2 M12 14.5l-3.4-2.2 M12 11l3-2 M12 14.5l3.4-2.2" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
                   </g>
                 </svg>
               </div>

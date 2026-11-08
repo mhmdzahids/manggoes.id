@@ -1257,28 +1257,21 @@
   background-color: var(--mg-green-700);
 }
 
-/* 6. Round Seal Symbol (.mg-seal) */
-.mg-seal {
-  position: absolute;
-  width: 116px;
-  height: 116px;
-  filter: drop-shadow(var(--mg-sh-card));
-  pointer-events: none;
+/* 6. Premium Rosette Seal Badge (.mg-seal-badge) */
+.mg-seal-badge {
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(31, 61, 36, 0.28));
   user-select: none;
+  transform-origin: center center;
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
 }
 
-.mg-seal__text {
-  font-family: var(--mg-font-display);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  fill: var(--mg-green-700);
-  text-transform: uppercase;
-}
-
-.mg-seal__text--sm {
-  font-size: 8.5px;
-  letter-spacing: 0.12em;
+@media (prefers-reduced-motion: reduce) {
+  .mg-seal-badge,
+  .mg-seal-wrap,
+  .mg-story__seal-pos {
+    transition: none !important;
+  }
 }
 
 /* 7. Sticky Compact Bar (.mg-sticky-bar) */
@@ -1804,24 +1797,36 @@
   }
 }
 
-/* Seal positioning on Product Stage */
-.mg-stage .mg-seal {
-  top: 12%;
-  right: 6%;
+/* Hero Seal Badge Positioning */
+.mg-stage .mg-seal-wrap {
+  position: absolute;
+  top: calc(12% - 12px);
+  right: calc(6% - 24px);
   z-index: 3;
   transform: rotate(-8deg);
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
+  pointer-events: auto;
+}
+
+@media (hover: hover) and (min-width: 1024px) {
+  .mg-stage .mg-seal-wrap:hover {
+    transform: rotate(0deg) scale(1.04);
+  }
+}
+
+.mg-seal-badge--hero {
+  width: 144px;
+  height: 144px;
 }
 
 @media (max-width: 767px) {
-  .mg-stage .mg-seal {
-    width: 90px;
-    height: 90px;
-    top: -5px;
+  .mg-stage .mg-seal-wrap {
+    top: -10px;
     right: -10px;
   }
-  .mg-stage .mg-seal svg {
-    width: 90px;
-    height: 90px;
+  .mg-seal-badge--hero {
+    width: 128px;
+    height: 128px;
   }
 }
 
@@ -3035,35 +3040,25 @@
   display: block;
 }
 
-.mg-story__badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 6px 16px;
-  border-radius: var(--mg-r-pill);
-  font-family: var(--mg-font-display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--mg-green-700);
-  box-shadow: 0 4px 12px rgba(40, 50, 30, 0.12);
-  z-index: 3;
-}
-
 .mg-story__seal-pos {
   position: absolute;
   top: -24px;
   right: -24px;
   z-index: 4;
   transform: rotate(8deg);
-  filter: drop-shadow(var(--mg-sh-card));
-  transition: transform var(--mg-dur-1) var(--mg-ease-out);
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
+  pointer-events: auto;
 }
 
-.mg-story__seal-pos:hover {
-  transform: rotate(0deg) scale(1.05);
+@media (hover: hover) and (min-width: 1024px) {
+  .mg-story__seal-pos:hover {
+    transform: rotate(0deg) scale(1.04);
+  }
+}
+
+.mg-seal-badge--cerita {
+  width: 136px;
+  height: 136px;
 }
 
 .mg-story__packaging-card {
@@ -3157,13 +3152,27 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 24px;
+  pointer-events: auto;
 }
 
-.mg-guarantee-seal-wrap .mg-seal--160 {
-  position: static !important;
-  margin-bottom: 14px;
-  filter: drop-shadow(var(--mg-sh-card));
-  pointer-events: none;
+.mg-seal-badge--garansi {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 8px;
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
+}
+
+@media (hover: hover) and (min-width: 1024px) {
+  .mg-guarantee-seal-wrap:hover .mg-seal-badge--garansi {
+    transform: scale(1.04);
+  }
+}
+
+@media (max-width: 767px) {
+  .mg-seal-badge--garansi {
+    width: 168px;
+    height: 168px;
+  }
 }
 
 .mg-guarantee-seal {
@@ -3851,7 +3860,11 @@
   .mg-story__seal-pos {
     top: -12px;
     right: -12px;
-    transform: scale(0.85);
+  }
+
+  .mg-seal-badge--cerita {
+    width: 128px;
+    height: 128px;
   }
 
   .mg-guarantee-card {

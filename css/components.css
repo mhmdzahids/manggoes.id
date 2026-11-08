@@ -828,28 +828,21 @@
   background-color: var(--mg-green-700);
 }
 
-/* 6. Round Seal Symbol (.mg-seal) */
-.mg-seal {
-  position: absolute;
-  width: 116px;
-  height: 116px;
-  filter: drop-shadow(var(--mg-sh-card));
-  pointer-events: none;
+/* 6. Premium Rosette Seal Badge (.mg-seal-badge) */
+.mg-seal-badge {
+  display: block;
+  filter: drop-shadow(0 14px 24px rgba(31, 61, 36, 0.28));
   user-select: none;
+  transform-origin: center center;
+  transition: transform var(--mg-dur-2) var(--mg-ease-out);
 }
 
-.mg-seal__text {
-  font-family: var(--mg-font-display);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  fill: var(--mg-green-700);
-  text-transform: uppercase;
-}
-
-.mg-seal__text--sm {
-  font-size: 8.5px;
-  letter-spacing: 0.12em;
+@media (prefers-reduced-motion: reduce) {
+  .mg-seal-badge,
+  .mg-seal-wrap,
+  .mg-story__seal-pos {
+    transition: none !important;
+  }
 }
 
 /* 7. Sticky Compact Bar (.mg-sticky-bar) */
