@@ -72,9 +72,9 @@
   --mg-color-dark-olive:    var(--mg-ink);
   --mg-color-leaf-green:    var(--mg-leaf);
   --mg-color-mango-gold:    var(--mg-mango);
-  --mg-color-crimson:       #D52518;
+  --mg-color-crimson:       var(--mg-green-700);
   --mg-color-cream:         var(--mg-surface);
-  --mg-color-coral:         #F17142;
+  --mg-color-coral:         var(--mg-mango);
 
   --mg-green-950: #151F0B;
   --mg-green-800: var(--mg-green-800);
@@ -95,10 +95,10 @@
   --mg-mango-100: #FFF2DD;
   --mg-mango-50:  #FFF9F0;
 
-  --mg-crimson-600: #BD1E12;
-  --mg-crimson-500: #D52518;
-  --mg-crimson-100: #FBE6E4;
-  --mg-crimson-50:  #FDF2F1;
+  --mg-crimson-600: var(--mg-green-800);
+  --mg-crimson-500: var(--mg-green-700);
+  --mg-crimson-100: var(--mg-surface);
+  --mg-crimson-50:  var(--mg-surface-raised);
 
   --mg-cream-100: #EFE8D3;
   --mg-cream-50:  var(--mg-surface);

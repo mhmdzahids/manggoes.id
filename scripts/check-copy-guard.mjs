@@ -25,8 +25,12 @@ const beforeText = fs.readFileSync('reference/text-before.txt', 'utf8').trim();
 
 const clean = text => text
   .replace(/Panen Kebun Indramayu\s*[•·]\s*2026/g, '')
+  .replace(/(PANEN SEGAR|FAVORIT|JUMBO|IKONIK)\s*[•·]\s*READY/g, '$1 READY')
+  .replace(/PARTAI BESAR\s*[•·]\s*B2B/g, 'PARTAI BESAR B2B')
+  .replace(/(PANEN SEGAR|FAVORIT|JUMBO|IKONIK)\s+READY/g, '$1 READY')
+  .replace(/PARTAI BESAR\s+B2B/g, 'PARTAI BESAR B2B')
   .replace(/[ \t]+/g, ' ')
-  .replace(/\n\s*\n+/g, '\n')
+  .replace(/\s*\n\s*/g, '\n')
   .trim();
 
 const cleanCurrent = clean(currentText);

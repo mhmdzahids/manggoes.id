@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordPress Theme Simulation - Manggoes</title>
+  <!-- Hostile Theme Stylesheet (Simulating worst-case theme overrides) -->
+  <style id="worst-case-theme">
+    a { color: #3a3a3a; }
+    a:hover, a:focus, a:visited { color: #0274be; background: #fff; }
+    button:hover, button:focus, .button:focus { background: #fff; color: #fff; }
+  </style>
+  <link rel="stylesheet" href="../wordpress/manggoes.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #F4F1E8;
+      font-family: system-ui, sans-serif;
+    }
+    .wp-sim-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .wp-sim-section-wrap {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wp-sim-container">
+    <div class="wp-sim-section-wrap" id="sim-hero">
+      <!-- ======================================================================
+     Manggoes Section 2: Hero Section (#atas)
+     Panduan Elementor:
+     1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
+     2. Masukkan widget 'HTML' ke dalam container tersebut.
+     3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
+     ====================================================================== -->
+<div class="mg">
+<section class="mg-hero-wrap" id="atas">
+        <div class="mg-frame">
+          
+          <!-- Navbar Inside Frame -->
+          <header class="mg-nav">
+            <div class="mg-nav__inner">
+              <a href="#atas" class="mg-nav__logo-link" aria-label="Manggoes Beranda">
+                <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes.webp" alt="Manggoes" class="mg-nav__logo" width="140" height="40">
+              </a>
+
+              <nav class="mg-nav__menu" aria-label="Navigasi Utama">
+                <a href="#atas" class="mg-nav__link is-active">Beranda</a>
+                <a href="#harga" class="mg-nav__link">Varietas</a>
+                <a href="#cerita" class="mg-nav__link">Cerita</a>
+                <a href="#faq" class="mg-nav__link">FAQ</a>
+              </nav>
+
+              <div class="mg-nav__actions">
+                <a href="#harga" class="mg-nav__icon-btn" aria-label="Cari varietas mangga">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </a>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-nav__icon-btn mg-nav__bag-btn" aria-label="Pesan via WhatsApp">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                  <span class="mg-nav__bag-badge" data-show-badge="true">0</span>
+                </a>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn-pill mg-btn-pill--primary mg-nav__cta">
+                  <span>Pesan Sekarang</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+
+                <!-- Mobile Hamburger Button -->
+                <button type="button" class="mg-nav__hamburger" id="mg-drawer-open" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mg-mobile-nav">
+                  <span class="mg-nav__hamburger-line"></span>
+                  <span class="mg-nav__hamburger-line"></span>
+                  <span class="mg-nav__hamburger-line"></span>
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <!-- Hero Content Inside Frame -->
+          <div class="mg-hero">
+            
+            <!-- Left Copy Column -->
+            <div class="mg-hero__copy">
+              <h1 class="mg-hero__title">
+                <span>Premium Fresh</span>
+                <span>Manggoes</span>
+              </h1>
+              <div class="mg-hero__cta-row">
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn-pill mg-btn-pill--primary mg-hero__cta">
+                  <span>Pesan Sekarang</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Product Stage (Center) -->
+            <div class="mg-stage">
+              <div class="mg-stage__shadow" aria-hidden="true"></div>
+              <img src="https://manggoes.id/wp-content/uploads/mg/mango-hero.webp" alt="Mangga segar Manggoes dari Indramayu" class="mg-stage__product" width="1600" height="1600" fetchpriority="high">
+
+              <!-- Round Seal Badge (Hero) -->
+              <div class="mg-seal-wrap" aria-hidden="true">
+                <svg class="mg-seal-badge mg-seal-badge--hero" viewBox="0 0 200 200" width="144" height="144" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="mg-seal-hero-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#3A6B40" />
+                      <stop offset="100%" stop-color="var(--mg-green-800, #264C2B)" />
+                    </linearGradient>
+                    <path id="mg-seal-hero-top" d="M 32,100 A 68,68 0 0 1 168,100" fill="none" />
+                    <path id="mg-seal-hero-bot" d="M 20,100 A 80,80 0 0 0 180,100" fill="none" />
+                  </defs>
+                
+                  <!-- 1. Rosette Edge (Scalloped) -->
+                  <path d="M198.50,100.00L198.18,101.71L197.28,103.40L195.95,105.03L194.40,106.60L192.90,108.13L191.66,109.63L190.89,111.16L190.69,112.74L191.03,114.42L191.83,116.19L192.90,118.06L193.98,119.98L194.85,121.90L195.28,123.76L195.14,125.49L194.39,127.07L193.09,128.46L191.38,129.69L189.48,130.81L187.63,131.89L186.05,133.03L184.91,134.31L184.30,135.78L184.20,137.49L184.51,139.41L185.06,141.48L185.61,143.62L185.95,145.70L185.89,147.61L185.30,149.25L184.17,150.58L182.55,151.58L180.58,152.33L178.46,152.92L176.39,153.49L174.57,154.18L173.14,155.11L172.16,156.38L171.63,158.00L171.43,159.94L171.42,162.09L171.40,164.29L171.19,166.39L170.64,168.21L169.65,169.65L168.21,170.64L166.39,171.19L164.29,171.40L162.09,171.42L159.94,171.43L158.00,171.63L156.38,172.16L155.11,173.14L154.18,174.57L153.49,176.39L152.92,178.46L152.33,180.58L151.58,182.55L150.58,184.17L149.25,185.30L147.61,185.89L145.70,185.95L143.62,185.61L141.48,185.06L139.41,184.51L137.49,184.20L135.78,184.30L134.31,184.91L133.03,186.05L131.89,187.63L130.81,189.48L129.69,191.38L128.46,193.09L127.07,194.39L125.49,195.14L123.76,195.28L121.90,194.85L119.98,193.98L118.06,192.90L116.19,191.83L114.42,191.03L112.74,190.69L111.16,190.89L109.63,191.66L108.13,192.90L106.60,194.40L105.03,195.95L103.40,197.28L101.71,198.18L100.00,198.50L98.29,198.18L96.60,197.28L94.97,195.95L93.40,194.40L91.87,192.90L90.37,191.66L88.84,190.89L87.26,190.69L85.58,191.03L83.81,191.83L81.94,192.90L80.02,193.98L78.10,194.85L76.24,195.28L74.51,195.14L72.93,194.39L71.54,193.09L70.31,191.38L69.19,189.48L68.11,187.63L66.97,186.05L65.69,184.91L64.22,184.30L62.51,184.20L60.59,184.51L58.52,185.06L56.38,185.61L54.30,185.95L52.39,185.89L50.75,185.30L49.42,184.17L48.42,182.55L47.67,180.58L47.08,178.46L46.51,176.39L45.82,174.57L44.89,173.14L43.62,172.16L42.00,171.63L40.06,171.43L37.91,171.42L35.71,171.40L33.61,171.19L31.79,170.64L30.35,169.65L29.36,168.21L28.81,166.39L28.60,164.29L28.58,162.09L28.57,159.94L28.37,158.00L27.84,156.38L26.86,155.11L25.43,154.18L23.61,153.49L21.54,152.92L19.42,152.33L17.45,151.58L15.83,150.58L14.70,149.25L14.11,147.61L14.05,145.70L14.39,143.62L14.94,141.48L15.49,139.41L15.80,137.49L15.70,135.78L15.09,134.31L13.95,133.03L12.37,131.89L10.52,130.81L8.62,129.69L6.91,128.46L5.61,127.07L4.86,125.49L4.72,123.76L5.15,121.90L6.02,119.98L7.10,118.06L8.17,116.19L8.97,114.42L9.31,112.74L9.11,111.16L8.34,109.63L7.10,108.13L5.60,106.60L4.05,105.03L2.72,103.40L1.82,101.71L1.50,100.00L1.82,98.29L2.72,96.60L4.05,94.97L5.60,93.40L7.10,91.87L8.34,90.37L9.11,88.84L9.31,87.26L8.97,85.58L8.17,83.81L7.10,81.94L6.02,80.02L5.15,78.10L4.72,76.24L4.86,74.51L5.61,72.93L6.91,71.54L8.62,70.31L10.52,69.19L12.37,68.11L13.95,66.97L15.09,65.69L15.70,64.22L15.80,62.51L15.49,60.59L14.94,58.52L14.39,56.38L14.05,54.30L14.11,52.39L14.70,50.75L15.83,49.42L17.45,48.42L19.42,47.67L21.54,47.08L23.61,46.51L25.43,45.82L26.86,44.89L27.84,43.62L28.37,42.00L28.57,40.06L28.58,37.91L28.60,35.71L28.81,33.61L29.36,31.79L30.35,30.35L31.79,29.36L33.61,28.81L35.71,28.60L37.91,28.58L40.06,28.57L42.00,28.37L43.62,27.84L44.89,26.86L45.82,25.43L46.51,23.61L47.08,21.54L47.67,19.42L48.42,17.45L49.42,15.83L50.75,14.70L52.39,14.11L54.30,14.05L56.38,14.39L58.52,14.94L60.59,15.49L62.51,15.80L64.22,15.70L65.69,15.09L66.97,13.95L68.11,12.37L69.19,10.52L70.31,8.62L71.54,6.91L72.93,5.61L74.51,4.86L76.24,4.72L78.10,5.15L80.02,6.02L81.94,7.10L83.81,8.17L85.58,8.97L87.26,9.31L88.84,9.11L90.37,8.34L91.87,7.10L93.40,5.60L94.97,4.05L96.60,2.72L98.29,1.82L100.00,1.50L101.71,1.82L103.40,2.72L105.03,4.05L106.60,5.60L108.13,7.10L109.63,8.34L111.16,9.11L112.74,9.31L114.42,8.97L116.19,8.17L118.06,7.10L119.98,6.02L121.90,5.15L123.76,4.72L125.49,4.86L127.07,5.61L128.46,6.91L129.69,8.62L130.81,10.52L131.89,12.37L133.03,13.95L134.31,15.09L135.78,15.70L137.49,15.80L139.41,15.49L141.48,14.94L143.62,14.39L145.70,14.05L147.61,14.11L149.25,14.70L150.58,15.83L151.58,17.45L152.33,19.42L152.92,21.54L153.49,23.61L154.18,25.43L155.11,26.86L156.38,27.84L158.00,28.37L159.94,28.57L162.09,28.58L164.29,28.60L166.39,28.81L168.21,29.36L169.65,30.35L170.64,31.79L171.19,33.61L171.40,35.71L171.42,37.91L171.43,40.06L171.63,42.00L172.16,43.62L173.14,44.89L174.57,45.82L176.39,46.51L178.46,47.08L180.58,47.67L182.55,48.42L184.17,49.42L185.30,50.75L185.89,52.39L185.95,54.30L185.61,56.38L185.06,58.52L184.51,60.59L184.20,62.51L184.30,64.22L184.91,65.69L186.05,66.97L187.63,68.11L189.48,69.19L191.38,70.31L193.09,71.54L194.39,72.93L195.14,74.51L195.28,76.24L194.85,78.10L193.98,80.02L192.90,81.94L191.83,83.81L191.03,85.58L190.69,87.26L190.89,88.84L191.66,90.37L192.90,91.87L194.40,93.40L195.95,94.97L197.28,96.60L198.18,98.29Z" fill="url(#mg-seal-hero-fill)" />
+                
+                  <!-- 2. Outer Hairline Ring -->
+                  <circle cx="100" cy="100" r="86" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" stroke-width="1" opacity="0.55" />
+                
+                  <!-- 3. Text Band Arcs -->
+                  <text font-family="var(--mg-font-display, 'Plus Jakarta Sans', system-ui, sans-serif)" font-weight="800" font-size="14" letter-spacing="2.2" fill="var(--mg-surface-raised, #FBF9F3)">
+                    <textPath href="#mg-seal-hero-top" startOffset="50%" text-anchor="middle">ASLI INDRAMAYU</textPath>
+                  </text>
+                  <text font-family="var(--mg-font-display, 'Plus Jakarta Sans', system-ui, sans-serif)" font-weight="800" font-size="14" letter-spacing="2.2" fill="var(--mg-surface-raised, #FBF9F3)">
+                    <textPath href="#mg-seal-hero-bot" startOffset="50%" text-anchor="middle">DIPETIK TANGAN</textPath>
+                  </text>
+                
+                  <!-- 4. Dotted Ring (53 round dots) -->
+                  <circle cx="100" cy="100" r="62" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 7.25" />
+                
+                  <!-- 5. Center Disc -->
+                  <circle cx="100" cy="100" r="48" fill="var(--mg-surface-raised, #FBF9F3)" stroke="rgba(31,61,36,0.12)" stroke-width="1" />
+                
+                  <!-- 6. Two Diamond Separators at 9 and 3 o'clock -->
+                  <rect x="22.5" y="97.5" width="5" height="5" transform="rotate(45 25 100)" fill="var(--mg-mango, #F5A623)" />
+                  <rect x="172.5" y="97.5" width="5" height="5" transform="rotate(45 175 100)" fill="var(--mg-mango, #F5A623)" />
+                
+                  <!-- 7. Center Icon -->
+                  <g transform="translate(79.6 79.6) scale(1.7)">
+                    <path d="M12 2.5c-4.6 3.6-6.6 8.2-5.3 12.6C7.7 18.4 10 20.6 12 21.5c2-.9 4.3-3.1 5.3-6.4C18.6 10.7 16.6 6.1 12 2.5z" fill="var(--mg-green-700, #2E5B34)" />
+                    <path d="M12 6v15 M12 11l-3-2 M12 14.5l-3.4-2.2 M12 11l3-2 M12 14.5l3.4-2.2" fill="none" stroke="var(--mg-surface-raised, #FBF9F3)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Hero Props (Floating Leaves, Mango Half, Cubes) -->
+            <div class="mg-props" aria-hidden="true">
+              <!-- Branch A: Top-Right (2-Leaf Branch) -->
+              <div class="mg-prop mg-branch mg-branch--a">
+                <div class="mg-branch__sway">
+                  <img src="https://manggoes.id/wp-content/uploads/mg/branch-2.webp" alt="" class="mg-branch__img" width="96" height="105">
+                </div>
+              </div>
+
+              <!-- Left Side Props (Untouched) -->
+              <img src="https://manggoes.id/wp-content/uploads/mg/leaf-2.webp" alt="" class="mg-prop mg-prop--leaf-2" width="140" height="140">
+              <img src="https://manggoes.id/wp-content/uploads/mg/leaf-3.webp" alt="" class="mg-prop mg-prop--leaf-3" width="96" height="96">
+
+              <!-- Branch B: Bottom-Right (3-Leaf Branch) -->
+              <div class="mg-prop mg-branch mg-branch--b">
+                <div class="mg-branch__sway">
+                  <img src="https://manggoes.id/wp-content/uploads/mg/branch-3.webp" alt="" class="mg-branch__img" width="150" height="164">
+                </div>
+              </div>
+
+              <!-- Left Side Props (Untouched) -->
+              <img src="https://manggoes.id/wp-content/uploads/mg/leaf-2.webp" alt="" class="mg-prop mg-prop--leaf-5" width="180" height="180">
+              <img src="https://manggoes.id/wp-content/uploads/mg/mango-half-cubes.webp" alt="" class="mg-prop mg-prop--mango-half" width="900" height="900">
+              <img src="https://manggoes.id/wp-content/uploads/mg/cube.webp" alt="" class="mg-prop mg-prop--cube-1" width="32" height="32">
+              <img src="https://manggoes.id/wp-content/uploads/mg/cube.webp" alt="" class="mg-prop mg-prop--cube-2" width="32" height="32">
+            </div>
+
+            <!-- Side Card (Glass) -->
+            <aside class="mg-card mg-hero__side-card" aria-label="Varietas Pilihan">
+              <div class="mg-hero-slider">
+                <div class="mg-hero-slider__thumb-wrap">
+                  <img src="https://manggoes.id/wp-content/uploads/mg/variety-gedong-gincu.webp" alt="Gedong Gincu" class="mg-hero-slider__thumb" id="mg-hero-slide-img" width="204" height="128">
+                  <button type="button" class="mg-btn-sage mg-hero-slider__next" id="mg-hero-slide-next" aria-label="Varietas selanjutnya">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
+                <a href="#harga" class="mg-hero-slider__title" id="mg-hero-slide-title">Gedong Gincu</a>
+              </div>
+
+              <div class="mg-hero-features">
+                <div class="mg-hero-feature-row">
+                  <div class="mg-icon-chip" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                    </svg>
+                  </div>
+                  <span class="mg-hero-feature-label">Request Kematangan</span>
+                </div>
+
+                <div class="mg-hero-feature-row">
+                  <div class="mg-icon-chip" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                  </div>
+                  <span class="mg-hero-feature-label">Garansi 100%</span>
+                </div>
+
+                <div class="mg-hero-feature-row">
+                  <div class="mg-icon-chip" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <line x1="12" y1="2" x2="12" y2="22"></line>
+                      <path d="m20 16-4-4 4-4"></path>
+                      <path d="m4 8 4 4-4 4"></path>
+                      <path d="m16 4-4 4-4-4"></path>
+                      <path d="m8 20 4-4 4 4"></path>
+                    </svg>
+                  </div>
+                  <span class="mg-hero-feature-label">Kirim Berpendingin</span>
+                </div>
+              </div>
+            </aside>
+
+            <!-- Pager / Dash Pagination -->
+            <div class="mg-pager" role="tablist" aria-label="Navigasi Slider Hero">
+              <button type="button" class="mg-pager__dash is-active" data-slide="0" aria-label="Slide 1"></button>
+              <button type="button" class="mg-pager__dash" data-slide="1" aria-label="Slide 2"></button>
+              <button type="button" class="mg-pager__dash" data-slide="2" aria-label="Slide 3"></button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+</div>
+
+    </div>
+    <div class="wp-sim-section-wrap" id="sim-harga">
+      <!-- ======================================================================
+     Manggoes Section 5: Harga: Special Offer (#harga)
+     Panduan Elementor:
+     1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
+     2. Masukkan widget 'HTML' ke dalam container tersebut.
+     3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
+     ====================================================================== -->
+<div class="mg">
+<section id="harga" class="mg-section mg-frame--section mg-frame--odd mg-pricing-section" aria-labelledby="mg-pricing-heading">
+        <img src="https://manggoes.id/wp-content/uploads/mg/leaf-1.webp" alt="" class="mg-section-prop" style="top: 20px; right: 24px; width: 110px; height: auto; filter: blur(2px); opacity: 0.5;" aria-hidden="true">
+        <div class="mg-container">
+          <div class="mg-section-header">
+            <span class="mg-eyebrow">SPECIAL OFFER</span>
+            <h2 id="mg-pricing-heading" class="mg-section-header__title" style="margin-top: 14px;">
+              Harga spesial, stok terbatas.
+            </h2>
+            <p class="mg-section-header__desc">
+              Stok dan harga bisa berubah sewaktu-waktu. Makin cepat pesan, makin pasti kebagian!
+            </p>
+          </div>
+
+          <div class="mg-pricing-grid">
+
+            <!-- Varietas 1: Gedong Gincu -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">PANEN SEGAR</span>
+                  <span class="mg-chip--status mg-chip--status-ready">READY</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/variety-gedong-gincu.webp" alt="Mangga Gedong Gincu Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Gedong Gincu</h3>
+                <p class="mg-price-card__flavor">Si Eksotis — Daging oranye kemerahan, aroma harum semerbak, perpaduan manis kaya dengan kesegaran alami.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp33.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Gedong Gincu</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 2: Golek Madu -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">PANEN SEGAR</span>
+                  <span class="mg-chip--status mg-chip--status-ready">READY</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/variety-golek-madu.webp" alt="Mangga Golek Madu Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Golek Madu</h3>
+                <p class="mg-price-card__flavor">Bentuk lonjong anggun, manis semanis madu dengan sari buah melimpah di setiap gigitan.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp27.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Golek Madu</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 3: Harum Manis -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">FAVORIT</span>
+                  <span class="mg-chip--status mg-chip--status-ready">READY</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/variety-harum-manis.webp" alt="Mangga Harum Manis Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Harum Manis</h3>
+                <p class="mg-price-card__flavor">Si Klasik — Daging tebal butter-soft nyaris tanpa serat. Manis legit, bersih tanpa jejak rasa asam.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp25.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp22.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Harum Manis</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 4: Kiojay -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">JUMBO</span>
+                  <span class="mg-chip--status mg-chip--status-ready">READY</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/variety-kiojay.webp" alt="Mangga Kiojay Jumbo Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Kiojay</h3>
+                <p class="mg-price-card__flavor">Ukuran jumbo memuaskan. Daging buah super tebal, renyah manis dan sangat memanjakan lidah.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp30.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp27.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Kiojay</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Varietas 5: Cengkir -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">IKONIK</span>
+                  <span class="mg-chip--status mg-chip--status-ready">READY</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/variety-cengkir.webp" alt="Mangga Cengkir Khas Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Cengkir</h3>
+                <p class="mg-price-card__flavor">Ikon khas tanah Indramayu. Tekstur serat padat dan renyah, rasa manis gurih yang unik dan khas.</p>
+                
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">1 – 5 kg</span>
+                    <span class="mg-price-val">Rp25.000 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">6 – 10 kg (Hemat)</span>
+                    <span class="mg-price-val mg-price-val--discount">Rp22.999 <small style="font-size: 0.75rem; font-weight: normal;">/kg</small></span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--primary" style="margin-top: auto; width: 100%;">
+                  <span>Pesan Cengkir</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Kartu ke-6: Bulk Order (>10 kg) -->
+            <article class="mg-price-card">
+              <div class="mg-price-card__image-wrap">
+                <div class="mg-media__tags">
+                  <span class="mg-chip--label">PARTAI BESAR</span>
+                  <span class="mg-chip--status mg-chip--status-b2b">B2B</span>
+                </div>
+                <img src="https://manggoes.id/wp-content/uploads/mg/packaging-mockup.webp" alt="Paket Borongan Mangga Manggoes Indramayu" class="mg-price-card__image" loading="lazy" width="600" height="375">
+              </div>
+
+              <div class="mg-price-card__body">
+                <h3 class="mg-price-card__title">Paket Borongan</h3>
+                <p class="mg-price-card__flavor">Kebutuhan keluarga besar, hampers kantor, hotel, katering, atau reseller toko buah.</p>
+
+                <div class="mg-price-table">
+                  <div class="mg-price-row">
+                    <span class="mg-price-tier">10 – 50 kg</span>
+                    <span class="mg-price-val">Harga Grosir</span>
+                  </div>
+                  <div class="mg-price-row mg-price-row--discount">
+                    <span class="mg-price-tier">&gt; 50 kg</span>
+                    <span class="mg-price-val mg-price-val--discount">Direct Kebun</span>
+                  </div>
+                </div>
+
+                <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--outlined-cream" style="margin-top: auto; width: 100%;">
+                  <span>Tanya Harga Borongan</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Penutup Bagian Harga: Info Restock Instagram -->
+          <div class="mg-restock-banner">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--mg-dark-olive); flex-shrink: 0;">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span class="mg-restock-banner__text">
+                Info restock kami umumkan lewat Instagram Story. Pantengin terus ya!
+              </span>
+            </div>
+            <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--dark" style="min-height: 38px; padding: 6px 18px; font-size: 0.8rem;">
+              <span>Follow @manggoes.co</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+</div>
+
+    </div>
+    <div class="wp-sim-section-wrap" id="sim-footer">
+      <!-- ======================================================================
+     Manggoes Section 11: Penutup & Footer (#kontak & #mg-footer)
+     Panduan Elementor:
+     1. Buat Container Elementor baru (Width: Full Width / 100%, Padding: 0, Margin: 0).
+     2. Masukkan widget 'HTML' ke dalam container tersebut.
+     3. Salin dan tempel seluruh kode di bawah ini ke dalam widget HTML.
+     ====================================================================== -->
+<div class="mg">
+<section id="kontak" class="mg-section mg-frame--section mg-frame--dark" style="padding-bottom: 0;" aria-labelledby="mg-closing-heading">
+        <div class="mg-container">
+          
+          <!-- Ajakan Penutup Sesuai Brief -->
+          <div class="mg-closing-banner">
+            <h2 id="mg-closing-heading" class="mg-closing-banner__title">
+              Siap merasakan mangga yang berbeda?
+            </h2>
+            <p class="mg-closing-banner__desc">
+              Mau pesan? DM atau klik link di bio. Kami tunggu ya! Dapatkan garansi 100% manis dan segar langsung dari kebun Indramayu.
+            </p>
+            <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-btn mg-btn--cream" style="font-size: 1.05rem; padding: 14px 36px;">
+              <span>Pesan via WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="mg-footer-divider" aria-hidden="true"></div>
+
+        <!-- Main Footer Directory -->
+        <footer id="mg-footer" class="mg-footer" role="contentinfo">
+          <div class="mg-container">
+            <div class="mg-footer-grid">
+              
+              <!-- Brand Identity Column -->
+              <div>
+                <a href="#atas" class="mg-footer__brand-logo" aria-label="Manggoes Beranda">
+                  <img src="https://manggoes.id/wp-content/uploads/mg/logo-manggoes-light.webp" alt="Logo Manggoes" width="240" height="70">
+                </a>
+                <p class="mg-footer__tagline">
+                  Premium Fresh Manggoes. From Indramayu, Fresh to your home. Menghadirkan manis alami pilihan nusantara dengan standar kurasi mutu tinggi langsung ke tanganmu.
+                </p>
+                <div class="mg-footer__social-row">
+                  <!-- Instagram -->
+                  <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="Instagram Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  </a>
+                  <!-- TikTok -->
+                  <a href="https://tiktok.com/@manggoes.co" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="TikTok Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.67 6.34 6.34 0 0 0 9.37 22a6.33 6.33 0 0 0 6.33-6.33V9.17a8.28 8.28 0 0 0 5-1.74v-3.4a4.86 4.86 0 0 1-1.11.66z"/></svg>
+                  </a>
+                  <!-- WhatsApp Direct -->
+                  <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-footer__social-btn" aria-label="WhatsApp Manggoes">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Quick Navigation Directory -->
+              <div>
+                <div class="mg-footer__col-title">Navigasi Halaman</div>
+                <div class="mg-footer__links">
+                  <a href="#atas" class="mg-footer__link">Beranda</a>
+                  <a href="#kenapa" class="mg-footer__link">Kenapa Manggoes</a>
+                  <a href="#harga" class="mg-footer__link">Harga: Special Offer</a>
+                  <a href="#cerita" class="mg-footer__link">Cerita Kami</a>
+                  <a href="#garansi" class="mg-footer__link">Garansi Kualitas 100%</a>
+                  <a href="#testimoni" class="mg-footer__link">Testimoni Pelanggan</a>
+                  <a href="#cara-pesan" class="mg-footer__link">Cara Pesan</a>
+                  <a href="#faq" class="mg-footer__link">Pertanyaan (FAQ)</a>
+                </div>
+              </div>
+
+              <!-- Official Client Contact Directory -->
+              <div>
+                <div class="mg-footer__col-title">Kontak &amp; Alamat Kebun</div>
+                <div class="mg-footer__contacts">
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Jalan Kerukunan No.32/C, Lemakmekar, Indramayu, Jawa Barat - 45212</span>
+                  </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" style="color: inherit;">+62 878 7482 3918 (WhatsApp)</a>
+                  </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <a href="mailto:mangoes.co@gmail.com" style="color: inherit;">mangoes.co@gmail.com</a>
+                  </div>
+                  <div class="mg-footer__contact-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path></svg>
+                    <a href="https://instagram.com/manggoes.co" target="_blank" rel="noopener noreferrer" style="color: inherit;">@manggoes.co</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Back to Top -->
+            <div class="mg-footer__bottom">
+              <div>
+                &copy; 2026 Manggoes. Seluruh hak cipta dilindungi undang-undang.
+              </div>
+              <div>
+                <a href="#atas" style="color: var(--mg-mango-500); font-weight: 600;">Kembali ke Atas &uarr;</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+      </section>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.link/5esniw" target="_blank" rel="noopener noreferrer" class="mg-floating-wa" aria-label="Chat WhatsApp Manggoes">
+      <svg class="mg-floating-wa__icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.886 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      <span class="mg-floating-wa__text">Pesan Mangga</span>
+    </a>
+</div>
+
+    </div>
+  </div>
+</body>
+</html>

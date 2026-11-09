@@ -6,110 +6,264 @@
 /* --------------------------------------------------------------------------
    Buttons (.mg-btn)
    -------------------------------------------------------------------------- */
-.mg-btn {
+/* ==========================================================================
+   Buttons & Interactive States (.mg-btn, .mg-btn-pill)
+   Paired custom properties: --_bg, --_fg, --_bd prevent color-background separation
+   Scoped with high specificity to neutralize hostile WordPress theme stylesheets
+   ========================================================================== */
+.mg .mg-btn,
+.mg .mg-btn-pill,
+.mg a.mg-btn,
+.mg a.mg-btn-pill,
+.mg button.mg-btn,
+.mg button.mg-btn-pill,
+.mg-root .mg-btn,
+.mg-root .mg-btn-pill {
+  background-color: var(--_bg);
+  color: var(--_fg);
+  border: 1.5px solid var(--_bd, transparent);
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--mg-space-sm);
-  min-height: 46px;
-  padding: 10px var(--mg-space-xl);
-  border-radius: var(--mg-radius-pill);
-  font-family: var(--mg-font-heading);
-  font-size: var(--mg-text-sm);
+  gap: 8px;
+  border-radius: var(--mg-r-pill);
+  font-family: var(--mg-font-body);
+  font-size: var(--mg-fs-btn);
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
   white-space: nowrap;
   user-select: none;
-  transition: background-color var(--mg-duration-fast) var(--mg-ease),
-              color var(--mg-duration-fast) var(--mg-ease),
-              border-color var(--mg-duration-fast) var(--mg-ease),
-              transform var(--mg-duration-fast) var(--mg-ease),
-              box-shadow var(--mg-duration-fast) var(--mg-ease);
+  cursor: pointer;
+  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
+              color var(--mg-dur-1) var(--mg-ease-out),
+              border-color var(--mg-dur-1) var(--mg-ease-out),
+              transform var(--mg-dur-1) var(--mg-ease-out),
+              box-shadow var(--mg-dur-1) var(--mg-ease-out);
 }
 
-.mg-btn:hover {
+.mg .mg-btn > span,
+.mg .mg-btn-pill > span {
+  color: inherit;
+}
+
+.mg .mg-btn svg,
+.mg .mg-btn-pill svg {
+  transition: transform var(--mg-dur-1) var(--mg-ease-out);
+  color: inherit;
+  stroke: currentColor;
+}
+
+.mg .mg-btn:visited,
+.mg .mg-btn-pill:visited,
+.mg a.mg-btn:visited,
+.mg a.mg-btn-pill:visited,
+.mg-root .mg-btn:visited,
+.mg-root .mg-btn-pill:visited {
+  color: var(--_fg);
+  background-color: var(--_bg);
+  border-color: var(--_bd, transparent);
+}
+
+.mg .mg-btn:hover,
+.mg .mg-btn-pill:hover,
+.mg a.mg-btn:hover,
+.mg a.mg-btn-pill:hover,
+.mg-root .mg-btn:hover,
+.mg-root .mg-btn-pill:hover {
+  color: var(--_fg);
+  background-color: var(--_bg);
+  border-color: var(--_bd, transparent);
+}
+
+.mg .mg-btn:hover svg,
+.mg .mg-btn-pill:hover svg {
+  transform: translateX(3px);
+}
+
+.mg .mg-btn:active,
+.mg .mg-btn-pill:active,
+.mg a.mg-btn:active,
+.mg a.mg-btn-pill:active,
+.mg-root .mg-btn:active,
+.mg-root .mg-btn-pill:active {
+  color: var(--_fg);
+  background-color: var(--_bg);
+  border-color: var(--_bd, transparent);
+}
+
+/* Focus after mouse click must look EXACTLY like the default state */
+.mg .mg-btn:focus,
+.mg .mg-btn-pill:focus,
+.mg a.mg-btn:focus,
+.mg a.mg-btn-pill:focus,
+.mg button.mg-btn:focus,
+.mg button.mg-btn-pill:focus,
+.mg-root .mg-btn:focus,
+.mg-root .mg-btn-pill:focus {
+  color: var(--_fg);
+  background-color: var(--_bg);
+  border-color: var(--_bd, transparent);
+}
+
+.mg .mg-btn:focus:not(:focus-visible),
+.mg .mg-btn-pill:focus:not(:focus-visible),
+.mg a.mg-btn:focus:not(:focus-visible),
+.mg a.mg-btn-pill:focus:not(:focus-visible),
+.mg button.mg-btn:focus:not(:focus-visible),
+.mg button.mg-btn-pill:focus:not(:focus-visible),
+.mg-root .mg-btn:focus:not(:focus-visible),
+.mg-root .mg-btn-pill:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.mg .mg-btn:focus-visible,
+.mg .mg-btn-pill:focus-visible,
+.mg a.mg-btn:focus-visible,
+.mg a.mg-btn-pill:focus-visible,
+.mg button.mg-btn:focus-visible,
+.mg button.mg-btn-pill:focus-visible,
+.mg-root .mg-btn:focus-visible,
+.mg-root .mg-btn-pill:focus-visible {
+  outline: 2px solid var(--mg-green-700);
+  outline-offset: 3px;
+}
+
+/* Variant 1: Primary (Green BG, White Text) */
+.mg-btn--primary,
+.mg-btn-pill--primary {
+  --_bg: var(--mg-green-700);
+  --_fg: #FFFFFF;
+  --_bd: transparent;
+  box-shadow: 0 4px 14px rgba(46, 91, 52, 0.22);
+}
+.mg-btn--primary:hover,
+.mg-btn-pill--primary:hover {
+  --_bg: var(--mg-green-800);
+  --_fg: #FFFFFF;
+  --_bd: transparent;
   transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(38, 76, 43, 0.32);
 }
-
-.mg-btn:active {
+.mg-btn--primary:active,
+.mg-btn-pill--primary:active {
+  --_bg: var(--mg-green-900);
+  --_fg: #FFFFFF;
+  --_bd: transparent;
   transform: scale(0.98);
 }
 
-/* Primary Button (Forest Green 700) */
-.mg-btn--primary {
-  background-color: var(--mg-green-700);
-  color: var(--mg-white);
-  box-shadow: 0 4px 14px rgba(47, 90, 30, 0.25);
+/* Variant 2: Outlined (Transparent BG, 1.5px green-700 border, green-700 text; hover/active: green-700 bg, white text) */
+.mg-btn--outlined,
+.mg-btn-pill--secondary {
+  --_bg: transparent;
+  --_bd: var(--mg-green-700);
+  --_fg: var(--mg-green-700);
+  box-shadow: none;
+}
+.mg-btn--outlined:hover,
+.mg-btn-pill--secondary:hover {
+  --_bg: var(--mg-green-700);
+  --_fg: #FFFFFF;
+  --_bd: var(--mg-green-700);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(46, 91, 52, 0.2);
+}
+.mg-btn--outlined:active,
+.mg-btn-pill--secondary:active {
+  --_bg: var(--mg-green-800);
+  --_fg: #FFFFFF;
+  --_bd: var(--mg-green-800);
+  transform: scale(0.98);
 }
 
-.mg-btn--primary:hover {
-  background-color: var(--mg-green-900);
-  box-shadow: 0 6px 18px rgba(31, 58, 20, 0.35);
-  color: var(--mg-white);
+/* Variant 3: Cream (Surface-Raised BG, Green-700 Text; Hover: #FFF BG with Green-800 Text) */
+.mg-btn--cream,
+.mg-closing-banner .mg-btn {
+  --_bg: var(--mg-surface-raised);
+  --_fg: var(--mg-green-700);
+  --_bd: transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.mg-btn--cream:hover,
+.mg-closing-banner .mg-btn:hover {
+  --_bg: #FFFFFF;
+  --_fg: var(--mg-green-800);
+  --_bd: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+}
+.mg-btn--cream:active,
+.mg-closing-banner .mg-btn:active {
+  --_bg: var(--mg-cream-100, #F4EEDB);
+  --_fg: var(--mg-green-900);
+  --_bd: transparent;
+  transform: scale(0.98);
+}
+.mg-btn--cream:focus-visible,
+.mg-closing-banner .mg-btn:focus-visible {
+  outline: 2px solid var(--mg-surface-raised);
+  outline-offset: 3px;
 }
 
-.mg-btn--primary:active {
-  background-color: var(--mg-green-900);
-  color: var(--mg-white);
+/* Variant 4: Outlined-Cream for Dark Cards (Transparent BG, Cream Border & Text; Hover/Active: Cream BG, Green-900 Text) */
+.mg-btn--outlined-cream,
+.mg-pricing-grid > .mg-price-card:last-child .mg-btn {
+  --_bg: transparent;
+  --_bd: var(--mg-surface-raised);
+  --_fg: var(--mg-surface-raised);
+  box-shadow: none;
+}
+.mg-btn--outlined-cream:hover,
+.mg-pricing-grid > .mg-price-card:last-child .mg-btn:hover {
+  --_bg: var(--mg-surface-raised);
+  --_fg: var(--mg-green-900);
+  --_bd: var(--mg-surface-raised);
+  transform: translateY(-1px);
+}
+.mg-btn--outlined-cream:active,
+.mg-pricing-grid > .mg-price-card:last-child .mg-btn:active {
+  --_bg: var(--mg-surface-raised);
+  --_fg: var(--mg-green-900);
+  --_bd: var(--mg-surface-raised);
+  transform: scale(0.98);
+}
+.mg-btn--outlined-cream:focus-visible,
+.mg-pricing-grid > .mg-price-card:last-child .mg-btn:focus-visible {
+  outline: 2px solid var(--mg-surface-raised);
+  outline-offset: 3px;
 }
 
-/* Dark Green Button (for Header CTA) */
+/* Variant 5: Dark Green Button (Restock Banner CTA) */
 .mg-btn--dark {
-  background-color: var(--mg-green-900);
-  color: var(--mg-cream-50);
-  box-shadow: 0 4px 12px rgba(31, 58, 20, 0.2);
+  --_bg: var(--mg-green-900);
+  --_fg: var(--mg-surface-raised);
+  --_bd: transparent;
 }
-
 .mg-btn--dark:hover {
-  background-color: var(--mg-green-700);
-  color: var(--mg-white);
+  --_bg: var(--mg-green-700);
+  --_fg: #FFFFFF;
+  --_bd: transparent;
 }
-
 .mg-btn--dark:active {
-  background-color: var(--mg-green-800);
-  color: var(--mg-white);
-}
-
-/* Cream Pill Button (for Dark Backgrounds) */
-.mg-btn--cream {
-  background-color: var(--mg-cream-50);
-  color: var(--mg-green-900);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.mg-btn--cream:hover {
-  background-color: var(--mg-white);
-  color: var(--mg-green-700);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.mg-btn--cream:active {
-  background-color: var(--mg-cream-100);
-  color: var(--mg-green-900);
-}
-
-.mg-btn--cream .mg-btn__icon-circle {
-  background-color: var(--mg-green-alpha-15);
-  color: var(--mg-green-900);
-}
-
-.mg-btn--cream:hover .mg-btn__icon-circle {
-  background-color: var(--mg-green-700);
-  color: var(--mg-white);
+  --_bg: var(--mg-green-800);
+  --_fg: #FFFFFF;
+  --_bd: transparent;
+  transform: scale(0.98);
 }
 
 /* Ghost Outline Button */
 .mg-btn--ghost {
-  background-color: transparent;
-  color: var(--mg-cream-50);
-  border: 1.5px solid var(--mg-white-alpha-35);
+  --_bg: transparent;
+  --_fg: var(--mg-surface-raised);
+  --_bd: var(--mg-surface-raised);
 }
-
 .mg-btn--ghost:hover {
-  background-color: var(--mg-white-alpha-12);
-  border-color: var(--mg-white);
-  color: var(--mg-white);
+  --_bg: rgba(255, 255, 255, 0.12);
+  --_fg: #FFFFFF;
+  --_bd: #FFFFFF;
 }
 
 /* Circular Icon Button (44px min tap target) */
@@ -418,127 +572,187 @@
 }
 
 
-/* --------------------------------------------------------------------------
-   Special Badges (.mg-badge)
-   -------------------------------------------------------------------------- */
-.mg-badge--special {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: var(--mg-crimson-500);
-  color: var(--mg-white);
+/* ==========================================================================
+   Shared Section Eyebrow (.mg-eyebrow)
+   Plain text, uppercase, muted, no background/border/shadow/glow
+   ========================================================================== */
+.mg-eyebrow,
+.mg-section-header__tag,
+.mg-guarantee-seal {
+  display: inline-block;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
   font-family: var(--mg-font-body);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-size: var(--mg-fs-eyebrow);
+  letter-spacing: var(--mg-ls-eyebrow);
+  font-weight: var(--mg-fw-eyebrow);
+  color: var(--mg-muted);
   text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 2px; /* Authentic agricultural inspection stamp */
-  box-shadow: 0 2px 10px rgba(213, 37, 24, 0.35);
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.mg-frame--dark .mg-eyebrow,
+.mg-frame--dark .mg-section-header__tag {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* ==========================================================================
-   Artisanal Farm Inspection Stamp Badges
-   High-contrast, crisp architectural rectangular tags (Zero AI rounded dots)
+   Variety Card Status Chips (.mg-media__tags, .mg-chip--label, .mg-chip--status)
    ========================================================================== */
-.mg-stamp-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 10px;
-  border-radius: 2px;
-  font-family: var(--mg-font-body);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+.mg-media__tags {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 2;
 }
 
-/* Variety Stamp Palettes (Artisanal Fruit Identity - Mapped to Brand Guidelines Hal. 24) */
-.mg-stamp-badge--gincu {
-  background-color: var(--mg-color-crimson); /* #D52518 Ripe Crimson */
-  color: #FFFFFF;
-  border-color: #BD1E12;
+@media (max-width: 767px) {
+  .mg-media__tags {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+  }
 }
 
-.mg-stamp-badge--golek {
-  background-color: #B45309; /* Warm Ripe Honey Amber */
-  color: #FFFFFF;
-  border-color: #92400E;
-}
-
-.mg-stamp-badge--harum {
-  background-color: var(--mg-color-primary-green); /* #4F6F2B Brand Green */
-  color: #FFFFFF;
-  border-color: #3B5420;
-}
-
-.mg-stamp-badge--kiojay {
-  background-color: var(--mg-color-leaf-green); /* #8A8F2B Leaf Green */
-  color: #FFFFFF;
-  border-color: #6E731F;
-}
-
-.mg-stamp-badge--cengkir {
-  background-color: var(--mg-color-coral); /* #F17142 Coral Tangerine */
-  color: #FFFFFF;
-  border-color: #D4572B;
-}
-
-.mg-stamp-badge--b2b {
-  background-color: var(--mg-color-dark-olive); /* #423610 Dark Olive */
-  color: var(--mg-color-mango-gold); /* #FFAF46 Warm Mango Gold */
-  border-color: #2D250B;
-}
-
-.mg-badge--ready {
+.mg-chip--label {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: var(--mg-green-800);
-  color: #FFFFFF;
+  height: 28px;
+  padding: 0 12px 0 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  box-shadow: 0 6px 16px -8px rgba(40, 50, 30, 0.35);
+  border-radius: var(--mg-r-pill);
   font-family: var(--mg-font-body);
-  font-size: 0.72rem;
+  font-size: 11px;
   font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 2px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mg-ink);
+  white-space: nowrap;
 }
 
-/* --------------------------------------------------------------------------
-   WhatsApp & Action Buttons
-   Refined with organic contrast, avoiding harsh neon AI-slop artifacts
-   -------------------------------------------------------------------------- */
-.mg-btn--whatsapp {
-  background-color: #1F8A44;
-  color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(31, 138, 68, 0.28);
+.mg-chip--label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--mg-mango);
+  flex-shrink: 0;
 }
 
-.mg-btn--whatsapp:hover {
-  background-color: #176B34;
-  color: #FFFFFF;
-  box-shadow: 0 8px 24px rgba(31, 138, 68, 0.40);
+@media (max-width: 767px) {
+  .mg-chip--label {
+    height: 26px;
+    font-size: 10px;
+    padding: 0 10px 0 8px;
+  }
 }
 
-.mg-btn--mango {
-  background-color: var(--mg-mango-500);
-  color: var(--mg-ink-950);
+.mg-chip--status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  padding: 0 12px;
+  background: rgba(31, 61, 36, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  border-radius: var(--mg-r-pill);
+  font-family: var(--mg-font-body);
+  font-size: 11px;
   font-weight: 700;
-  box-shadow: 0 4px 14px rgba(255, 175, 70, 0.30);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mg-surface-raised);
+  white-space: nowrap;
 }
 
-.mg-btn--mango:hover {
-  background-color: var(--mg-mango-600);
-  color: var(--mg-ink-950);
-  box-shadow: 0 8px 22px rgba(232, 149, 32, 0.40);
+@media (max-width: 767px) {
+  .mg-chip--status {
+    height: 26px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+}
+
+/* Pulsing Green Indicator Dot for READY */
+.mg-chip--status-ready {
+  position: relative;
+  padding-left: 24px;
+}
+
+.mg-chip--status-ready::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #9BD68A;
+  z-index: 1;
+}
+
+.mg-chip--status-ready::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 50%;
+  background-color: #9BD68A;
+  pointer-events: none;
+  animation: mg-chip-pulse 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  transform-origin: center center;
+}
+
+@keyframes mg-chip-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-chip--status-ready::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* B2B chip on Partai Besar card (no dot) */
+.mg-chip--status-b2b {
+  padding: 0 12px;
 }
 
 /* --------------------------------------------------------------------------
    Floating WhatsApp Button (.mg-floating-wa)
    -------------------------------------------------------------------------- */
+.mg .mg-floating-wa,
+.mg a.mg-floating-wa,
 .mg-floating-wa {
   position: fixed;
   bottom: 24px;
@@ -547,11 +761,11 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: #1F8A44;
+  background-color: #1B7E3D;
   color: #FFFFFF;
   padding: 12px 20px 12px 14px;
   border-radius: var(--mg-radius-pill);
-  box-shadow: 0 8px 28px rgba(31, 138, 68, 0.38), 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 28px rgba(27, 126, 61, 0.38), 0 2px 6px rgba(0, 0, 0, 0.08);
   font-family: var(--mg-font-body);
   font-size: var(--mg-text-sm);
   font-weight: 600;
@@ -561,15 +775,46 @@
               background-color var(--mg-duration-fast) var(--mg-ease);
 }
 
+.mg .mg-floating-wa:hover,
+.mg a.mg-floating-wa:hover,
 .mg-floating-wa:hover {
   transform: translateY(-3px) scale(1.02);
-  background-color: #176B34;
-  box-shadow: 0 12px 36px rgba(31, 138, 68, 0.48), 0 4px 10px rgba(0, 0, 0, 0.12);
+  background-color: #156832;
+  box-shadow: 0 12px 36px rgba(21, 104, 50, 0.48), 0 4px 10px rgba(0, 0, 0, 0.12);
   color: #FFFFFF;
 }
 
+.mg .mg-floating-wa:active,
+.mg a.mg-floating-wa:active,
 .mg-floating-wa:active {
   transform: scale(0.96);
+  background-color: #105227;
+  color: #FFFFFF;
+}
+
+.mg .mg-floating-wa:visited,
+.mg a.mg-floating-wa:visited,
+.mg-floating-wa:visited {
+  color: #FFFFFF;
+  background-color: #1B7E3D;
+}
+
+.mg .mg-floating-wa:focus,
+.mg a.mg-floating-wa:focus,
+.mg-floating-wa:focus {
+  color: #FFFFFF;
+  background-color: #1B7E3D;
+}
+
+.mg .mg-floating-wa:focus:not(:focus-visible),
+.mg a.mg-floating-wa:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.mg .mg-floating-wa:focus-visible,
+.mg a.mg-floating-wa:focus-visible {
+  outline: 2px solid #25D366;
+  outline-offset: 3px;
 }
 
 .mg-floating-wa__icon {
@@ -685,89 +930,6 @@
    FRESHSEAL DESIGN SYSTEM COMPONENTS
    ========================================================================== */
 
-/* 1. Pill Buttons (.mg-btn-pill) */
-.mg-btn-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: var(--mg-r-pill);
-  font-family: var(--mg-font-body);
-  font-size: var(--mg-fs-btn);
-  font-weight: 600;
-  line-height: 1.2;
-  text-align: center;
-  white-space: nowrap;
-  user-select: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
-              color var(--mg-dur-1) var(--mg-ease-out),
-              border-color var(--mg-dur-1) var(--mg-ease-out),
-              transform var(--mg-dur-1) var(--mg-ease-out),
-              box-shadow var(--mg-dur-1) var(--mg-ease-out);
-}
-
-.mg-btn-pill svg {
-  transition: transform var(--mg-dur-1) var(--mg-ease-out);
-}
-
-.mg-btn-pill--primary {
-  background-color: var(--mg-green-700);
-  color: var(--mg-white);
-  border: none;
-  box-shadow: 0 4px 14px rgba(46, 91, 52, 0.22);
-}
-
-.mg-btn-pill--primary:hover {
-  background-color: var(--mg-green-800);
-  color: var(--mg-white);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(38, 76, 43, 0.32);
-}
-
-.mg-btn-pill--primary:hover svg {
-  transform: translateX(3px);
-}
-
-.mg-btn-pill--secondary {
-  background-color: transparent;
-  color: var(--mg-green-700);
-  border: 1.5px solid var(--mg-green-700);
-}
-
-.mg-btn-pill--secondary:hover {
-  background-color: rgba(46, 91, 52, 0.08);
-  color: var(--mg-green-800);
-}
-
-/* 2. Sage Round Arrow Buttons (.mg-btn-sage) */
-.mg-btn-sage {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--mg-green-400);
-  color: var(--mg-white);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(127, 156, 116, 0.3);
-  transition: background-color var(--mg-dur-1) var(--mg-ease-out),
-              transform var(--mg-dur-1) var(--mg-ease-out);
-}
-
-.mg-btn-sage:hover {
-  background-color: var(--mg-green-700);
-  transform: scale(1.05);
-}
-
-.mg-btn-sage:active {
-  transform: scale(0.95);
-}
-
 /* 3. Icon Chips (.mg-icon-chip) */
 .mg-icon-chip {
   width: 44px;
@@ -854,12 +1016,12 @@
   z-index: 1000;
   width: calc(100% - 32px);
   max-width: 960px;
-  background: var(--mg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(251, 249, 243, 0.92);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border: 1px solid var(--mg-glass-border);
   border-radius: var(--mg-r-pill);
-  box-shadow: 0 16px 40px -10px rgba(40, 50, 30, 0.18);
+  box-shadow: var(--mg-sh-card);
   padding: 8px 18px 8px 24px;
   transition: transform 350ms var(--mg-ease-out),
               opacity 350ms var(--mg-ease-out);

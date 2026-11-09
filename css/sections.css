@@ -939,23 +939,23 @@
 }
 
 .mg-hero__feature-box:first-child {
-  border-left-color: var(--mg-color-primary-green); /* #4F6F2B Brand Green */
+  border-left-color: var(--mg-green-700);
 }
 
 .mg-hero__feature-box:first-child .mg-hero__feature-icon {
   background-color: var(--mg-green-100);
   border-color: var(--mg-green-200);
-  color: var(--mg-color-primary-green);
+  color: var(--mg-green-700);
 }
 
 .mg-hero__feature-box:last-child {
-  border-left-color: var(--mg-color-mango-gold); /* #FFAF46 Mango Gold */
+  border-left-color: var(--mg-mango);
 }
 
 .mg-hero__feature-box:last-child .mg-hero__feature-icon {
   background-color: var(--mg-mango-100);
   border-color: var(--mg-mango-200);
-  color: var(--mg-color-dark-olive);
+  color: var(--mg-ink);
 }
 
 .mg-hero__feature-icon {
@@ -1319,6 +1319,7 @@
   gap: 24px;
   position: relative;
   z-index: 2;
+  align-items: stretch;
 }
 
 @media (min-width: 640px) {
@@ -1342,7 +1343,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
   position: relative;
   box-shadow: var(--mg-sh-card);
   transition: transform var(--mg-dur-1) var(--mg-ease-out),
@@ -1364,6 +1365,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .mg-price-card__image {
@@ -1376,49 +1378,15 @@
   transition: transform var(--mg-dur-2) var(--mg-ease-out);
 }
 
-.mg-badge--special {
-  background: transparent !important;
-  color: var(--mg-muted) !important;
-  font-family: var(--mg-font-body) !important;
-  font-size: var(--mg-fs-eyebrow) !important;
-  font-weight: var(--mg-fw-eyebrow) !important;
-  letter-spacing: var(--mg-ls-eyebrow) !important;
-  text-transform: uppercase !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  display: inline-block !important;
-  margin-bottom: 8px !important;
-}
-
 .mg-price-card:hover .mg-price-card__image {
   transform: scale(1.06) rotate(-2deg);
-}
-
-.mg-price-card__badge-pos {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: var(--mg-r-pill);
-  padding: 4px 12px;
-  font-family: var(--mg-font-display);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--mg-green-700);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(40, 50, 30, 0.08);
 }
 
 .mg-price-card__body {
   padding-top: 16px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
+  flex: 1;
 }
 
 .mg-price-card__title {
@@ -1435,7 +1403,11 @@
   color: var(--mg-muted);
   line-height: 1.5;
   margin-bottom: 16px;
-  min-height: 42px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: calc(1.5 * 3 * 1em);
 }
 
 /* Tiered Pricing Table */
@@ -1445,7 +1417,8 @@
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--mg-r-thumb);
   padding: 12px 14px;
-  margin-bottom: 20px;
+  margin-top: auto;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -1484,8 +1457,6 @@
 }
 
 .mg-price-card .mg-btn {
-  background: var(--mg-green-700);
-  color: #FFFFFF;
   border-radius: var(--mg-r-pill);
   font-weight: 600;
   font-size: var(--mg-fs-btn);
@@ -1496,16 +1467,7 @@
   gap: 8px;
   text-decoration: none;
   width: 100%;
-  box-shadow: 0 4px 14px rgba(46, 91, 52, 0.2);
-  transition: background var(--mg-dur-1) var(--mg-ease-out),
-              transform var(--mg-dur-1) var(--mg-ease-out),
-              box-shadow var(--mg-dur-1) var(--mg-ease-out);
-}
-
-.mg-price-card .mg-btn:hover {
-  background: var(--mg-green-800);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(46, 91, 52, 0.28);
+  margin-top: 0;
 }
 
 /* B2B Card (Paket Borongan) */
@@ -1550,15 +1512,7 @@
 }
 
 .mg-pricing-grid > .mg-price-card:last-child .mg-btn {
-  background: transparent;
-  border: 1.5px solid var(--mg-surface-raised);
-  color: var(--mg-surface-raised);
   box-shadow: none;
-}
-
-.mg-pricing-grid > .mg-price-card:last-child .mg-btn:hover {
-  background: var(--mg-surface-raised);
-  color: var(--mg-green-900);
 }
 
 /* Restock Banner */
@@ -2274,8 +2228,6 @@
 }
 
 .mg-closing-banner .mg-btn {
-  background: var(--mg-surface-raised);
-  color: var(--mg-green-900);
   border-radius: var(--mg-r-pill);
   font-weight: 700;
   font-size: 1.0625rem;
@@ -2284,16 +2236,6 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  transition: transform var(--mg-dur-1) var(--mg-ease-out),
-              background var(--mg-dur-1),
-              color var(--mg-dur-1);
-}
-
-.mg-closing-banner .mg-btn:hover {
-  transform: translateY(-2px);
-  background: #FFFFFF;
-  color: var(--mg-green-900);
 }
 
 .mg-closing-banner .mg-btn svg {
